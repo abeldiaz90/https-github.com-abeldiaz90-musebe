@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_9B18B8_musebe" Class="MUSEBEDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SQL5033.SmarterASP.NET;Initial Catalog=DB_9B18B8_musebe;Persist Security Info=True;User ID=DB_9B18B8_musebe_admin" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_9B18B8_musebeConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.ROLES_MODIFICAR_PERMISOS" Method="ROLES_MODIFICAR_PERMISOS">
+    <Parameter Name="ID_ROL" Parameter="iD_ROL" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERMISOS" Parameter="pERMISOS" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Productos_Modificar_Foto" Method="Productos_Modificar_Foto">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Imagen" Parameter="imagen" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Usuarios_Insertar" Method="Usuarios_Insertar">
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ID_ROL" Parameter="iD_ROL" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Cotizaciones_Detalle_Insertar" Method="Cotizaciones_Detalle_Insertar">
+    <Parameter Name="FolioCotizacion" Parameter="folioCotizacion" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Producto" Parameter="producto" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Cantidad" Parameter="cantidad" Type="System.Single" DbType="Real" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Cotizaciones_Abrir" Method="Cotizaciones_Abrir">
+    <Parameter Name="IdCotizacion" Parameter="idCotizacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Cotizaciones_AbrirResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Folio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Requisicion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdContacto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Margen" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Titulo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdPrecioLista" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdFormaPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TiempoEntrega" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Referencia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="LugarEntrega" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Usuarios_Consultar_Datos" Method="Usuarios_Consultar_Datos">
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="Usuarios_Consultar_DatosResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Uuid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ID_ROL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Segundo_Nombre" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Apellido_Paterno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Apellido_Materno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Usuarios_Modificar_Datos" Method="Usuarios_Modificar_Datos">
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Segundo_Nombre" Parameter="segundo_Nombre" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Apellido_Paterno" Parameter="apellido_Paterno" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Apellido_Materno" Parameter="apellido_Materno" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Empresas_Insertar_Logo" Method="Empresas_Insertar_Logo">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Logo" Parameter="logo" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ObtenerPassword" Method="ObtenerPassword">
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="ObtenerPasswordResult">
+      <Column Name="Password" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Usuarios_Cambiar_Contraseña" Method="Usuarios_Cambiar_Contraseña">
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Documentos_Modificar_Requisicion" Method="Documentos_Modificar_Requisicion">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="URL" Parameter="uRL" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.COTIZACIONES_INSERTAR" Method="COTIZACIONES_INSERTAR">
+    <Parameter Name="Folio" Parameter="folio" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Requisicion" Parameter="requisicion" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdCliente" Parameter="idCliente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdContacto" Parameter="idContacto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Margen" Parameter="margen" Type="System.Single" DbType="Real" />
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Titulo" Parameter="titulo" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdPrecioLista" Parameter="idPrecioLista" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdFormaPago" Parameter="idFormaPago" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Referencia" Parameter="referencia" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdMetodoPago" Parameter="idMetodoPago" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TiempoEntrega" Parameter="tiempoEntrega" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="LugarEntrega" Parameter="lugarEntrega" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CotizacionCopiar" Method="CotizacionCopiar">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Entradas_Obtener_Folio" Method="Entradas_Obtener_Folio">
+    <ElementType Name="Entradas_Obtener_FolioResult">
+      <Column Name="Folio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Entradas_Insertar" Method="Entradas_Insertar">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdOrigen" Parameter="idOrigen" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Idproveedor" Parameter="idproveedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Factura" Parameter="factura" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Documento" Parameter="documento" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Entradas_Consultar_Detalle" Method="Entradas_Consultar_Detalle">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Entradas_Consultar_DetalleResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Factura" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Documento" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Entradas_Documentos_Factura" Method="Entradas_Documentos_Factura">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Documento" Parameter="documento" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Entradas_Insertar_Detalle" Method="Entradas_Insertar_Detalle">
+    <Parameter Name="IdEntrada" Parameter="idEntrada" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Idproducto" Parameter="idproducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cantidad" Parameter="cantidad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CostoUnitario" Parameter="costoUnitario" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Compras_Detalle_Eliminar" Method="Compras_Detalle_Eliminar">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Compras_Detalle_Mostrar" Method="Compras_Detalle_Mostrar">
+    <Parameter Name="IdCompra" Parameter="idCompra" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Compras_Detalle_MostrarResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdCompra" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrecioUnitario" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Single" DbType="Real" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Compras_Obtener_Folio" Method="Compras_Obtener_Folio">
+    <ElementType Name="Compras_Obtener_FolioResult">
+      <Column Name="Folio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Compras_Detalle_Insertar" Method="Compras_Detalle_Insertar">
+    <Parameter Name="IdCompra" Parameter="idCompra" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Producto" Parameter="producto" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="PrecioUnitario" Parameter="precioUnitario" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Cantidad" Parameter="cantidad" Type="System.Single" DbType="Real" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Compras_Insertar_Modificar" Method="Compras_Insertar_Modificar">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaCompra" Parameter="fechaCompra" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFactura" Parameter="fechaFactura" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Idproveedor" Parameter="idproveedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdFormaPago" Parameter="idFormaPago" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumeroTicket" Parameter="numeroTicket" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="NumeroFactura" Parameter="numeroFactura" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdTipoCredito" Parameter="idTipoCredito" Type="System.Int32" DbType="Int" />
+    <Parameter Name="mesesCredito" Type="System.Int32" DbType="Int" />
+    <Parameter Name="diasCredito" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdMetodoPago" Parameter="idMetodoPago" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdTarjeta" Parameter="idTarjeta" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumeroCheque" Parameter="numeroCheque" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FechaPagoTarjeta" Parameter="fechaPagoTarjeta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="subtotal" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="iva" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="ieps" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="ish" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="propina" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="ameses" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="xml" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="pdf" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
