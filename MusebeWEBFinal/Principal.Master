@@ -22,35 +22,39 @@
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <div>
-                        <div class="dropdown col-lg-12">
-                            <button class="btn btn-default dropdown-toggle btn-group-justified" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <asp:LoginName ID="LoginName1" runat="server" />
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li>
-                                    <asp:LinkButton ID="MisDatos" runat="server" OnClick="MisDatos_Click" Text="Mis Datos"></asp:LinkButton>
-                                </li>
-                                <li>
-                                    <asp:LinkButton ID="lnkPassword" runat="server" OnClick="lnkPassword_Click" Text="Cambiar Contraseña"></asp:LinkButton>
-                                </li>
-                                <li><a href="#">Ayuda</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">
-                                    <asp:LoginStatus ID="LoginStatus1" runat="server" OnLoggingOut="LoginStatus1_LoggingOut" />
-                                </a></li>
-                            </ul>
-                        </div>
-                        <dx:ASPxMenu ID="Menu" runat="server" NameField="MenuText" NavigateUrlField="destUrl"
-                            TextField="MenuText" AccessibilityCompliant="True" AutoSeparators="All"
-                            ClientIDMode="AutoID" CssFilePath="~/App_Themes/SoftOrange/{0}/styles.css" CssPostfix="SoftOrange"
-                            GutterWidth="0px" HorizontalAlign="Center" ImageUrlField="ImageUrlField" ShowPopOutImages="True"
-                            SpriteCssFilePath="~/App_Themes/SoftOrange/{0}/sprite.css" ToolTipField="tooltip"
-                            Theme="Metropolis" ItemImagePosition="Bottom" ShowAsToolbar="True" CssClass="navbar navbar-default"
-                            VerticalAlign="Middle" AllowSelectItem="True" EnableAdaptivity="true"
-                            ApplyItemStyleToTemplates="True"
-                            EnableSubMenuScrolling="True" SelectParentItem="True">
-                        </dx:ASPxMenu>
+                        <ol class="breadcrumb">
+                            <dx:ASPxMenu ID="Menu" runat="server" NameField="MenuText" NavigateUrlField="destUrl"
+                                TextField="MenuText" AccessibilityCompliant="True" AutoSeparators="All"
+                                ClientIDMode="AutoID" CssFilePath="~/App_Themes/SoftOrange/{0}/styles.css" CssPostfix="SoftOrange"
+                                GutterWidth="0px" HorizontalAlign="Center" ImageUrlField="ImageUrlField" ShowPopOutImages="True"
+                                SpriteCssFilePath="~/App_Themes/SoftOrange/{0}/sprite.css" ToolTipField="tooltip"
+                                Theme="Metropolis" ItemImagePosition="Bottom" ShowAsToolbar="True" CssClass="navbar navbar-default"
+                                VerticalAlign="Middle" AllowSelectItem="True" EnableAdaptivity="true"
+                                ApplyItemStyleToTemplates="True"
+                                EnableSubMenuScrolling="True" SelectParentItem="True">
+                            </dx:ASPxMenu>
+                            <div class="dropdown col-lg-4">
+                                <button class="btn btn-default dropdown-toggle btn-group-justified" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <asp:LoginName ID="LoginName1" runat="server" />
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li>
+                                        <asp:LinkButton ID="MisDatos" runat="server" OnClick="MisDatos_Click" Text="Mis Datos"></asp:LinkButton>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="lnkPassword" runat="server" OnClick="lnkPassword_Click" Text="Cambiar Contraseña"></asp:LinkButton>
+                                    </li>
+                                    <li><a href="#">Ayuda</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">
+                                        <asp:LoginStatus ID="LoginStatus1" runat="server" OnLoggingOut="LoginStatus1_LoggingOut" />
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </ol>
+
+
                         <dx:ASPxPopupControl ID="popupPerfil" runat="server" HeaderText="Mis Datos" Modal="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Theme="Metropolis" AllowDragging="True" AllowResize="True" AutoUpdatePosition="True" ShowPageScrollbarWhenModal="True">
                             <ContentCollection>
                                 <dx:PopupControlContentControl runat="server">

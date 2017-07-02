@@ -29,63 +29,9 @@ namespace MusebeWEBFinal
             return Folio.ToString();
         }
 
-        protected void cboFormaPago_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                //if (cboFormaPago.SelectedItem.Value.ToString() == "1")
-                //{
-                //    this.cboTarjeta.Visible = true;
-                //    this.txtNumeroChequetRansferencia.Visible = false;
-                //    this.fcharansferencia.Visible = false;
-                //}
-                //else if (cboFormaPago.SelectedItem.Value.ToString() == "2")
-                //{
-                //    this.cboTarjeta.Visible = false;
-                //    this.txtNumeroChequetRansferencia.Visible = true;
-                //    this.fcharansferencia.Visible = false;
 
-                //}
-                //else if (cboFormaPago.SelectedItem.Value.ToString() == "3")
-                //{
-                //    this.cboTarjeta.Visible = false;
-                //    this.txtNumeroChequetRansferencia.Visible = false;
-                //    this.fcharansferencia.Visible = true;
 
-                //}
-            }
-            catch (Exception ex) { ex.ToString(); }
-        }
 
-        protected void txtAgregar_Click(object sender, EventArgs e)
-        {
-            MUSEBEDataContext db = new MUSEBEDataContext();
-            try
-            {
-                //if (cboFormaPago.SelectedItem.Value.ToString() == "1")
-                //{
-                //    //db.Compras_Insertar_Modificar(Int32.Parse(this.txtFolioCompra.Text), this.fechaCompra.Date, Int32.Parse(Test(this.cboProveedor.SelectedItem.Value.ToString())), this.txtNumeroTicket.Text, this.txtNumeroFactura.Text, Int32.Parse(Test(this.cboFormaPago.SelectedItem.Value.ToString())), Int32.Parse(Test(this.cboTarjeta.SelectedItem.Value.ToString())), null, null);//this.fcharansferencia.Date);
-                //    //db.Compras_Detalle_Insertar(Int32.Parse(this.txtFolioCompra.Text), this.txtItem.Text, decimal.Parse(this.PrecioUnitario.Text), float.Parse(this.txtCantidad.Text));
-
-                //}
-                //else if (cboFormaPago.SelectedItem.Value.ToString() == "2")
-                //{
-                //    //db.Compras_Insertar_Modificar(Int32.Parse(this.txtFolioCompra.Text), this.fechaCompra.Date, Int32.Parse(Test(this.cboProveedor.SelectedItem.Value.ToString())), this.txtNumeroTicket.Text, this.txtNumeroFactura.Text, Int32.Parse(Test(this.cboFormaPago.SelectedItem.Value.ToString())), null, this.txtNumeroChequetRansferencia.Text, null);//this.fcharansferencia.Date);
-                //    //db.Compras_Detalle_Insertar(Int32.Parse(this.txtFolioCompra.Text), this.txtItem.Text, decimal.Parse(this.PrecioUnitario.Text), float.Parse(this.txtCantidad.Text));
-
-                //}
-                //else if (cboFormaPago.SelectedItem.Value.ToString() == "3")
-                //{
-                //    //db.Compras_Insertar_Modificar(Int32.Parse(this.txtFolioCompra.Text), this.fechaCompra.Date, Int32.Parse(Test(this.cboProveedor.SelectedItem.Value.ToString())), this.txtNumeroTicket.Text, this.txtNumeroFactura.Text, Int32.Parse(Test(this.cboFormaPago.SelectedItem.Value.ToString())), null, null, this.fcharansferencia.Date);//this.fcharansferencia.Date);
-                //    //db.Compras_Detalle_Insertar(Int32.Parse(this.txtFolioCompra.Text), this.txtItem.Text, decimal.Parse(this.PrecioUnitario.Text), float.Parse(this.txtCantidad.Text));
-
-                //}
-                //db.SubmitChanges();
-
-                //this.grdProductos.DataBind();
-            }
-            catch (Exception ex) { ex.ToString(); }
-        }
         public static String Test(string s)
         {
             if (String.IsNullOrEmpty(s))
@@ -200,30 +146,22 @@ namespace MusebeWEBFinal
             try
             {
                 MUSEBEDataContext db = new MUSEBEDataContext();
-                if (cboFormaPago.SelectedItem.Value.ToString() == "1")
-                {
-                    db.Compras_Insertar_Modificar(Int32.Parse(this.txtFolioCompra.Text), this.fechaCompra.Date, Int32.Parse(Test(this.cboProveedor.SelectedItem.Value.ToString())), this.txtNumeroTicket.Text, this.txtNumeroFactura.Text, Int32.Parse(Test(this.cboFormaPago.SelectedItem.Value.ToString())), Int32.Parse(Test(this.cboTarjeta.SelectedItem.Value.ToString())), null, null);//this.fcharansferencia.Date);
-                    //db.Compras_Detalle_Insertar(Int32.Parse(this.txtFolioCompra.Text), this.txtItem.Text, decimal.Parse(this.PrecioUnitario.Text), float.Parse(this.txtCantidad.Text));
 
-                }
-                else if (cboFormaPago.SelectedItem.Value.ToString() == "2")
-                {
-                    //db.Compras_Insertar_Modificar(Int32.Parse(this.txtFolioCompra.Text), this.fechaCompra.Date, Int32.Parse(Test(this.cboProveedor.SelectedItem.Value.ToString())), this.txtNumeroTicket.Text, this.txtNumeroFactura.Text, Int32.Parse(Test(this.cboFormaPago.SelectedItem.Value.ToString())), null, this.txtNumeroChequetRansferencia.Text, null);//this.fcharansferencia.Date);
-                    //db.Compras_Detalle_Insertar(Int32.Parse(this.txtFolioCompra.Text), this.txtItem.Text, decimal.Parse(this.PrecioUnitario.Text), float.Parse(this.txtCantidad.Text));
-
-                }
-                else if (cboFormaPago.SelectedItem.Value.ToString() == "3")
-                {
-                    //db.Compras_Insertar_Modificar(Int32.Parse(this.txtFolioCompra.Text), this.fechaCompra.Date, Int32.Parse(Test(this.cboProveedor.SelectedItem.Value.ToString())), this.txtNumeroTicket.Text, this.txtNumeroFactura.Text, Int32.Parse(Test(this.cboFormaPago.SelectedItem.Value.ToString())), null, null, this.fcharansferencia.Date);//this.fcharansferencia.Date);
-                    //db.Compras_Detalle_Insertar(Int32.Parse(this.txtFolioCompra.Text), this.txtItem.Text, decimal.Parse(this.PrecioUnitario.Text), float.Parse(this.txtCantidad.Text));
-
-                }
                 db.SubmitChanges();
 
-                this.grdProductos.DataBind();
+                //this.grdProductos.DataBind();
 
             }
             catch (Exception ex) { ex.ToString(); }
+        }
+
+        public void EsNulo(string str)
+        {
+
+            if (string.IsNullOrEmpty(str))
+            {
+                MessageBox.Show("String is empty or null");
+            }
         }
 
     }
