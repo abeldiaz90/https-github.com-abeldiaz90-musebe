@@ -73,6 +73,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AjaxControlToolkit.dll" />
     <Content Include="Compras.aspx" />
     <Content Include="Cotizaciones.aspx" />
     <Content Include="Decode.aspx" />
@@ -897,6 +898,17 @@
     <Content Include="CotizacionImprimir.xsc">
       <DependentUpon>CotizacionImprimir.xsd</DependentUpon>
     </Content>
+    <Content Include="ComprasDatos.xsc">
+      <DependentUpon>ComprasDatos.xsd</DependentUpon>
+    </Content>
+    <None Include="ComprasDatos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ComprasDatos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ComprasDatos.xss">
+      <DependentUpon>ComprasDatos.xsd</DependentUpon>
+    </Content>
     <None Include="CotizacionImprimir.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CotizacionImprimir.Designer.cs</LastGenOutput>
@@ -965,6 +977,11 @@
     </Compile>
     <Compile Include="Compras.aspx.designer.cs">
       <DependentUpon>Compras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComprasDatos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComprasDatos.xsd</DependentUpon>
     </Compile>
     <Compile Include="Cotizaciones.aspx.cs">
       <DependentUpon>Cotizaciones.aspx</DependentUpon>
@@ -1145,7 +1162,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Mensajes.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cotizacion.rdlc" />
+    <EmbeddedResource Include="Reportes\ConsolidadoCompras.rdlc" />
+    <EmbeddedResource Include="Reportes\Cotizacion.rdlc" />
     <EmbeddedResource Include="Productos.rdlc" />
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>

@@ -218,18 +218,15 @@ namespace MusebeWEBFinal
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Compras_Insertar_Modificar")]
 		public int Compras_Insertar_Modificar(
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="VarChar(MAX)")] string id, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaCompra", DbType="DateTime")] System.Nullable<System.DateTime> fechaCompra, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaFactura", DbType="DateTime")] System.Nullable<System.DateTime> fechaFactura, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Idproveedor", DbType="Int")] System.Nullable<int> idproveedor, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFormaPago", DbType="Int")] System.Nullable<int> idFormaPago, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumeroTicket", DbType="VarChar(MAX)")] string numeroTicket, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumeroFactura", DbType="VarChar(MAX)")] string numeroFactura, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoCredito", DbType="Int")] System.Nullable<int> idTipoCredito, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> mesesCredito, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> diasCredito, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdMetodoPago", DbType="Int")] System.Nullable<int> idMetodoPago, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTarjeta", DbType="Int")] System.Nullable<int> idTarjeta, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Idproveedor", DbType="VarChar(MAX)")] string idproveedor, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFormaPago", DbType="VarChar(MAX)")] string idFormaPago, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoCredito", DbType="VarChar(MAX)")] string idTipoCredito, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string mesesCredito, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string diasCredito, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdMetodoPago", DbType="VarChar(MAX)")] string idMetodoPago, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTarjeta", DbType="VarChar(MAX)")] string idTarjeta, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumeroCheque", DbType="VarChar(MAX)")] string numeroCheque, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaPagoTarjeta", DbType="DateTime")] System.Nullable<System.DateTime> fechaPagoTarjeta, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> subtotal, 
@@ -239,9 +236,10 @@ namespace MusebeWEBFinal
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> propina, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> ameses, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string xml, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string pdf)
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string pdf, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string tipogasto)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, fechaCompra, fechaFactura, idproveedor, idFormaPago, numeroTicket, numeroFactura, idTipoCredito, mesesCredito, diasCredito, idMetodoPago, idTarjeta, numeroCheque, fechaPagoTarjeta, subtotal, iva, ieps, ish, propina, ameses, xml, pdf);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, fechaCompra, idproveedor, idFormaPago, idTipoCredito, mesesCredito, diasCredito, idMetodoPago, idTarjeta, numeroCheque, fechaPagoTarjeta, subtotal, iva, ieps, ish, propina, ameses, xml, pdf, tipogasto);
 			return ((int)(result.ReturnValue));
 		}
 	}

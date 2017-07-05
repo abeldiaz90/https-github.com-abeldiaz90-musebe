@@ -174,18 +174,15 @@
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.Compras_Insertar_Modificar" Method="Compras_Insertar_Modificar">
-    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="VarChar(MAX)" />
     <Parameter Name="FechaCompra" Parameter="fechaCompra" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="FechaFactura" Parameter="fechaFactura" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="Idproveedor" Parameter="idproveedor" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdFormaPago" Parameter="idFormaPago" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumeroTicket" Parameter="numeroTicket" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="NumeroFactura" Parameter="numeroFactura" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="IdTipoCredito" Parameter="idTipoCredito" Type="System.Int32" DbType="Int" />
-    <Parameter Name="mesesCredito" Type="System.Int32" DbType="Int" />
-    <Parameter Name="diasCredito" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdMetodoPago" Parameter="idMetodoPago" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdTarjeta" Parameter="idTarjeta" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Idproveedor" Parameter="idproveedor" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdFormaPago" Parameter="idFormaPago" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdTipoCredito" Parameter="idTipoCredito" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="mesesCredito" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="diasCredito" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdMetodoPago" Parameter="idMetodoPago" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdTarjeta" Parameter="idTarjeta" Type="System.String" DbType="VarChar(MAX)" />
     <Parameter Name="NumeroCheque" Parameter="numeroCheque" Type="System.String" DbType="VarChar(MAX)" />
     <Parameter Name="FechaPagoTarjeta" Parameter="fechaPagoTarjeta" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="subtotal" Type="System.Decimal" DbType="Money" />
@@ -196,6 +193,7 @@
     <Parameter Name="ameses" Type="System.Boolean" DbType="Bit" />
     <Parameter Name="xml" Type="System.String" DbType="VarChar(MAX)" />
     <Parameter Name="pdf" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="tipogasto" Type="System.String" DbType="VarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>
