@@ -74,8 +74,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AjaxControlToolkit.dll" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\musebe.dll" />
+    <Content Include="bin\musebe.pdb" />
+    <Content Include="bin\MusebeWEBFinal.dll" />
+    <Content Include="bin\MusebeWEBFinal.pdb" />
+    <Content Include="bin\Utilidades.dll" />
+    <Content Include="bin\Utilidades.pdb" />
     <Content Include="Compras.aspx" />
+    <Content Include="Contacto.aspx" />
     <Content Include="Cotizaciones.aspx" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\full-width-pics.css" />
     <Content Include="Decode.aspx" />
     <Content Include="Directorio.aspx" />
     <Content Include="Entradas.aspx" />
@@ -880,8 +891,12 @@
     <Content Include="Fonts\glyphicons-98-vector-path-line.png" />
     <Content Include="Fonts\glyphicons-99-vector-path-curve.png" />
     <Content Include="Galeria.aspx" />
+    <Content Include="Index.aspx" />
     <Content Include="jquery\jquery-2.1.0.js" />
     <Content Include="jquery\JQuery.ACT.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery.js" />
     <Content Include="Login.aspx" />
     <Content Include="Menu.xslt" />
     <Content Include="MiEmpresa.aspx" />
@@ -901,6 +916,7 @@
     <Content Include="ComprasDatos.xsc">
       <DependentUpon>ComprasDatos.xsd</DependentUpon>
     </Content>
+    <Content Include="bin\MusebeWEBFinal.dll.config" />
     <None Include="ComprasDatos.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ComprasDatos.Designer.cs</LastGenOutput>
@@ -917,6 +933,7 @@
     <Content Include="CotizacionImprimir.xss">
       <DependentUpon>CotizacionImprimir.xsd</DependentUpon>
     </Content>
+    <Content Include="MaestraWeb.Master" />
     <None Include="ProductosDatos.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ProductosDatos.Designer.cs</LastGenOutput>
@@ -942,6 +959,7 @@
     <Content Include="Marcas.aspx" />
     <Content Include="Materiales.aspx" />
     <Content Include="Productos.aspx" />
+    <Content Include="productosweb.aspx" />
     <Content Include="Proveedores.aspx" />
     <Content Include="Roles.aspx" />
     <Content Include="scripts\bootstrap-theme.css" />
@@ -955,6 +973,7 @@
     <Content Include="scripts\custom.js" />
     <Content Include="scripts\jquery-2.1.4.min.js" />
     <Content Include="scripts\npm.js" />
+    <Content Include="Servicios.aspx" />
     <Content Include="ServicioWeb.asmx" />
     <Content Include="Unidades.aspx" />
     <Content Include="Usuarios.aspx" />
@@ -982,6 +1001,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ComprasDatos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cotizaciones.aspx.cs">
       <DependentUpon>Cotizaciones.aspx</DependentUpon>
@@ -1040,12 +1066,26 @@
     <Compile Include="Grupos.aspx.designer.cs">
       <DependentUpon>Grupos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaestraWeb.Master.cs">
+      <DependentUpon>MaestraWeb.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaestraWeb.Master.designer.cs">
+      <DependentUpon>MaestraWeb.Master</DependentUpon>
     </Compile>
     <Compile Include="Marcas.aspx.cs">
       <DependentUpon>Marcas.aspx</DependentUpon>
@@ -1104,6 +1144,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProductosDatos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="productosweb.aspx.cs">
+      <DependentUpon>productosweb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="productosweb.aspx.designer.cs">
+      <DependentUpon>productosweb.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedores.aspx.cs">
       <DependentUpon>Proveedores.aspx</DependentUpon>
@@ -1118,6 +1165,13 @@
     </Compile>
     <Compile Include="Roles.aspx.designer.cs">
       <DependentUpon>Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios.aspx.cs">
+      <DependentUpon>Servicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Servicios.aspx.designer.cs">
+      <DependentUpon>Servicios.aspx</DependentUpon>
     </Compile>
     <Compile Include="ServicioWeb.asmx.cs">
       <DependentUpon>ServicioWeb.asmx</DependentUpon>
