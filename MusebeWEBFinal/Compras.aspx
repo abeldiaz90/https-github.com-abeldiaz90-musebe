@@ -2,11 +2,11 @@
 
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
-<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+	<asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div class="col-md-6">
                 <!-- Single button -->
@@ -250,10 +250,8 @@
             <dx:ASPxPopupControl ID="ASPxPopupControl1" runat="server" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" HeaderText="Reporte de Inventario" Maximized="True" Modal="True">
                 <ContentCollection>
                     <dx:PopupControlContentControl runat="server">
-                        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" DocumentMapWidth="100%" ZoomMode="PageWidth" Width="100%" Height="100%">
-                            <LocalReport ReportPath="ConsolidadoCompras.rdlc">
-                            </LocalReport>
-                        </rsweb:ReportViewer>
+                        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
+						</rsweb:ReportViewer>
                         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="VincoEnergy.InventarioDatosTableAdapters.Inventario_Consultar_Reporte_TodosTableAdapter"></asp:ObjectDataSource>
                     </dx:PopupControlContentControl>
                 </ContentCollection>

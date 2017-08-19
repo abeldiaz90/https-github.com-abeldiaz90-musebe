@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="Productos" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Productos.aspx.cs" Inherits="MusebeWEBFinal.Productos" %>
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
-<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <dx:ASPxButton ID="btnImprimirCatalogo" runat="server" Text="Exportar Catalogo a Excel" OnClick="btnImprimirCatalogo_Click">
+	<dx:ASPxButton ID="btnImprimirCatalogo" runat="server" Text="Exportar Catalogo a Excel" OnClick="btnImprimirCatalogo_Click">
 </dx:ASPxButton>
     <dx:ASPxButton ID="btnExportar" runat="server" Text="Imprimir Catalogo" OnClick="btnExportar_Click">
 </dx:ASPxButton>
