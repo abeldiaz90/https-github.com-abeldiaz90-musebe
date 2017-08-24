@@ -242,6 +242,13 @@ namespace MusebeWEBFinal
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, fechaCompra, idproveedor, idFormaPago, idTipoCredito, mesesCredito, diasCredito, idMetodoPago, idTarjeta, numeroCheque, fechaPagoTarjeta, subtotal, iva, ieps, ish, propina, ameses, xml, pdf, tipogasto);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Productos_Consultar_Activos_Guid")]
+		public ISingleResult<Productos_Consultar_Activos_GuidResult> Productos_Consultar_Activos_Guid([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Guid", DbType="UniqueIdentifier")] System.Nullable<System.Guid> guid)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), guid);
+			return ((ISingleResult<Productos_Consultar_Activos_GuidResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class Cotizaciones_AbrirResult
@@ -997,6 +1004,482 @@ namespace MusebeWEBFinal
 				if ((this._Folio != value))
 				{
 					this._Folio = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Productos_Consultar_Activos_GuidResult
+	{
+		
+		private int _Id;
+		
+		private System.Nullable<System.Guid> _Uuid;
+		
+		private string _Producto;
+		
+		private string _Descripcion;
+		
+		private string _NombreCorto;
+		
+		private string _Clave;
+		
+		private System.Nullable<int> _IdGrupo;
+		
+		private System.Nullable<int> _IdMarca;
+		
+		private System.Nullable<int> _IdMaterial;
+		
+		private System.Nullable<int> _IdUnidad;
+		
+		private System.Nullable<float> _Dimension;
+		
+		private System.Nullable<float> _PiezasPaquete;
+		
+		private System.Nullable<float> _PaquetesCajaBulto;
+		
+		private System.Nullable<float> _PiezasCajaBulto;
+		
+		private System.Nullable<decimal> _PrecioPieza;
+		
+		private System.Nullable<decimal> _PrecioPaquete;
+		
+		private System.Nullable<decimal> _PrecioCajaBulto;
+		
+		private System.Data.Linq.Binary _Imagen;
+		
+		private string _Creo;
+		
+		private System.Nullable<System.DateTime> _Creado;
+		
+		private System.Nullable<bool> _Activo;
+		
+		private System.Nullable<float> _Min;
+		
+		private System.Nullable<float> _Max;
+		
+		private System.Nullable<float> _Inicial;
+		
+		private System.Nullable<bool> _Iva;
+		
+		private System.Nullable<bool> _Inventariable;
+		
+		public Productos_Consultar_Activos_GuidResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Uuid", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> Uuid
+		{
+			get
+			{
+				return this._Uuid;
+			}
+			set
+			{
+				if ((this._Uuid != value))
+				{
+					this._Uuid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Producto", DbType="VarChar(MAX)")]
+		public string Producto
+		{
+			get
+			{
+				return this._Producto;
+			}
+			set
+			{
+				if ((this._Producto != value))
+				{
+					this._Producto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(MAX)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreCorto", DbType="VarChar(MAX)")]
+		public string NombreCorto
+		{
+			get
+			{
+				return this._NombreCorto;
+			}
+			set
+			{
+				if ((this._NombreCorto != value))
+				{
+					this._NombreCorto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Clave", DbType="VarChar(MAX)")]
+		public string Clave
+		{
+			get
+			{
+				return this._Clave;
+			}
+			set
+			{
+				if ((this._Clave != value))
+				{
+					this._Clave = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdGrupo", DbType="Int")]
+		public System.Nullable<int> IdGrupo
+		{
+			get
+			{
+				return this._IdGrupo;
+			}
+			set
+			{
+				if ((this._IdGrupo != value))
+				{
+					this._IdGrupo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdMarca", DbType="Int")]
+		public System.Nullable<int> IdMarca
+		{
+			get
+			{
+				return this._IdMarca;
+			}
+			set
+			{
+				if ((this._IdMarca != value))
+				{
+					this._IdMarca = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdMaterial", DbType="Int")]
+		public System.Nullable<int> IdMaterial
+		{
+			get
+			{
+				return this._IdMaterial;
+			}
+			set
+			{
+				if ((this._IdMaterial != value))
+				{
+					this._IdMaterial = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUnidad", DbType="Int")]
+		public System.Nullable<int> IdUnidad
+		{
+			get
+			{
+				return this._IdUnidad;
+			}
+			set
+			{
+				if ((this._IdUnidad != value))
+				{
+					this._IdUnidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dimension", DbType="Real")]
+		public System.Nullable<float> Dimension
+		{
+			get
+			{
+				return this._Dimension;
+			}
+			set
+			{
+				if ((this._Dimension != value))
+				{
+					this._Dimension = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PiezasPaquete", DbType="Real")]
+		public System.Nullable<float> PiezasPaquete
+		{
+			get
+			{
+				return this._PiezasPaquete;
+			}
+			set
+			{
+				if ((this._PiezasPaquete != value))
+				{
+					this._PiezasPaquete = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaquetesCajaBulto", DbType="Real")]
+		public System.Nullable<float> PaquetesCajaBulto
+		{
+			get
+			{
+				return this._PaquetesCajaBulto;
+			}
+			set
+			{
+				if ((this._PaquetesCajaBulto != value))
+				{
+					this._PaquetesCajaBulto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PiezasCajaBulto", DbType="Real")]
+		public System.Nullable<float> PiezasCajaBulto
+		{
+			get
+			{
+				return this._PiezasCajaBulto;
+			}
+			set
+			{
+				if ((this._PiezasCajaBulto != value))
+				{
+					this._PiezasCajaBulto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioPieza", DbType="Money")]
+		public System.Nullable<decimal> PrecioPieza
+		{
+			get
+			{
+				return this._PrecioPieza;
+			}
+			set
+			{
+				if ((this._PrecioPieza != value))
+				{
+					this._PrecioPieza = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioPaquete", DbType="Money")]
+		public System.Nullable<decimal> PrecioPaquete
+		{
+			get
+			{
+				return this._PrecioPaquete;
+			}
+			set
+			{
+				if ((this._PrecioPaquete != value))
+				{
+					this._PrecioPaquete = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioCajaBulto", DbType="Money")]
+		public System.Nullable<decimal> PrecioCajaBulto
+		{
+			get
+			{
+				return this._PrecioCajaBulto;
+			}
+			set
+			{
+				if ((this._PrecioCajaBulto != value))
+				{
+					this._PrecioCajaBulto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Imagen", DbType="Image")]
+		public System.Data.Linq.Binary Imagen
+		{
+			get
+			{
+				return this._Imagen;
+			}
+			set
+			{
+				if ((this._Imagen != value))
+				{
+					this._Imagen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Creo", DbType="VarChar(MAX)")]
+		public string Creo
+		{
+			get
+			{
+				return this._Creo;
+			}
+			set
+			{
+				if ((this._Creo != value))
+				{
+					this._Creo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Creado", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Creado
+		{
+			get
+			{
+				return this._Creado;
+			}
+			set
+			{
+				if ((this._Creado != value))
+				{
+					this._Creado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activo", DbType="Bit")]
+		public System.Nullable<bool> Activo
+		{
+			get
+			{
+				return this._Activo;
+			}
+			set
+			{
+				if ((this._Activo != value))
+				{
+					this._Activo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Min", DbType="Real")]
+		public System.Nullable<float> Min
+		{
+			get
+			{
+				return this._Min;
+			}
+			set
+			{
+				if ((this._Min != value))
+				{
+					this._Min = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Max", DbType="Real")]
+		public System.Nullable<float> Max
+		{
+			get
+			{
+				return this._Max;
+			}
+			set
+			{
+				if ((this._Max != value))
+				{
+					this._Max = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Inicial", DbType="Real")]
+		public System.Nullable<float> Inicial
+		{
+			get
+			{
+				return this._Inicial;
+			}
+			set
+			{
+				if ((this._Inicial != value))
+				{
+					this._Inicial = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Iva", DbType="Bit")]
+		public System.Nullable<bool> Iva
+		{
+			get
+			{
+				return this._Iva;
+			}
+			set
+			{
+				if ((this._Iva != value))
+				{
+					this._Iva = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Inventariable", DbType="Bit")]
+		public System.Nullable<bool> Inventariable
+		{
+			get
+			{
+				return this._Inventariable;
+			}
+			set
+			{
+				if ((this._Inventariable != value))
+				{
+					this._Inventariable = value;
 				}
 			}
 		}

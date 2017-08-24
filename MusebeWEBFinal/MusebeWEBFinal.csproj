@@ -82,11 +82,13 @@
     <Content Include="bin\Utilidades.pdb" />
     <Content Include="Compras.aspx" />
     <Content Include="Contacto.aspx" />
+    <Content Include="Correos.aspx" />
     <Content Include="Cotizaciones.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\full-width-pics.css" />
     <Content Include="Decode.aspx" />
+    <Content Include="detail.aspx" />
     <Content Include="Directorio.aspx" />
     <Content Include="Entradas.aspx" />
     <Content Include="Fonts\glyphicons-1-glass.png" />
@@ -1008,6 +1010,13 @@
     <Compile Include="Contacto.aspx.designer.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Correos.aspx.cs">
+      <DependentUpon>Correos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Correos.aspx.designer.cs">
+      <DependentUpon>Correos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cotizaciones.aspx.cs">
       <DependentUpon>Cotizaciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1033,6 +1042,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="detail.aspx.cs">
+      <DependentUpon>detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detail.aspx.designer.cs">
+      <DependentUpon>detail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Directorio.aspx.cs">
       <DependentUpon>Directorio.aspx</DependentUpon>

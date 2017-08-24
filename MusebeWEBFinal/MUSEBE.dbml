@@ -196,4 +196,35 @@
     <Parameter Name="tipogasto" Type="System.String" DbType="VarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.Productos_Consultar_Activos_Guid" Method="Productos_Consultar_Activos_Guid">
+    <Parameter Name="Guid" Parameter="guid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="Productos_Consultar_Activos_GuidResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Uuid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NombreCorto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Clave" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdMarca" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdMaterial" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdUnidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dimension" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="PiezasPaquete" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="PaquetesCajaBulto" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="PiezasCajaBulto" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="PrecioPieza" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PrecioPaquete" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PrecioCajaBulto" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Imagen" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Creo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Creado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Min" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Max" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Inicial" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Iva" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Inventariable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

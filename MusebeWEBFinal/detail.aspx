@@ -1,44 +1,13 @@
-﻿<%@ Page Title="Productos" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="productosweb.aspx.cs" Inherits="MusebeWEBFinal.productosweb" %>
+﻿<%@ Page Title="Detalle" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="detail.aspx.cs" Inherits="MusebeWEBFinal.detail" %>
 
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
-	<dx:ASPxDataView ID="ASPxDataView1" runat="server" DataSourceID="Datos" EnableTheming="True" Theme="Glass" Width="100%">
-		<PagerSettings ShowNumericButtons="False"></PagerSettings>
-		<ItemTemplate>
-
-			<asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' Visible="False" />
-			<br />
-			<asp:Label ID="UuidLabel" runat="server" Text='<%# Eval("Uuid") %>' Visible="False" />
-			<br />
-			<b class="">Producto</b>:
-          <%--  <asp:Label ID="ProductoLabel" runat="server" Text='<%# Eval("Producto") %>' />
-			<br />--%>
-			<!--<h1><b>Descripcion</b>:</h1>-->
-            <asp:Label ID="DescripcionLabel" runat="server" Text='<%# Eval("Descripcion") %>' />
-			<br />
-			<%--<b>NombreCorto</b>:
-            <asp:Label ID="NombreCortoLabel" runat="server" Text='<%# Eval("NombreCorto") %>' />
-			<br />--%>
-			<b>Clave</b>:
-            <asp:Label ID="ClaveLabel" runat="server" Text='<%# Eval("Clave") %>' />
-			</br>
-			<b>Precio: </b>
-            <%# "$ " + String.Format("{0:C2}", Convert.ToString(Eval("PrecioPieza")) ) %>
-			<%--<b>PrecioPaquete</b>:
-            <%# String.Format("{0:C2}", Convert.ToString(Eval("PrecioPaquete")) ) %>
-			<b>PrecioCajaBulto</b>:
-            <%# String.Format("{0:C2}", Convert.ToString(Eval("PrecioCajaBulto")) ) %>--%>
-			<dx:ASPxBinaryImage ID="ASPxBinaryImage1" runat="server" Value='<%# Eval("Imagen") %>'>
-			</dx:ASPxBinaryImage>
-			<dx:ASPxButton ID="btnComprar" Text="detalle" runat="server" CssClass="btn btn-danger" PostBackUrl='<%# "detail.aspx?Art="+Eval("Uuid") %>'></dx:ASPxButton>
-		</ItemTemplate>
-		<LoadingPanelStyle HorizontalAlign="Center">
-		</LoadingPanelStyle>
-	</dx:ASPxDataView>
-	<asp:SqlDataSource ID="Datos" runat="server" ConnectionString="<%$ ConnectionStrings:DB_9B18B8_musebeConnectionString %>" SelectCommand="Productos_Consultar_Activos" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+	<b><label id="lblcl" aria-valuetext="Clave:"></label></b><dx:ASPxLabel ID="lblClave" runat="server"></dx:ASPxLabel>
+	<dx:ASPxLabel ID="lblDescripcion" runat="server"></dx:ASPxLabel>
+	<dx:ASPxBinaryImage ID="imgImagen" runat="server"></dx:ASPxBinaryImage>
 </asp:Content>
 <asp:Content ID="Content4" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 	<style>
@@ -129,5 +98,3 @@
 
 	</body>
 </asp:Content>
-
-
