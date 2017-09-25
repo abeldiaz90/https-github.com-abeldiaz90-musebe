@@ -227,4 +227,16 @@
       <Column Name="Inventariable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.Logo_Obtener" Method="Logo_Obtener">
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="Logo_ObtenerResult">
+      <Column Name="Logo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Logo_Obtener_Musebe" Method="Logo_Obtener_Musebe">
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="Logo_Obtener_MusebeResult">
+      <Column Name="Logo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

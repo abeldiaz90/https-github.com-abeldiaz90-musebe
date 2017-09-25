@@ -1,9 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="Servicios.aspx.cs" Inherits="MusebeWEBFinal.Servicios" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-    <!-- Full Width Image Header with Logo -->
+<asp:Content ID="Content3" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
+ <!-- Full Width Image Header with Logo -->
     <!-- Image backgrounds are set within the full-width-pics.css file. -->
     <!--<header class="image-bg-fluid-height">-->
     <!--<img class="img-responsive img-center" src="../Images/MUSEBE Multi-Servicios Bear v3.1.jpg" alt="">-->
@@ -98,6 +97,94 @@
         </div>
     </section>-->
 </asp:Content>
-<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
+<asp:Content ID="Content6" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
+	<style>
+		body {
+			margin: 0;
+		}
+
+		.topnav {
+			overflow: hidden;
+			background-color: #333;
+		}
+
+			.topnav a {
+				float: left;
+				display: block;
+				color: #f2f2f2;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				font-size: 17px;
+			}
+
+				.topnav a:hover {
+					background-color: #ddd;
+					color: black;
+				}
+
+			.topnav .icon {
+				display: none;
+			}
+
+		@media screen and (max-width: 600px) {
+			.topnav a:not(:first-child) {
+				display: none;
+			}
+
+			.topnav a.icon {
+				float: right;
+				display: block;
+			}
+		}
+
+		@media screen and (max-width: 600px) {
+			.topnav.responsive {
+				position: relative;
+			}
+
+				.topnav.responsive .icon {
+					position: absolute;
+					right: 0;
+					top: 0;
+				}
+
+				.topnav.responsive a {
+					float: none;
+					display: block;
+					text-align: left;
+				}
+		}
+	</style>
+
+	<body>
+		<div class="topnav" id="myTopnav">
+			<a href="Index.aspx">Home</a><a href="Servicios.aspx">Servicios</a> <a href="ProductosWeb.aspx">Productos</a> <a href="Somos.aspx">&iquest;Quienes Somos?</a> <a href="Contacto.aspx">Contactanos</a> <a href="Login.aspx">Login</a> <a href="javascript:void(0);" style="font-size: 15px;" class="icon" onclick="myFunction()">&#9776;</a>
+		</div>
+		<div class="pull-right">
+			<p style="color: white" class="d-inline pull-right">
+				&#9742;4499996662
+			</p>
+			<br />
+			<p style="color: white" class="d-inline pull-right">
+				&#9993;ventas@musebe.com.mx
+			</p>
+		</div>
+
+
+
+		<script>
+			function myFunction() {
+				var x = document.getElementById("myTopnav");
+				if (x.className === "topnav") {
+					x.className += " responsive";
+				} else {
+					x.className = "topnav";
+				}
+			}
+		</script>
+
+	</body>
 </asp:Content>
+
 

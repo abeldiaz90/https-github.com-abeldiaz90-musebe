@@ -249,6 +249,20 @@ namespace MusebeWEBFinal
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), guid);
 			return ((ISingleResult<Productos_Consultar_Activos_GuidResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Logo_Obtener")]
+		public ISingleResult<Logo_ObtenerResult> Logo_Obtener([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(MAX)")] string usuario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario);
+			return ((ISingleResult<Logo_ObtenerResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Logo_Obtener_Musebe")]
+		public ISingleResult<Logo_Obtener_MusebeResult> Logo_Obtener_Musebe([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(MAX)")] string usuario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario);
+			return ((ISingleResult<Logo_Obtener_MusebeResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class Cotizaciones_AbrirResult
@@ -1480,6 +1494,58 @@ namespace MusebeWEBFinal
 				if ((this._Inventariable != value))
 				{
 					this._Inventariable = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Logo_ObtenerResult
+	{
+		
+		private System.Data.Linq.Binary _Logo;
+		
+		public Logo_ObtenerResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Logo", DbType="Image")]
+		public System.Data.Linq.Binary Logo
+		{
+			get
+			{
+				return this._Logo;
+			}
+			set
+			{
+				if ((this._Logo != value))
+				{
+					this._Logo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Logo_Obtener_MusebeResult
+	{
+		
+		private System.Data.Linq.Binary _Logo;
+		
+		public Logo_Obtener_MusebeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Logo", DbType="Image")]
+		public System.Data.Linq.Binary Logo
+		{
+			get
+			{
+				return this._Logo;
+			}
+			set
+			{
+				if ((this._Logo != value))
+				{
+					this._Logo = value;
 				}
 			}
 		}

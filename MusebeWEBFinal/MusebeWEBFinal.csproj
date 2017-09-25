@@ -40,7 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit">
-      <HintPath>..\..\VincoEnergy\VincoEnergy\bin\AjaxControlToolkit.dll</HintPath>
+      <HintPath>..\..\..\..\Google Drive\Software\SISGRES\Clases\bin\Debug\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Data.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v14.2.Core, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -73,13 +73,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\AjaxControlToolkit.dll" />
-    <Content Include="bin\musebe.dll" />
-    <Content Include="bin\musebe.pdb" />
-    <Content Include="bin\MusebeWEBFinal.dll" />
-    <Content Include="bin\MusebeWEBFinal.pdb" />
-    <Content Include="bin\Utilidades.dll" />
-    <Content Include="bin\Utilidades.pdb" />
     <Content Include="Compras.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="Correos.aspx" />
@@ -917,7 +910,6 @@
     <Content Include="ComprasDatos.xsc">
       <DependentUpon>ComprasDatos.xsd</DependentUpon>
     </Content>
-    <Content Include="bin\MusebeWEBFinal.dll.config" />
     <None Include="ComprasDatos.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ComprasDatos.Designer.cs</LastGenOutput>
@@ -1216,6 +1208,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
     <Folder Include="Documentos\Facturas\" />
     <Folder Include="Documentos\Requisiciones\" />
     <Folder Include="Imagenes\Empresas\" />
