@@ -13,12 +13,12 @@ namespace MusebeWEBFinal.scripts {
     public partial class Index {
         
         /// <summary>
-        /// ASPxNewsControl1 control.
+        /// News control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxNewsControl ASPxNewsControl1;
+        protected global::DevExpress.Web.ASPxNewsControl News;
     }
 }

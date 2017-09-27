@@ -239,4 +239,19 @@
       <Column Name="Logo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.Somos_Actualizar" Method="Somos_Actualizar">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Texto" Parameter="texto" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Somos_Consultar" Method="Somos_Consultar">
+    <ElementType Name="Somos_ConsultarResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="texto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Somos_Insertar" Method="Somos_Insertar">
+    <Parameter Name="Texto" Parameter="texto" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

@@ -46,7 +46,10 @@
     <Reference Include="DevExpress.Printing.v14.2.Core, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v14.2.Core, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v14.2.Core, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.SpellChecker.v14.2.Core, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxSpellChecker.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.ASPxThemes.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.ASPxTreeList.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -968,6 +971,7 @@
     <Content Include="scripts\npm.js" />
     <Content Include="Servicios.aspx" />
     <Content Include="ServicioWeb.asmx" />
+    <Content Include="somos.aspx" />
     <Content Include="Unidades.aspx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="Video.aspx" />
@@ -1183,6 +1187,13 @@
     <Compile Include="ServicioWeb.asmx.cs">
       <DependentUpon>ServicioWeb.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="somos.aspx.cs">
+      <DependentUpon>somos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="somos.aspx.designer.cs">
+      <DependentUpon>somos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Unidades.aspx.cs">
       <DependentUpon>Unidades.aspx</DependentUpon>

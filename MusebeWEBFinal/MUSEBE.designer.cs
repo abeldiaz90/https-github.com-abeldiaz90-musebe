@@ -263,6 +263,27 @@ namespace MusebeWEBFinal
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario);
 			return ((ISingleResult<Logo_Obtener_MusebeResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Somos_Actualizar")]
+		public int Somos_Actualizar([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Texto", DbType="VarChar(MAX)")] string texto)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, texto);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Somos_Consultar")]
+		public ISingleResult<Somos_ConsultarResult> Somos_Consultar()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Somos_ConsultarResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Somos_Insertar")]
+		public int Somos_Insertar([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Texto", DbType="VarChar(MAX)")] string texto)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), texto);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class Cotizaciones_AbrirResult
@@ -1546,6 +1567,50 @@ namespace MusebeWEBFinal
 				if ((this._Logo != value))
 				{
 					this._Logo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Somos_ConsultarResult
+	{
+		
+		private System.Nullable<int> _Id;
+		
+		private string _texto;
+		
+		public Somos_ConsultarResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int")]
+		public System.Nullable<int> Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_texto", DbType="VarChar(MAX)")]
+		public string texto
+		{
+			get
+			{
+				return this._texto;
+			}
+			set
+			{
+				if ((this._texto != value))
+				{
+					this._texto = value;
 				}
 			}
 		}

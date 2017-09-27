@@ -1,12 +1,32 @@
-﻿<%@ Page Title="MUSEBE" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="MusebeWEBFinal.scripts.Index" %>
+﻿<%@ Page Title="¿Quienes somos?" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="somos.aspx.cs" Inherits="MusebeWEBFinal.somos" %>
+
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<%@ Register Assembly="DevExpress.Web.ASPxHtmlEditor.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxHtmlEditor" TagPrefix="dx" %>
+
+<%@ Register assembly="DevExpress.Web.ASPxSpellChecker.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxSpellChecker" tagprefix="dx" %>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content3" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
-	<dx:ASPxNewsControl ID="News" runat="server" Width="100%" AlwaysShowPager="True" EnableCallbackAnimation="True" ShowBackToTop="True" Theme="PlasticBlue"></dx:ASPxNewsControl>
+<asp:Content ID="Content4" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
+	<asp:LinkButton ID="lnkEditar" runat="server" OnClick="lnkEditar_Click">Editar Contenido</asp:LinkButton>
+	<div class='jumbotron' id="somostexto" runat="server">
+
+	</div>
+
+	<dx:ASPxPopupControl ID="popupSomos" runat="server" CloseOnEscape="True" HeaderText="Edición" Height="700px" Maximized="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" ShowPageScrollbarWhenModal="True" Theme="PlasticBlue" Width="700px">
+		<ContentCollection>
+			<dx:PopupControlContentControl runat="server">
+				<asp:LinkButton ID="lnkPublicar" runat="server" OnClick="lnkPublicar_Click">Publicar</asp:LinkButton>
+				<dx:ASPxHtmlEditor ID="ASPxHtmlEditor1" runat="server" EnableTheming="True" Theme="Office2003Blue" Width="100%">
+				</dx:ASPxHtmlEditor>
+			</dx:PopupControlContentControl>
+		</ContentCollection>
+
+	</dx:ASPxPopupControl>
 </asp:Content>
-<asp:Content ID="Content4" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
+
+<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 	<style>
 		body {
 			margin: 0;
@@ -95,3 +115,6 @@
 
 	</body>
 </asp:Content>
+
+
+
