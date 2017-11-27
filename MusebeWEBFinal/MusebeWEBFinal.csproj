@@ -58,6 +58,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -888,6 +889,11 @@
     <Content Include="Fonts\glyphicons-98-vector-path-line.png" />
     <Content Include="Fonts\glyphicons-99-vector-path-curve.png" />
     <Content Include="Galeria.aspx" />
+    <Content Include="Imagenes\HomeGaleria\banquetes.jpg" />
+    <Content Include="Imagenes\HomeGaleria\Bocadillos.jpg" />
+    <Content Include="Imagenes\HomeGaleria\CoffeBreak.jpg" />
+    <Content Include="Imagenes\HomeGaleria\taquizas.jpg" />
+    <Content Include="Imagenes\Logo\logo.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="jquery\jquery-2.1.0.js" />
     <Content Include="jquery\JQuery.ACT.js" />
@@ -939,6 +945,7 @@
       <DependentUpon>ProductosDatos.xsd</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\Musebe.pubxml" />
+    <None Include="Properties\PublishProfiles\publish.pubxml" />
     <None Include="Properties\PublishProfiles\Sistema.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -969,6 +976,7 @@
     <Content Include="scripts\custom.js" />
     <Content Include="scripts\jquery-2.1.4.min.js" />
     <Content Include="scripts\npm.js" />
+    <Content Include="Servicios_.aspx" />
     <Content Include="Servicios.aspx" />
     <Content Include="ServicioWeb.asmx" />
     <Content Include="somos.aspx" />
@@ -1177,6 +1185,13 @@
     <Compile Include="Roles.aspx.designer.cs">
       <DependentUpon>Roles.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Servicios_.aspx.cs">
+      <DependentUpon>Servicios_.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Servicios_.aspx.designer.cs">
+      <DependentUpon>Servicios_.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Servicios.aspx.cs">
       <DependentUpon>Servicios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1219,12 +1234,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="bin\" />
     <Folder Include="Documentos\Facturas\" />
     <Folder Include="Documentos\Requisiciones\" />
     <Folder Include="Imagenes\Empresas\" />
     <Folder Include="Imagenes\GaleriaSitio\" />
     <Folder Include="Imagenes\Productos\" />
+    <Folder Include="Imagenes\Servicios\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

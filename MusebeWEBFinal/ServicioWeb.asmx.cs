@@ -28,9 +28,7 @@ namespace SISGRES
 
 
         [WebMethod(EnableSession = true)]
-        //[System.Web.Services.WebMethod]
-        //[System.Web.Script.Services.ScriptMethod]
-        public string[] BusquedaItems(string prefixText, int count)
+		public string[] BusquedaItems(string prefixText, int count)
         {
 
             List<string> NombresEmpleados = new List<string>();
@@ -53,28 +51,5 @@ namespace SISGRES
             return NombresEmpleados.ToArray();
 
         }
-
-        //[WebMethod]
-        //public string[] BusquedaElementosHerramientas(string prefixText, int count)
-        //{
-        //    List<string> NombresEmpleados = new List<string>();
-        //    SqlConnection con = new SqlConnection();
-        //    con.ConnectionString = System.Configuration.ConfigurationManager.AppSettings["SIFICA"].ToString();
-        //    con.Open();
-        //    DataTable dt = new DataTable();
-        //    SqlCommand com = new SqlCommand();
-        //    com.Connection = con;
-        //    com.CommandType = CommandType.StoredProcedure;
-        //    com.CommandText = "BUSQUEDA_ELEMENTOS_HERRAMIENTAS";
-        //    com.Parameters.AddWithValue("@ELEMENTO", prefixText);
-        //    com.ExecuteNonQuery();
-        //    SqlDataAdapter TablaDatos = new SqlDataAdapter(com);
-        //    TablaDatos.Fill(dt);
-        //    for (int i = 0; i < dt.Rows.Count; i++)
-        //        NombresEmpleados.Add(AjaxControlToolkit.AutoCompleteExtender.CreateAutoCompleteItem(string.Format("{0}", dt.Rows[i]["Elemento"].ToString()), dt.Rows[i]["Elemento"].ToString()));
-        //    //NombresEmpleados.Add(dt.Rows[i][1].ToString());
-        //    return NombresEmpleados.ToArray();
-
-        //}
     }
 }

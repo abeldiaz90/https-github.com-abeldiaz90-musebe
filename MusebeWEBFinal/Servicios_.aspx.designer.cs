@@ -10,7 +10,7 @@
 namespace MusebeWEBFinal {
     
     
-    public partial class Servicios {
+    public partial class Servicios_ {
         
         /// <summary>
         /// lnkEditar control.
@@ -20,24 +20,6 @@ namespace MusebeWEBFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkEditar;
-        
-        /// <summary>
-        /// ltlCarouselIndicators control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlCarouselIndicators;
-        
-        /// <summary>
-        /// ltlCarouselImages control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlCarouselImages;
         
         /// <summary>
         /// popupServicios control.
@@ -56,24 +38,6 @@ namespace MusebeWEBFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridView grdServicios;
-        
-        /// <summary>
-        /// popupFotos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl popupFotos;
-        
-        /// <summary>
-        /// popupControlSubida control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxUploadControl popupControlSubida;
         
         /// <summary>
         /// ServiciosDatos control.

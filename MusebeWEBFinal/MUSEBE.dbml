@@ -254,4 +254,29 @@
     <Parameter Name="Texto" Parameter="texto" Type="System.String" DbType="VarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.Servicios_Modificar_Foto" Method="Servicios_Modificar_Foto">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Foto" Parameter="foto" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FotoBinaria" Parameter="fotoBinaria" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Servicios_Consultar" Method="Servicios_Consultar">
+    <ElementType Name="Servicios_ConsultarResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Servicio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Foto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FotoBinaria" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Servicios_Consultar_Por_Foto" Method="Servicios_Consultar_Por_Foto">
+    <Parameter Name="Foto" Parameter="foto" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="Servicios_Consultar_Por_FotoResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Servicio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Foto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FotoBinaria" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

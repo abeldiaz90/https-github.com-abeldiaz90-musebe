@@ -61,11 +61,38 @@ namespace MusebeWEBFinal.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Solicitud de Información.
+        /// </summary>
+        internal static string AsuntoCorreoInformacion {
+            get {
+                return ResourceManager.GetString("AsuntoCorreoInformacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ¡Su Contraseña fue Cambiada exitosamente!.
         /// </summary>
         internal static string CambioPasswordExitoso {
             get {
                 return ResourceManager.GetString("CambioPasswordExitoso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ¡Hemos procesado su información, en breve un representante le contactara!.
+        /// </summary>
+        internal static string correoConfirmacionInformacion {
+            get {
+                return ResourceManager.GetString("correoConfirmacionInformacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ventas@musebe.com.mx;israel.cervantes@musebe.com.mx.
+        /// </summary>
+        internal static string correosDestinatariosInformacion {
+            get {
+                return ResourceManager.GetString("correosDestinatariosInformacion", resourceCulture);
             }
         }
         
@@ -93,6 +120,15 @@ namespace MusebeWEBFinal.App_GlobalResources {
         internal static string NuevaCopiaRequisicion {
             get {
                 return ResourceManager.GetString("NuevaCopiaRequisicion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Administración del catalogo servicios.
+        /// </summary>
+        internal static string popupServiciosEncabezado {
+            get {
+                return ResourceManager.GetString("popupServiciosEncabezado", resourceCulture);
             }
         }
         

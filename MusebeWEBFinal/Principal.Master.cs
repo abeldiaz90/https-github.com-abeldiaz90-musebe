@@ -200,7 +200,7 @@ namespace MusebeWEBFinal
         protected void LoginStatus1_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             FormsAuthentication.SignOut();
-            Response.Redirect("Login.aspx");
+            Response.Redirect("Servicios.aspx");
         }
 
         protected void MiPerfil_Click(object sender, EventArgs e)

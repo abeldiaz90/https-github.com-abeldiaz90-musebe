@@ -129,7 +129,19 @@
   <data name="NuevaCopiaRequisicion" xml:space="preserve">
     <value>¿ Desea Generar una nueva Requisición a partir de esta ?</value>
   </data>
+  <data name="popupServiciosEncabezado" xml:space="preserve">
+    <value>Administración del catalogo servicios</value>
+  </data>
   <data name="RespuestaCotizacion" xml:space="preserve">
     <value>Se ha Generado una copia nueva</value>
+  </data>
+  <data name="AsuntoCorreoInformacion" xml:space="preserve">
+    <value>Solicitud de Información</value>
+  </data>
+  <data name="correoConfirmacionInformacion" xml:space="preserve">
+    <value>¡Hemos procesado su información, en breve un representante le contactara!</value>
+  </data>
+  <data name="correosDestinatariosInformacion" xml:space="preserve">
+    <value>ventas@musebe.com.mx;israel.cervantes@musebe.com.mx</value>
   </data>
 </root>

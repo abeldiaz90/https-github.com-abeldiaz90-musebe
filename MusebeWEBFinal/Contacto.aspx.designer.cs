@@ -22,21 +22,30 @@ namespace MusebeWEBFinal {
         protected global::DevExpress.Web.ASPxTextBox txtCorreo;
         
         /// <summary>
-        /// txtContacto control.
+        /// txtTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxMemo txtContacto;
+        protected global::DevExpress.Web.ASPxTextBox txtTelefono;
         
         /// <summary>
-        /// btnEnviar control.
+        /// txtbody control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnEnviar;
+        protected global::DevExpress.Web.ASPxMemo txtbody;
+        
+        /// <summary>
+        /// lnkEnviar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkEnviar;
     }
 }

@@ -60,33 +60,33 @@ namespace MusebeWEBFinal
         }
         protected void btnExportar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.ReportViewer1.ProcessingMode = ProcessingMode.Local;
-                LocalReport report = new LocalReport();
-                report.EnableExternalImages = true;
-                report.ReportPath = "Productos.rdlc";
+            //try
+            //{
+            //    this.ReportViewer1.ProcessingMode = ProcessingMode.Local;
+            //    LocalReport report = new LocalReport();
+            //    report.EnableExternalImages = true;
+            //    report.ReportPath = "Productos.rdlc";
 
-                DataTable ds = ProductosLista();
+            //    DataTable ds = ProductosLista();
 
-                ReportDataSource dsMain = new ReportDataSource();
-                dsMain.Name = "DatosProductos";
-                dsMain.Value = ds;
+            //    ReportDataSource dsMain = new ReportDataSource();
+            //    dsMain.Name = "DatosProductos";
+            //    dsMain.Value = ds;
 
-                report.DataSources.Clear();
-                report.DataSources.Add(dsMain);
-                report.Refresh();
+            //    report.DataSources.Clear();
+            //    report.DataSources.Add(dsMain);
+            //    report.Refresh();
 
-                this.ReportViewer1.Visible = true;
-                this.ReportViewer1.LocalReport.ReportPath = Server.MapPath("Productos.rdlc");
-                this.ReportViewer1.LocalReport.DataSources.Clear();
-                this.ReportViewer1.LocalReport.DataSources.Add(dsMain);
+            //    this.ReportViewer1.Visible = true;
+            //    this.ReportViewer1.LocalReport.ReportPath = Server.MapPath("Productos.rdlc");
+            //    this.ReportViewer1.LocalReport.DataSources.Clear();
+            //    this.ReportViewer1.LocalReport.DataSources.Add(dsMain);
 
-                this.ReportViewer1.DocumentMapCollapsed = true;
-                this.ReportViewer1.ShowPrintButton = true;
-                this.ReportViewer1.LocalReport.Refresh();
-            }
-            catch (Exception ex) { ex.ToString(); }
+            //    this.ReportViewer1.DocumentMapCollapsed = true;
+            //    this.ReportViewer1.ShowPrintButton = true;
+            //    this.ReportViewer1.LocalReport.Refresh();
+            //}
+            //catch (Exception ex) { ex.ToString(); }
         }
         public DataTable ProductosLista()
         {

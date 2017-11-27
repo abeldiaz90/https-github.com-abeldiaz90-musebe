@@ -5,7 +5,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Multiservicios BEAR</title>
+	<link rel="icon" type="image/png" href="/Imagenes/Logo/logo.jpg" />
     <link rel="stylesheet" href="Scripts/bootstrap.min.css">
     <link rel="stylesheet" href="dist/css/bootstrapValidator.css" />
     <script type="text/javascript" src="Scripts/jquery-2.1.4.min.js"></script>

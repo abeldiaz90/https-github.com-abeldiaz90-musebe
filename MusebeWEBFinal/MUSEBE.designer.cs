@@ -284,6 +284,27 @@ namespace MusebeWEBFinal
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), texto);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Servicios_Modificar_Foto")]
+		public int Servicios_Modificar_Foto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Foto", DbType="VarChar(MAX)")] string foto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FotoBinaria", DbType="Image")] System.Data.Linq.Binary fotoBinaria)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, foto, fotoBinaria);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Servicios_Consultar")]
+		public ISingleResult<Servicios_ConsultarResult> Servicios_Consultar()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Servicios_ConsultarResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Servicios_Consultar_Por_Foto")]
+		public ISingleResult<Servicios_Consultar_Por_FotoResult> Servicios_Consultar_Por_Foto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Foto", DbType="VarChar(MAX)")] string foto)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), foto);
+			return ((ISingleResult<Servicios_Consultar_Por_FotoResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class Cotizaciones_AbrirResult
@@ -1611,6 +1632,202 @@ namespace MusebeWEBFinal
 				if ((this._texto != value))
 				{
 					this._texto = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Servicios_ConsultarResult
+	{
+		
+		private int _Id;
+		
+		private string _Servicio;
+		
+		private string _Descripcion;
+		
+		private string _Foto;
+		
+		private System.Data.Linq.Binary _FotoBinaria;
+		
+		public Servicios_ConsultarResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Servicio", DbType="VarChar(MAX)")]
+		public string Servicio
+		{
+			get
+			{
+				return this._Servicio;
+			}
+			set
+			{
+				if ((this._Servicio != value))
+				{
+					this._Servicio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(MAX)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Foto", DbType="VarChar(MAX)")]
+		public string Foto
+		{
+			get
+			{
+				return this._Foto;
+			}
+			set
+			{
+				if ((this._Foto != value))
+				{
+					this._Foto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FotoBinaria", DbType="Image")]
+		public System.Data.Linq.Binary FotoBinaria
+		{
+			get
+			{
+				return this._FotoBinaria;
+			}
+			set
+			{
+				if ((this._FotoBinaria != value))
+				{
+					this._FotoBinaria = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Servicios_Consultar_Por_FotoResult
+	{
+		
+		private int _Id;
+		
+		private string _Servicio;
+		
+		private string _Descripcion;
+		
+		private string _Foto;
+		
+		private System.Data.Linq.Binary _FotoBinaria;
+		
+		public Servicios_Consultar_Por_FotoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Servicio", DbType="VarChar(MAX)")]
+		public string Servicio
+		{
+			get
+			{
+				return this._Servicio;
+			}
+			set
+			{
+				if ((this._Servicio != value))
+				{
+					this._Servicio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(MAX)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Foto", DbType="VarChar(MAX)")]
+		public string Foto
+		{
+			get
+			{
+				return this._Foto;
+			}
+			set
+			{
+				if ((this._Foto != value))
+				{
+					this._Foto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FotoBinaria", DbType="Image")]
+		public System.Data.Linq.Binary FotoBinaria
+		{
+			get
+			{
+				return this._FotoBinaria;
+			}
+			set
+			{
+				if ((this._FotoBinaria != value))
+				{
+					this._FotoBinaria = value;
 				}
 			}
 		}

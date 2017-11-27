@@ -1,101 +1,94 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="Servicios.aspx.cs" Inherits="MusebeWEBFinal.Servicios" %>
+﻿<%@ Page Title="Multiservicios Bear Catalogo de servicios" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="Servicios.aspx.cs" Inherits="MusebeWEBFinal.Servicios" %>
+
+<%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
- <!-- Full Width Image Header with Logo -->
-    <!-- Image backgrounds are set within the full-width-pics.css file. -->
-    <!--<header class="image-bg-fluid-height">-->
-    <!--<img class="img-responsive img-center" src="../Images/MUSEBE Multi-Servicios Bear v3.1.jpg" alt="">-->
-    <div class="container">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="Imagenes/HomeGaleria/taquizas.jpg" alt="taquizas" style="width: 100%;">
-                    <div class="carousel-caption">
-                        <h3>Taquizas</h3>
-                        <a href="#" class="btn btn-danger">Ver Mas...</a>
-
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="Imagenes/HomeGaleria/CoffeBreak.jpg" alt="Coffe Break" style="width: 100%;">
-                    <div class="carousel-caption">
-                        <h3>Coffe Break</h3>
-                        <a href="#" class="btn btn-danger">Ver Mas...</a>
-
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="Imagenes/HomeGaleria/Bocadillos.jpg" alt="Bocadillos" style="width: 100%;">
-                    <div class="carousel-caption">
-                        <h3>Bocadillos</h3>
-                        <a href="#" class="btn btn-danger">Ver Mas...</a>
-
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="Imagenes/HomeGaleria/banquetes.jpg" alt="Banquetes" style="width: 100%;">
-                    <div class="carousel-caption">
-                        <h3>Banquetes</h3>
-                        <a href="#" class="btn btn-danger">Ver Mas...</a>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- </header>-->
-
-    <!-- Content Section -->
-    <!--<section>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="section-heading">Sección para publicaciones</h1>
-                    <p class="lead section-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p class="section-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
-                </div>
-            </div>
-        </div>
-    </section>-->
-
-    <!-- Fixed Height Image Aside -->
-    <!-- Image backgrounds are set within the full-width-pics.css file. -->
-    <!--<aside class="image-bg-fixed-height"></aside>-->
-
-    <!-- Content Section -->
-    <!--<section>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="section-heading">Sección para Videos</h1>
-                    <p class="lead section-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p class="section-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
-                </div>
-            </div>
-        </div>
-    </section>-->
+	<asp:LinkButton ID="lnkEditar" runat="server" OnClick="lnkEditar_Click">Editar</asp:LinkButton>
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="align-content: center">
+		<!-- Indicators -->
+		<asp:Literal ID="ltlCarouselIndicators" runat="server" />
+		<!-- Images-->
+		<div class="carousel-inner" style="align-content: center; align-items: center; background-size: auto; margin: auto">
+			<asp:Literal ID="ltlCarouselImages" runat="server" />
+		</div>
+		<!-- Left Right Arrows -->
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	<dx:ASPxPopupControl ID="popupServicios" runat="server" ClientInstanceName="popupServicios" CloseOnEscape="True" Maximized="True" Modal="True" Width="100%">
+		<ContentCollection>
+			<dx:PopupControlContentControl runat="server">
+				<dx:ASPxGridView ID="grdServicios" runat="server" AutoGenerateColumns="False" DataSourceID="ServiciosDatos" EnableTheming="True" KeyFieldName="Id" Theme="Office2003Silver" Width="100%" OnRowDeleting="grdServicios_RowDeleting" ClientInstanceName="grdServicios">
+					<Columns>
+						<dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" ShowInCustomizationForm="True" ShowNewButtonInHeader="True" VisibleIndex="0">
+						</dx:GridViewCommandColumn>
+						<dx:GridViewDataTextColumn FieldName="Id" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="1" Visible="False">
+							<EditFormSettings Visible="False" />
+						</dx:GridViewDataTextColumn>
+						<dx:GridViewDataTextColumn FieldName="Servicio" ShowInCustomizationForm="True" VisibleIndex="2">
+						</dx:GridViewDataTextColumn>
+						<dx:GridViewDataTextColumn ShowInCustomizationForm="True" VisibleIndex="4" FieldName="Foto" Visible="False">
+						</dx:GridViewDataTextColumn>
+						<dx:GridViewDataTextColumn ShowInCustomizationForm="True" VisibleIndex="6">
+							<EditFormSettings Visible="False" />
+							<DataItemTemplate>
+								<asp:LinkButton ID="LinkButton1" runat="server" OnClick="lnkDetalle_Click">Cargar Foto</asp:LinkButton>
+							</DataItemTemplate>
+						</dx:GridViewDataTextColumn>
+						<dx:GridViewDataBinaryImageColumn FieldName="FotoBinaria" ShowInCustomizationForm="True" VisibleIndex="5" Width="20%" Caption="Foto">
+							<PropertiesBinaryImage ImageAlign="Middle" ImageHeight="20%" ImageWidth="20%" ImageSizeMode="FitProportional" IsPng="True">
+							</PropertiesBinaryImage>
+							<EditFormSettings Visible="False" />
+						</dx:GridViewDataBinaryImageColumn>
+						<dx:GridViewDataMemoColumn FieldName="Descripcion" ShowInCustomizationForm="True" VisibleIndex="3">
+						</dx:GridViewDataMemoColumn>
+					</Columns>
+					<SettingsBehavior AllowFixedGroups="True" AllowFocusedRow="True" AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" />
+					<Settings ShowFilterRow="True" ShowGroupPanel="True" />
+					<SettingsSearchPanel Visible="True" />
+					<Styles>
+						<Header HorizontalAlign="Center" VerticalAlign="Middle">
+						</Header>
+						<Cell HorizontalAlign="Center" VerticalAlign="Middle" Wrap="True">
+						</Cell>
+					</Styles>
+				</dx:ASPxGridView>
+				<dx:ASPxPopupControl ID="popupFotos" runat="server" AllowDragging="True" CloseOnEscape="True" Modal="True" PopupElementID="popupFoto" Theme="Glass">
+					<ContentCollection>
+						<dx:PopupControlContentControl runat="server">
+							<dx:ASPxUploadControl ID="popupControlSubida" runat="server" FileUploadMode="OnPageLoad" OnFileUploadComplete="popupControlSubida_FileUploadComplete" ShowProgressPanel="True" ShowUploadButton="True" Theme="Glass" UploadMode="Auto" Width="280px">
+								<ClientSideEvents FileUploadComplete="function(s, e) {
+}" />
+								<AdvancedModeSettings EnableFileList="True" EnableMultiSelect="True">
+								</AdvancedModeSettings>
+							</dx:ASPxUploadControl>
+						</dx:PopupControlContentControl>
+					</ContentCollection>
+				</dx:ASPxPopupControl>
+				<asp:SqlDataSource ID="ServiciosDatos" runat="server" ConnectionString="<%$ ConnectionStrings:DB_9B18B8_musebeConnectionString %>" DeleteCommand="Servicios_Eliminar" DeleteCommandType="StoredProcedure" InsertCommand="Servicios_insertar" InsertCommandType="StoredProcedure" SelectCommand="Servicios_Consultar" SelectCommandType="StoredProcedure" UpdateCommand="Servicios_Modificar" UpdateCommandType="StoredProcedure">
+					<DeleteParameters>
+						<asp:Parameter Name="Id" Type="Int32" />
+					</DeleteParameters>
+					<InsertParameters>
+						<asp:Parameter Name="Servicio" Type="String" />
+						<asp:Parameter Name="Descripcion" Type="String" />
+					</InsertParameters>
+					<UpdateParameters>
+						<asp:Parameter Name="Id" Type="Int32" />
+						<asp:Parameter Name="Servicio" Type="String" />
+						<asp:Parameter Name="Descripcion" Type="String" />
+					</UpdateParameters>
+				</asp:SqlDataSource>
+			</dx:PopupControlContentControl>
+		</ContentCollection>
+	</dx:ASPxPopupControl>
 </asp:Content>
 <asp:Content ID="Content6" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 	<style>
@@ -155,6 +148,32 @@
 					text-align: left;
 				}
 		}
+
+		@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+
+		body {
+			background-color: black;
+		}
+
+		.carousel-inner > .item {
+			height: 100vh;
+		}
+
+			.carousel-inner > .item > img {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+				max-height: 800px;
+				width: auto;
+			}
+
+		.carousel-control.left,
+		.carousel-control.right {
+			background-image: none;
+		}
 	</style>
 
 	<body>
@@ -163,7 +182,7 @@
 		</div>
 		<div class="pull-right">
 			<p style="color: white" class="d-inline pull-right">
-				&#9742;4499996662
+				&#9742;9381180887 
 			</p>
 			<br />
 			<p style="color: white" class="d-inline pull-right">

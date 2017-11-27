@@ -1,29 +1,40 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="Contacto.aspx.cs" Inherits="MusebeWEBFinal.Contacto" %>
+﻿<%@ Page Title="Multiservicios Bear Contacto" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="Contacto.aspx.cs" Inherits="MusebeWEBFinal.Contacto" %>
 
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content3" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
-	    <div class="col-xs-12">
-        <div class="center-block">
-            <dx:ASPxTextBox ID="txtCorreo" runat="server" Caption="Correo Electrónico:" Theme="Glass" Width="170px" NullText="Correo Electronico">
-                <CaptionSettings HorizontalAlign="Left" Position="Top" />
-                <ValidationSettings SetFocusOnError="True" ValidationGroup="Enviar">
-                    <RegularExpression ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
-                    <RequiredField IsRequired="True" />
-                </ValidationSettings>
-            </dx:ASPxTextBox>
-            <dx:ASPxMemo ID="txtContacto" runat="server" Height="71px" Width="100%" Caption="Solicite Información" HorizontalAlign="Center" NullText="Escribanos sus dudas queremos ayudarle" Theme="Glass">
-                <CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
-                <ValidationSettings SetFocusOnError="True" ValidationGroup="Enviar">
-                    <RequiredField IsRequired="True" />
-                </ValidationSettings>
-            </dx:ASPxMemo>
-            <dx:ASPxButton ID="btnEnviar" runat="server" Text="Enviar" Theme="Glass" ValidationGroup="Enviar">
-            </dx:ASPxButton>
-            <!-- Contenido -->
-        </div>
-    </div>
+		<div class="form-group">
+			<label for="txtCorreo">Email:</label>
+			<dx:ASPxTextBox ID="txtCorreo" runat="server" Theme="Glass" NullText="jane.doe@example.com" CssClass="form-control" HorizontalAlign="Center" Width="100%">
+				<CaptionSettings HorizontalAlign="Left" Position="Top" />
+				<ValidationSettings SetFocusOnError="True" ValidationGroup="Enviar" ErrorTextPosition="Bottom">
+					<RegularExpression ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
+					<RequiredField IsRequired="True" />
+				</ValidationSettings>
+			</dx:ASPxTextBox>
+		</div>
+		<div class="form-group">
+			<label for="txtTelefono">Telefono:</label>
+			<dx:ASPxTextBox ID="txtTelefono" runat="server" Theme="Glass" NullText="Telefono de contacto:" ClientInstanceName="txtTelefono" CssClass="form-control" HorizontalAlign="Center" Width="100%">
+				<MaskSettings Mask="(999) 000-0000" />
+				<CaptionSettings HorizontalAlign="Left" Position="Top" />
+				<ValidationSettings SetFocusOnError="True" ValidationGroup="Enviar" ErrorTextPosition="Bottom">
+					<RequiredField IsRequired="True" />
+				</ValidationSettings>
+			</dx:ASPxTextBox>
+		</div>
+
+		<div class="form-group">
+			<label for="txtbody">Asunto:</label>
+			<dx:ASPxMemo ID="txtbody" runat="server" Height="71px" Width="100%"  HorizontalAlign="Center" NullText="Contactenos por este medio permitanos ayudarle" Theme="Glass" CssClass="form-control">
+				<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
+				<ValidationSettings SetFocusOnError="True" ValidationGroup="Enviar" ErrorTextPosition="Bottom">
+					<RequiredField IsRequired="True" />
+				</ValidationSettings>
+			</dx:ASPxMemo>
+		</div>
+		<asp:LinkButton ID="lnkEnviar" runat="server" OnClick="lnkEnviar_Click" CssClass="btn btn-default">Enviar</asp:LinkButton>		
 
 </asp:Content>
 <asp:Content ID="Content5" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">

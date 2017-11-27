@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Productos" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Productos.aspx.cs" Inherits="MusebeWEBFinal.Productos" %>
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
-<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -10,7 +10,7 @@
 </dx:ASPxButton>
     <dx:ASPxGridViewExporter ID="grdExportar" runat="server" GridViewID="grdProductos">
     </dx:ASPxGridViewExporter>
-<dx:ASPxGridView ID="grdProductos" runat="server" AutoGenerateColumns="False" DataSourceID="ProductosDatos" KeyFieldName="Id" Theme="Metropolis" ClientInstanceName="grdProductos" Width="100%">
+<dx:ASPxGridView ID="grdProductos" runat="server" AutoGenerateColumns="False" DataSourceID="ProductosDatos" KeyFieldName="Id" Theme="Default" ClientInstanceName="grdProductos" Width="100%" EnableTheming="True">
         <Columns>
             <dx:GridViewCommandColumn ShowClearFilterButton="True" ShowEditButton="True" ShowNewButtonInHeader="True" VisibleIndex="0" ShowDeleteButton="True">
             </dx:GridViewCommandColumn>
@@ -20,15 +20,6 @@
             <dx:GridViewDataTextColumn FieldName="Uuid" VisibleIndex="2" Visible="False">
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="Producto" VisibleIndex="3">
-                <PropertiesTextEdit>
-                    <ValidationSettings SetFocusOnError="True" ValidationGroup="ProductoNuevo">
-                        <RequiredField IsRequired="True" />
-                    </ValidationSettings>
-                    <Style CssClass="form-control">
-                    </Style>
-                </PropertiesTextEdit>
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="Descripcion" VisibleIndex="4">
                 <PropertiesTextEdit>
                     <ValidationSettings SetFocusOnError="True" ValidationGroup="ProductoNuevo">
                         <RequiredField IsRequired="True" />
@@ -96,7 +87,7 @@
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataDateColumn FieldName="Creado" VisibleIndex="20" Visible="False">
             </dx:GridViewDataDateColumn>
-            <dx:GridViewDataCheckColumn FieldName="Activo" VisibleIndex="21">
+            <dx:GridViewDataCheckColumn FieldName="Activo" VisibleIndex="24">
             </dx:GridViewDataCheckColumn>
             <dx:GridViewDataComboBoxColumn Caption="Marca" FieldName="IdMarca" VisibleIndex="8">
                 <PropertiesComboBox DataSourceID="MarcasDatos" TextField="Marca" ValueField="Id">
@@ -125,7 +116,7 @@
                     </Style>
                 </PropertiesComboBox>
             </dx:GridViewDataComboBoxColumn>
-            <dx:GridViewDataTextColumn VisibleIndex="28">
+            <dx:GridViewDataTextColumn VisibleIndex="29">
                 <EditFormSettings Visible="False" />
                 <DataItemTemplate>
                     <dx:ASPxHyperLink ID="ASPxHyperLink1" runat="server" Text="Cargar Imagen" >
@@ -135,7 +126,7 @@
                     </dx:ASPxHyperLink>
                 </DataItemTemplate>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataBinaryImageColumn Caption="Imagen" VisibleIndex="27" FieldName="Imagen">
+            <dx:GridViewDataBinaryImageColumn Caption="Imagen" VisibleIndex="28" FieldName="Imagen">
                 <PropertiesBinaryImage ImageAlign="Middle" ImageHeight="100px" ImageWidth="100px">
                 </PropertiesBinaryImage>
                 <EditFormSettings Visible="False" />
@@ -146,19 +137,19 @@
                     </Style>
                 </PropertiesComboBox>
             </dx:GridViewDataComboBoxColumn>
-            <dx:GridViewDataTextColumn Caption="Stock Minimo" FieldName="Min" VisibleIndex="22">
+            <dx:GridViewDataTextColumn Caption="Stock Minimo" FieldName="Min" VisibleIndex="21">
                 <PropertiesTextEdit>
                     <Style CssClass="form-control">
                     </Style>
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn Caption="Stock Máximo" FieldName="Max" VisibleIndex="23">
+            <dx:GridViewDataTextColumn Caption="Stock Máximo" FieldName="Max" VisibleIndex="22">
                 <PropertiesTextEdit>
                     <Style CssClass="form-control">
                     </Style>
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn Caption="Cantidad Inicial" FieldName="Inicial" VisibleIndex="24">
+            <dx:GridViewDataTextColumn Caption="Cantidad Inicial" FieldName="Inicial" VisibleIndex="23">
                 <PropertiesTextEdit>
                     <Style CssClass="form-control">
                     </Style>
@@ -168,6 +159,17 @@
             </dx:GridViewDataCheckColumn>
             <dx:GridViewDataCheckColumn Caption="Inventariable" FieldName="Inventariable" VisibleIndex="26">
             </dx:GridViewDataCheckColumn>
+        	<dx:GridViewDataCheckColumn Caption="Visible en la web" FieldName="VisibleWeb" VisibleIndex="27">
+			</dx:GridViewDataCheckColumn>
+			<dx:GridViewDataMemoColumn FieldName="Descripcion" VisibleIndex="4">
+				<PropertiesMemoEdit Height="100px">
+					<ValidationSettings SetFocusOnError="True" ValidationGroup="ProductoNuevo">
+						<RequiredField IsRequired="True" />
+					</ValidationSettings>
+					<Style CssClass="form-control">
+					</Style>
+				</PropertiesMemoEdit>
+			</dx:GridViewDataMemoColumn>
         </Columns>
         <SettingsBehavior AllowFocusedRow="True" AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" ConfirmDelete="True" />
         <SettingsEditing Mode="PopupEditForm">
@@ -175,7 +177,7 @@
         <Settings ShowFilterRow="True" ShowGroupPanel="True" />
         <SettingsText PopupEditFormCaption="Productos" Title="Productos" />
         <SettingsPopup>
-            <EditForm AllowResize="True" Height="100%" HorizontalAlign="WindowCenter" Modal="True" VerticalAlign="WindowCenter" Width="600px" />
+            <EditForm AllowResize="True" Height="700px" HorizontalAlign="WindowCenter" Modal="True" VerticalAlign="WindowCenter" Width="750px" CloseOnEscape="True" />
         </SettingsPopup>
         <SettingsSearchPanel Visible="True" />
         <Styles>
@@ -184,10 +186,6 @@
             <Cell HorizontalAlign="Center" VerticalAlign="Middle" Wrap="True">
             </Cell>
         </Styles>
-        <StylesEditors>
-            <TextBox CssClass="form-control">
-            </TextBox>
-        </StylesEditors>
     </dx:ASPxGridView>
     <asp:SqlDataSource ID="Unidades" runat="server" ConnectionString="<%$ ConnectionStrings:DB_9B18B8_musebeConnectionString %>" SelectCommand="Unidades_Consultar" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
     <dx:ASPxPopupControl ID="popupImagen" runat="server"
@@ -212,8 +210,6 @@
             </dx:PopupControlContentControl>
         </ContentCollection>
     </dx:ASPxPopupControl>
-    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%">
-</rsweb:ReportViewer>
 <br />
     <asp:SqlDataSource ID="ProductosDatos" runat="server" ConnectionString="<%$ ConnectionStrings:DB_9B18B8_musebeConnectionString %>" InsertCommand="Productos_Insertar" InsertCommandType="StoredProcedure" SelectCommand="Productos_Consultar" SelectCommandType="StoredProcedure" UpdateCommand="Productos_Modificar" UpdateCommandType="StoredProcedure" DeleteCommand="Productos_Eliminar" DeleteCommandType="StoredProcedure">
         <DeleteParameters>
@@ -239,6 +235,7 @@
             <asp:Parameter Name="Min" Type="Single" />
             <asp:Parameter Name="Max" Type="Single" />
             <asp:Parameter Name="Inicial" Type="Single" />
+        	<asp:Parameter Name="VisibleWeb" Type="Boolean" />
         </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="Id" Type="Int32" />
@@ -264,6 +261,7 @@
             <asp:Parameter Name="Inicial" Type="Single" />
             <asp:Parameter Name="Iva" Type="Boolean" />
             <asp:Parameter Name="Inventariable" Type="Boolean" />
+        	<asp:Parameter Name="VisibleWeb" Type="Boolean" />
         </UpdateParameters>
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="MarcasDatos" runat="server" ConnectionString="Data Source=SQL5033.SmarterASP.NET;Initial Catalog=DB_9B18B8_musebe;Persist Security Info=True;User ID=DB_9B18B8_musebe_admin;Password=Imperio90" ProviderName="System.Data.SqlClient" SelectCommand="Marcas_Consultar_activas" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
