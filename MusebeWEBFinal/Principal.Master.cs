@@ -94,7 +94,6 @@ namespace MusebeWEBFinal
                 SqlDataAdapter Datos = new SqlDataAdapter(com);
                 Datos.Fill(TablaDatos);
                 con.Close();
-
             }
             catch (Exception ex) { ex.ToString(); }
             return TablaDatos;
@@ -143,6 +142,7 @@ namespace MusebeWEBFinal
                 {
                     Numero = Convert.ToInt32(TablaDatos.Rows[0][0].ToString());
                 }
+				con.Close();
             }
             catch (Exception Ex) { Ex.ToString(); }
             return Numero;

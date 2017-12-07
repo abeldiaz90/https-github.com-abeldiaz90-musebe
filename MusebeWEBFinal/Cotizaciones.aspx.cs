@@ -115,6 +115,7 @@ namespace MusebeWEBFinal
                 {
 
                 }
+				con.Close();
 
             }
             catch (Exception ex) { }
@@ -145,7 +146,7 @@ namespace MusebeWEBFinal
                 {
 
                 }
-
+				con.Close();
             }
             catch (Exception ex) { }
             return FolioNumero;
@@ -310,6 +311,7 @@ namespace MusebeWEBFinal
                 SqlDataAdapter datos = new SqlDataAdapter(com);
                 Resultado = new DataTable();
                 datos.Fill(Resultado);
+				con.Close();
             }
             catch (Exception ex) { ex.ToString(); }
             return Resultado;

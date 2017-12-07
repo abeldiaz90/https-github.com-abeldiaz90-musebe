@@ -964,6 +964,7 @@
     <Content Include="Productos.aspx" />
     <Content Include="productosweb.aspx" />
     <Content Include="Proveedores.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="Roles.aspx" />
     <Content Include="scripts\bootstrap-theme.css" />
     <Content Include="scripts\bootstrap-theme.min.css" />
@@ -976,13 +977,13 @@
     <Content Include="scripts\custom.js" />
     <Content Include="scripts\jquery-2.1.4.min.js" />
     <Content Include="scripts\npm.js" />
-    <Content Include="Servicios_.aspx" />
     <Content Include="Servicios.aspx" />
     <Content Include="ServicioWeb.asmx" />
     <Content Include="somos.aspx" />
     <Content Include="Unidades.aspx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="Video.aspx" />
+    <Content Include="Videos\movie.mp4" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1178,19 +1179,19 @@
     <Compile Include="Proveedores.aspx.designer.cs">
       <DependentUpon>Proveedores.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Roles.aspx.cs">
       <DependentUpon>Roles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Roles.aspx.designer.cs">
       <DependentUpon>Roles.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Servicios_.aspx.cs">
-      <DependentUpon>Servicios_.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Servicios_.aspx.designer.cs">
-      <DependentUpon>Servicios_.aspx</DependentUpon>
     </Compile>
     <Compile Include="Servicios.aspx.cs">
       <DependentUpon>Servicios.aspx</DependentUpon>

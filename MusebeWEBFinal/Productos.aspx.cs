@@ -101,10 +101,10 @@ namespace MusebeWEBFinal
                 com.CommandText = "Productos_Consultar";
                 com.CommandType = CommandType.StoredProcedure;
                 com.ExecuteNonQuery();
-
-                SqlDataAdapter datos = new SqlDataAdapter(com);
+                SqlDataAdapter datos = new SqlDataAdapter(com);				
                 Resultado = new DataTable();
                 datos.Fill(Resultado);
+				con.Close();
             }
             catch (Exception ex) { ex.ToString(); }
             return Resultado;

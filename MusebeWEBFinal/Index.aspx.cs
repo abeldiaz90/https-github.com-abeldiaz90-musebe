@@ -11,10 +11,11 @@ namespace MusebeWEBFinal.scripts
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			//if (!Page.IsPostBack)
-			//{
-				//MostrarLogo();
-			//}
+			if (!Page.IsPostBack)
+			{
+				this.btnEditar.Visible = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+				this.btnEditarGaleria.Visible = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+			}
 		}
 		public void MostrarLogo()
 		{
@@ -24,6 +25,18 @@ namespace MusebeWEBFinal.scripts
 			{
 				//this.imgLogo.Value = i.Logo;
 			}
+		}
+
+		protected void btnEditar_Click(object sender, EventArgs e)
+		{
+			try { this.popupEditarNoticias.ShowOnPageLoad = true; }
+			catch (Exception ex) { ex.ToString(); }
+		}
+
+		protected void btnEditarGaleria_Click(object sender, EventArgs e)
+		{
+			try { this.popupEditarGaleria.ShowOnPageLoad = true; }
+			catch (Exception ex) { ex.ToString(); }
 		}
 	}
 }
