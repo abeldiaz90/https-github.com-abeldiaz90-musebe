@@ -39,25 +39,25 @@
                     </Style>
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="Dimension" VisibleIndex="10">
+            <dx:GridViewDataTextColumn FieldName="Dimension" VisibleIndex="10" Visible="False">
                 <PropertiesTextEdit>
                     <Style CssClass="form-control">
                     </Style>
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="PiezasPaquete" VisibleIndex="12">
+            <dx:GridViewDataTextColumn FieldName="PiezasPaquete" VisibleIndex="12" Visible="False">
                 <PropertiesTextEdit>
                     <Style CssClass="form-control">
                     </Style>
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="PaquetesCajaBulto" VisibleIndex="13">
+            <dx:GridViewDataTextColumn FieldName="PaquetesCajaBulto" VisibleIndex="13" Visible="False">
                 <PropertiesTextEdit>
                     <Style CssClass="form-control">
                     </Style>
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="PiezasCajaBulto" VisibleIndex="14">
+            <dx:GridViewDataTextColumn FieldName="PiezasCajaBulto" VisibleIndex="14" Visible="False">
                 <PropertiesTextEdit>
                     <Style CssClass="form-control">
                     </Style>
@@ -69,13 +69,13 @@
                     </Style>
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="PrecioPaquete" VisibleIndex="16">
+            <dx:GridViewDataTextColumn FieldName="PrecioPaquete" VisibleIndex="16" Visible="False">
                 <PropertiesTextEdit DisplayFormatInEditMode="True" DisplayFormatString="C2">
                     <Style CssClass="form-control">
                     </Style>
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="PrecioCajaBulto" VisibleIndex="17">
+            <dx:GridViewDataTextColumn FieldName="PrecioCajaBulto" VisibleIndex="17" Visible="False">
                 <PropertiesTextEdit DisplayFormatInEditMode="True" DisplayFormatString="C2">
                     <Style CssClass="form-control">
                     </Style>
@@ -98,7 +98,7 @@
                     </Style>
                 </PropertiesComboBox>
             </dx:GridViewDataComboBoxColumn>
-            <dx:GridViewDataComboBoxColumn Caption="Material" FieldName="IdMaterial" VisibleIndex="9">
+            <dx:GridViewDataComboBoxColumn Caption="Material" FieldName="IdMaterial" VisibleIndex="9" Visible="False">
                 <PropertiesComboBox DataSourceID="Materiales" TextField="Material" ValueField="Id">
                     <ValidationSettings SetFocusOnError="True" ValidationGroup="ProductoNuevo">
                         <RequiredField IsRequired="True" />

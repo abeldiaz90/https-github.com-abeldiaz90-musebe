@@ -10,14 +10,14 @@
 </asp:Content>
 <asp:Content ID="Content4" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
 	<asp:LinkButton ID="lnkEditar" runat="server" OnClick="lnkEditar_Click">Editar Contenido</asp:LinkButton>
-	<div class='jumbotron' id="somostexto" runat="server">
+	<div class='jumbotron' id="somostexto" runat="server" style="background-color:transparent">
 	</div>
 
-	<dx:ASPxPopupControl ID="popupSomos" runat="server" CloseOnEscape="True" HeaderText="Edición" Height="700px" Maximized="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" ShowPageScrollbarWhenModal="True" Theme="PlasticBlue" Width="700px">
+	<dx:ASPxPopupControl ID="popupSomos" runat="server" CloseOnEscape="True" HeaderText="Edición" Height="700px" Maximized="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" ShowPageScrollbarWhenModal="True" Theme="PlasticBlue" Width="700px" BackColor="Transparent">
 		<ContentCollection>
 			<dx:PopupControlContentControl runat="server">
 				<asp:LinkButton ID="lnkPublicar" runat="server" OnClick="lnkPublicar_Click">Publicar</asp:LinkButton>
-				<dx:ASPxHtmlEditor ID="ASPxHtmlEditor1" runat="server" EnableTheming="True" Theme="Office2003Blue" Width="100%">
+				<dx:ASPxHtmlEditor ID="ASPxHtmlEditor1" runat="server" EnableTheming="True" Theme="Office2003Blue" Width="100%" BackColor="Transparent">
 				</dx:ASPxHtmlEditor>
 			</dx:PopupControlContentControl>
 		</ContentCollection>
@@ -28,7 +28,10 @@
 <asp:Content ID="Content5" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 	<style>
 		body {
-			background-color: black;
+			background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
+			background-color: transparent;
+			background-repeat: no-repeat;
+			background-size: cover;
 			margin: 0;
 		}
 
@@ -91,11 +94,11 @@
 			<a href="Index.aspx">Home</a><a href="Servicios.aspx">Servicios</a> <a href="ProductosWeb.aspx">Productos</a> <a href="Somos.aspx">&iquest;Quienes Somos?</a> <a href="Contacto.aspx">Contactanos</a> <a href="Login.aspx">Login</a> <a href="Register.aspx">Registrarme</a><a href="javascript:void(0);" style="font-size: 15px;" class="icon" onclick="myFunction()">&#9776;</a>
 		</div>
 		<div class="pull-right">
-			<p style="color: white" class="d-inline pull-right">
+			<p style="color: black" class="d-inline pull-right">
 				&#9742;9381180887 
 			</p>
 			<br />
-			<p style="color: white" class="d-inline pull-right">
+			<p style="color: black" class="d-inline pull-right">
 				&#9993;ventas@musebe.com.mx
 			</p>
 		</div>

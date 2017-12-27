@@ -77,7 +77,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\AjaxControlToolkit.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Compras.aspx" />
+    <Content Include="Configuracion.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="Correos.aspx" />
     <Content Include="Cotizaciones.aspx" />
@@ -894,6 +898,7 @@
     <Content Include="Imagenes\HomeGaleria\CoffeBreak.jpg" />
     <Content Include="Imagenes\HomeGaleria\taquizas.jpg" />
     <Content Include="Imagenes\Logo\logo.jpg" />
+    <Content Include="Imagenes\PaginaWeb\Fondo.JPG" />
     <Content Include="Index.aspx" />
     <Content Include="jquery\jquery-2.1.0.js" />
     <Content Include="jquery\JQuery.ACT.js" />
@@ -1007,6 +1012,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ComprasDatos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion.aspx.cs">
+      <DependentUpon>Configuracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Configuracion.aspx.designer.cs">
+      <DependentUpon>Configuracion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contacto.aspx.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>

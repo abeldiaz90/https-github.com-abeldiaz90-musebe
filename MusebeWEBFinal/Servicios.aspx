@@ -93,6 +93,10 @@
 <asp:Content ID="Content6" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 	<style>
 		body {
+			background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
+			background-color: transparent;
+			background-repeat:no-repeat;
+			background-size:cover;
 			margin: 0;
 		}
 
@@ -151,10 +155,6 @@
 
 		@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
 
-		body {
-			background-color: black;
-		}
-
 		.carousel-inner > .item {
 			height: 100vh;
 		}
@@ -181,11 +181,11 @@
 			<a href="Index.aspx">Home</a><a href="Servicios.aspx">Servicios</a> <a href="ProductosWeb.aspx">Productos</a> <a href="Somos.aspx">&iquest;Quienes Somos?</a> <a href="Contacto.aspx">Contactanos</a> <a href="Login.aspx">Login</a><a href="Register.aspx">Registrarme</a> <a href="javascript:void(0);" style="font-size: 15px;" class="icon" onclick="myFunction()">&#9776;</a>
 		</div>
 		<div class="pull-right">
-			<p style="color: white" class="d-inline pull-right">
+			<p style="color: black" class="d-inline pull-right">
 				&#9742;9381180887 
 			</p>
 			<br />
-			<p style="color: white" class="d-inline pull-right">
+			<p style="color: black" class="d-inline pull-right">
 				&#9993;ventas@musebe.com.mx
 			</p>
 		</div>

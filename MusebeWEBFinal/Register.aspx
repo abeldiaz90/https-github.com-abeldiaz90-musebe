@@ -12,7 +12,10 @@
 		<ContentTemplate>
 			<style>
 				body {
-					background-color: black;
+					background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
+					background-color: transparent;
+					background-repeat: no-repeat;
+					background-size: contain;
 					margin: 0;
 				}
 
@@ -92,7 +95,7 @@
 							</dx:ASPxTextBox>
 						</div>
 						<div class="col-md-3">
-								<dx:ASPxTextBox ID="txtSegundoNombre" runat="server" CssClass="form-control col-xs-3" Caption="Segundo Nombre:">
+							<dx:ASPxTextBox ID="txtSegundoNombre" runat="server" CssClass="form-control col-xs-3" Caption="Segundo Nombre:">
 								<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
 							</dx:ASPxTextBox>
 						</div>
@@ -105,9 +108,9 @@
 							</dx:ASPxTextBox>
 						</div>
 						<div class="col-md-3">
-							<dx:ASPxTextBox ID="txtApellidoMaterno" runat="server" CssClass="form-control col-xs-3" Caption="Apellido Materno:" >
+							<dx:ASPxTextBox ID="txtApellidoMaterno" runat="server" CssClass="form-control col-xs-3" Caption="Apellido Materno:">
 								<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
-							</dx:ASPxTextBox>							
+							</dx:ASPxTextBox>
 						</div>
 
 					</div>

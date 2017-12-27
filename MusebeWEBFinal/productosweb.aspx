@@ -11,7 +11,10 @@
 				@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
 
 				body {
-					background-color: black;
+					background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
+					background-color: transparent;
+					background-repeat: no-repeat;
+					background-size: cover;
 					margin: 0;
 				}
 
@@ -76,15 +79,15 @@
 					<a href="Index.aspx">Home</a><a href="Servicios.aspx">Servicios</a> <a href="ProductosWeb.aspx">Productos</a> <a href="Somos.aspx">&iquest;Quienes Somos?</a> <a href="Contacto.aspx">Contactanos</a> <a href="Login.aspx">Login</a><a href="Register.aspx">Registrarme</a> <a href="javascript:void(0);" style="font-size: 15px;" class="icon" onclick="myFunction()">&#9776;</a>
 				</div>
 				<div class="pull-right">
-					<p style="color: white" class="d-inline pull-right">
+					<p style="color: black" class="d-inline pull-right">
 						&#9742;9381180887 
 					</p>
 					<br />
-					<p style="color: white" class="d-inline pull-right">
+					<p style="color: black" class="d-inline pull-right">
 						&#9993;ventas@musebe.com.mx
 					</p>
 				</div>
-
+				<dx:ASPxMenu ID="subMenuServicios" runat="server"></dx:ASPxMenu>
 
 
 				<script>
@@ -116,7 +119,7 @@
 
 						</div>
 					</div>
-					<dx:ASPxDataView ID="grdProductos" runat="server" DataSourceID="Datos" EnableTheming="True" Theme="Metropolis" Width="100%">
+					<dx:ASPxDataView ID="grdProductos" runat="server" DataSourceID="Datos" Width="100%" BackColor="Transparent">
 						<SettingsTableLayout ColumnCount="4" RowsPerPage="4" />
 						<PagerSettings ShowNumericButtons="False"></PagerSettings>
 						<ItemTemplate>

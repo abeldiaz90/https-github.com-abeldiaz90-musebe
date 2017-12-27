@@ -40,6 +40,10 @@
 <asp:Content ID="Content5" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 	<style>
 		body {
+			background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
+			background-color: transparent;
+			background-repeat:no-repeat;
+			background-size:cover;
 			margin: 0;
 		}
 

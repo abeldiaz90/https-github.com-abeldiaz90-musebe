@@ -31,6 +31,15 @@ namespace MusebeWEBFinal {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
+        /// subMenuServicios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxMenu subMenuServicios;
+        
+        /// <summary>
         /// txtBusqueda control.
         /// </summary>
         /// <remarks>

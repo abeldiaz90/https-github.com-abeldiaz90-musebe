@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Multiservicios Bear Login" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="MusebeWEBFinal.Login" %>
+﻿<%@ Page Title="Configuración" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="Configuracion.aspx.cs" Inherits="MusebeWEBFinal.Configuracion" %>
 
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
@@ -10,7 +10,7 @@
 		body {
 			background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
 			background-color: transparent;
-			background-repeat: no-repeat;
+			background-repeat:no-repeat;
 			background-size:cover;
 			margin: 0;
 		}
@@ -74,11 +74,11 @@
 			<a href="Index.aspx">Home</a><a href="Servicios.aspx">Servicios</a> <a href="ProductosWeb.aspx">Productos</a> <a href="Somos.aspx">&iquest;Quienes Somos?</a> <a href="Contacto.aspx">Contactanos</a> <a href="Login.aspx">Login</a><a href="Register.aspx">Registrarme</a> <a href="javascript:void(0);" style="font-size: 15px;" class="icon" onclick="myFunction()">&#9776;</a>
 		</div>
 		<div class="pull-right">
-			<p style="color: black" class="d-inline pull-right">
+			<p style="color: white" class="d-inline pull-right">
 				&#9742;9381180887 
 			</p>
 			<br />
-			<p style="color: black" class="d-inline pull-right">
+			<p style="color: white" class="d-inline pull-right">
 				&#9993;ventas@musebe.com.mx
 			</p>
 		</div>
@@ -97,37 +97,6 @@
 		</script>
 
 	</body>
-<%--	<div class="modal-content" style="align-content: center">
-		<div class="modal-body" style="align-content: center">--%>
-
-			<asp:Login ID="Login1" runat="server" CssClass="User" OnAuthenticate="Login1_Authenticate">
-				<LayoutTemplate>
-					<div id="loginform" class="form-horizontal" role="form">
-						<div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							<asp:TextBox runat="server" ID="UserName" CssClass="form-control" placeholder="User Name"></asp:TextBox>
-						</div>
-						<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="UserName" Display="Dynamic" ValidationGroup="Login" ErrorMessage="Please enter an User Name" CssClass="error">Please enter an User Name</asp:RequiredFieldValidator>
-
-						<div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-							<asp:TextBox runat="server" ID="Password" CssClass="form-control" placeholder="Password"
-								TextMode="Password"></asp:TextBox>
-						</div>
-						<asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="Password" Display="Dynamic" ValidationGroup="Login" ErrorMessage="Please enter a password" CssClass="error">Please enter a password</asp:RequiredFieldValidator>
-
-
-
-						<asp:Button ID="LoginButton" runat="server" CommandName="Login" class="btn btn-primary" ValidationGroup="Login" Text="Log in" UseSubmitBehavior="false" />
-					</div>
-				</LayoutTemplate>
-
-			</asp:Login>
-
-<%--		</div>
-		<div class="modal-footer">
-		</div>
-	</div>--%>
 </asp:Content>
 <asp:Content ID="Content6" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 </asp:Content>
