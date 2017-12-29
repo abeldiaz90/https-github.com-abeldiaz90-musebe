@@ -40,6 +40,7 @@ namespace MusebeWEBFinal
 				SqlDataAdapter datos = new SqlDataAdapter(com);
 				DataTable Resultado = new DataTable();
 				datos.Fill(Resultado);
+				con.Close();				
 				if (Resultado.Rows.Count >= 1)
 				{
 					FormsAuthenticationTicket tkt;

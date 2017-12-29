@@ -31,6 +31,24 @@ namespace MusebeWEBFinal.scripts {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
+        /// ltlCarouselIndicators control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltlCarouselIndicators;
+        
+        /// <summary>
+        /// ltlCarouselImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltlCarouselImages;
+        
+        /// <summary>
         /// btnEditarGaleria control.
         /// </summary>
         /// <remarks>

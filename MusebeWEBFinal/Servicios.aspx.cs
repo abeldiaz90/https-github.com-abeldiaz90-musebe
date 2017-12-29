@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Runtime.Caching;
@@ -18,58 +20,45 @@ namespace MusebeWEBFinal
 			if (!Page.IsPostBack)
 			{
 				this.lnkEditar.Visible = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
-				ObjectCache cache = MemoryCache.Default;
-				try
-				{
-						const string imagesPath = "/Imagenes/Servicios/";
-						var dir = new DirectoryInfo(HttpContext.Current.Server.MapPath(imagesPath));
-						//filtering to jpgs, but ideally not required
-						List<string> fileNames = (from flInfo in dir.GetFiles() where flInfo.Name.EndsWith(".jpg") select flInfo.Name).ToList();
-						if (fileNames.Count > 0)
-						{
-							var carouselInnerHtml = new StringBuilder();
-							var indicatorsHtml = new StringBuilder(@"<ol class='carousel-indicators'>");
-
-							MUSEBEDataContext db = new MusebeWEBFinal.MUSEBEDataContext();
-							
-							for (int i = 0; i < fileNames.Count; i++)
-							{
-								var fileName = fileNames[i];
-								var query=db.Servicios_Consultar_Por_Foto(fileName);
-								foreach (var j in query)
-								{							
-								carouselInnerHtml.AppendLine(i == 0 ? "<div class='item active' style='margin: auto;'>" : "<div class='item'>");
-								carouselInnerHtml.AppendLine("<img class='img-responsive' src='" + imagesPath + fileName + "' alt='Slide #" + (i + 1) + "'>");
-								carouselInnerHtml.AppendLine("<h3  style='color: white; font-weight: bold; font-size: 20px;'>" + j.Servicio+ "</h3><p><label style='color: white;' id='" + imagesPath + fileName + "'>" + j.Descripcion +"</label></p>");
-								carouselInnerHtml.AppendLine("</div>");
-								indicatorsHtml.AppendLine(i == 0 ? @"<li data-target='#myCarousel' data-slide-to='" + i + "' class='active'></li>" : @"<li data-target='#myCarousel' data-slide-to='" + i + "' class=''></li>");
-								}
-							}
-							//close tag
-							indicatorsHtml.AppendLine("</ol>");
-							//stick the html in the literal tags and the cache
-							cache["CarouselInnerHtml"] = ltlCarouselImages.Text = carouselInnerHtml.ToString();
-							cache["CarouselIndicatorsHtml"] = ltlCarouselIndicators.Text = indicatorsHtml.ToString();
-					}
-				}
-				catch (Exception)
-				{
-					//something is dodgy so flush the cache
-					if (cache["CarouselInnerHtml"] != null)
-					{
-						Cache.Remove("CarouselInnerHtml");
-					}
-					if (cache["CarouselIndicatorsHtml"] != null)
-					{
-						Cache.Remove("CarouselIndicatorsHtml");
-					}
-				}
+				
+				llenarSubMenu();
 			}
 		}
 
+		public void llenarSubMenu()
+		{
+			DataTable submenu = MenuServicios();
+			var cadenahtml = new StringBuilder();
+			//var indicatorsHtml = new StringBuilder(@"<div class='container'><div class='jumbotron'>");
 
-
-
+			for (int i = 0; i <= submenu.Rows.Count - 1; i++)
+			{
+				cadenahtml.AppendLine("<a href='#'><h3>" + submenu.Rows[i][1].ToString() + "</h3><p>" + "<img src='/Imagenes/Servicios/" + submenu.Rows[i][3].ToString() + "' alt ='" + submenu.Rows[i][1].ToString() + "' style='width:200px'></p></a>");
+				
+				//carouselInnerHtml.AppendLine("<p>" + submenu.Rows[i][1].ToString() + "</p>");
+			}
+			anuncios.InnerHtml = cadenahtml + anuncios.InnerHtml;
+		}
+		public DataTable MenuServicios()
+		{
+			DataTable Resultado = new DataTable();
+			try
+			{
+				SqlConnection con = new SqlConnection();
+				con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString;
+				con.Open();
+				SqlCommand com = new SqlCommand();
+				com.Connection = con;
+				com.CommandText = "select * from servicios";
+				com.CommandType = CommandType.Text;
+				com.ExecuteNonQuery();
+				SqlDataAdapter datos = new SqlDataAdapter(com);
+				datos.Fill(Resultado);
+				con.Close();
+			}
+			catch (Exception ex) { ex.ToString(); }
+			return Resultado;
+		}
 		protected void lnkEditar_Click(object sender, EventArgs e)
 		{
 			try
@@ -80,7 +69,6 @@ namespace MusebeWEBFinal
 			}
 			catch (Exception ex) { ex.ToString(); }
 		}
-
 		protected void lnkDetalle_Click(object sender, EventArgs e)
 		{
 			try
@@ -89,7 +77,6 @@ namespace MusebeWEBFinal
 			}
 			catch (Exception ex) { ex.ToString(); }
 		}
-
 		protected void popupControlSubida_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
 		{
 			string filename = Path.GetFileName(e.UploadedFile.FileName);
@@ -109,7 +96,6 @@ namespace MusebeWEBFinal
 			db.Servicios_Modificar_Foto(Int32.Parse(this.grdServicios.GetRowValues(this.grdServicios.FocusedRowIndex, "Id").ToString()), filename, fileBytes);
 			this.popupFotos.ShowOnPageLoad = false;
 		}
-
 		protected void grdServicios_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
 		{
 			string targetPath = Server.MapPath("Imagenes/Servicios/" + e.Values[2].ToString());

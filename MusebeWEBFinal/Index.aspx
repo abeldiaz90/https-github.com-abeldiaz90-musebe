@@ -21,7 +21,7 @@
 
 		.topnav {
 			overflow: hidden;
-			background-color: #333;
+			background-color: deepskyblue;
 		}
 
 			.topnav a {
@@ -35,8 +35,8 @@
 			}
 
 				.topnav a:hover {
-					background-color: #ddd;
-					color: black;
+					background-color: #F0D27B;
+					color: white;
 				}
 
 			.topnav .icon {
@@ -85,10 +85,28 @@
 			&#9993;ventas@musebe.com.mx
 		</p>
 	</div>
+			<div id="myCarousel" class="carousel slide" data-ride="carousel" style="align-content: center">
+		<!-- Indicators -->
+		<asp:Literal ID="ltlCarouselIndicators" runat="server" />
+		<!-- Images-->
+		<div class="carousel-inner" style="align-content: center; align-items: center; background-size: auto; margin: auto">
+			<asp:Literal ID="ltlCarouselImages" runat="server" />
+		</div>
+		<!-- Left Right Arrows -->
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
 	<asp:LinkButton ID="btnEditarGaleria" runat="server" CssClass="btn btn-danger" OnClick="btnEditarGaleria_Click">Editar Galeria</asp:LinkButton>
 	<asp:LinkButton ID="btnEditar" runat="server" CssClass="btn btn-success" OnClick="btnEditar_Click">Editar Contenido Noticias</asp:LinkButton>
 	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 		Visita nuestras video Galerias</button>
+			
 	<div class="collapse" id="collapseExample">
 		<div class="well">
 			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">

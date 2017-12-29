@@ -17,7 +17,7 @@
 
 		.topnav {
 			overflow: hidden;
-			background-color: #333;
+			background-color: deepskyblue;
 		}
 
 			.topnav a {

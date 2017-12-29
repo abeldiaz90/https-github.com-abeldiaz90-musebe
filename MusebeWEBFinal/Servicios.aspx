@@ -5,23 +5,10 @@
 </asp:Content>
 <asp:Content ID="Content3" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
 	<asp:LinkButton ID="lnkEditar" runat="server" OnClick="lnkEditar_Click">Editar</asp:LinkButton>
-	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="align-content: center">
-		<!-- Indicators -->
-		<asp:Literal ID="ltlCarouselIndicators" runat="server" />
-		<!-- Images-->
-		<div class="carousel-inner" style="align-content: center; align-items: center; background-size: auto; margin: auto">
-			<asp:Literal ID="ltlCarouselImages" runat="server" />
+	<div class="container">
+		<div class="jumbotron" runat="server" id="anuncios">
 		</div>
-		<!-- Left Right Arrows -->
-		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
-	</div>
+	</div>	
 	<dx:ASPxPopupControl ID="popupServicios" runat="server" ClientInstanceName="popupServicios" CloseOnEscape="True" Maximized="True" Modal="True" Width="100%">
 		<ContentCollection>
 			<dx:PopupControlContentControl runat="server">
@@ -95,14 +82,14 @@
 		body {
 			background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
 			background-color: transparent;
-			background-repeat:no-repeat;
-			background-size:cover;
+			background-repeat: no-repeat;
+			background-size: cover;
 			margin: 0;
 		}
 
 		.topnav {
 			overflow: hidden;
-			background-color: #333;
+			background-color: deepskyblue;
 		}
 
 			.topnav a {
@@ -173,6 +160,10 @@
 		.carousel-control.left,
 		.carousel-control.right {
 			background-image: none;
+		}
+
+		img {
+			border-radius: 50%;
 		}
 	</style>
 
