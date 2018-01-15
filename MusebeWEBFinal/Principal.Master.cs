@@ -25,16 +25,7 @@ namespace MusebeWEBFinal
 
             }
         }
-        public void AvisoInicioSesion()
-        {
-            try
-            {
-                Utilidades.Mails correo = new Utilidades.Mails();
-                correo.Mail("abeldiaz90@hotmail.com", "abel@ensitech.com", "Hola", true, "<html><body><b>Hola buenos dias</b></body></html>");
-            }
-            catch (Exception ex) { ex.ToString(); }
 
-        }
         public void LlenarMenu()
         {
             try
@@ -74,9 +65,6 @@ namespace MusebeWEBFinal
             }
             catch (Exception ex) { ex.ToString(); }
         }
-
-
-
         private DataTable GetMenuTable()
         {
             DataTable TablaDatos = new DataTable();

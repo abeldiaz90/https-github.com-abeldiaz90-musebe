@@ -10,7 +10,7 @@
 namespace MusebeWEBFinal {
     
     
-    public partial class Login {
+    public partial class detalleservicio {
         
         /// <summary>
         /// ScriptManager1 control.
@@ -22,30 +22,21 @@ namespace MusebeWEBFinal {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// Image1 control.
+        /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// menupaginaweb control.
+        /// anuncios control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::MusebeWEBFinal.menupaginaweb menupaginaweb;
-        
-        /// <summary>
-        /// Login1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Login Login1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl anuncios;
     }
 }

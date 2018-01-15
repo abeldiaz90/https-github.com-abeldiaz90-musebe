@@ -305,6 +305,13 @@ namespace MusebeWEBFinal
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), foto);
 			return ((ISingleResult<Servicios_Consultar_Por_FotoResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Servicios_Actualizar_Detalle")]
+		public int Servicios_Actualizar_Detalle([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Detalle", DbType="VarChar(MAX)")] string detalle)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, detalle);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class Cotizaciones_AbrirResult

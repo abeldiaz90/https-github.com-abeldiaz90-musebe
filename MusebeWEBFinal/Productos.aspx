@@ -23,9 +23,7 @@
                 <PropertiesTextEdit>
                     <ValidationSettings SetFocusOnError="True" ValidationGroup="ProductoNuevo">
                         <RequiredField IsRequired="True" />
-                    </ValidationSettings>
-                    <Style CssClass="form-control">
-                    </Style>
+                    </ValidationSettings>                  
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="NombreCorto" VisibleIndex="5" Visible="False">
@@ -34,51 +32,35 @@
                 <PropertiesTextEdit>
                     <ValidationSettings SetFocusOnError="True" ValidationGroup="ProductoNuevo">
                         <RequiredField IsRequired="True" />
-                    </ValidationSettings>
-                    <Style CssClass="form-control">
-                    </Style>
+                    </ValidationSettings>                   
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="Dimension" VisibleIndex="10" Visible="False">
-                <PropertiesTextEdit>
-                    <Style CssClass="form-control">
-                    </Style>
+                <PropertiesTextEdit>                   
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="PiezasPaquete" VisibleIndex="12" Visible="False">
-                <PropertiesTextEdit>
-                    <Style CssClass="form-control">
-                    </Style>
+                <PropertiesTextEdit>                    
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="PaquetesCajaBulto" VisibleIndex="13" Visible="False">
-                <PropertiesTextEdit>
-                    <Style CssClass="form-control">
-                    </Style>
+                <PropertiesTextEdit>                   
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="PiezasCajaBulto" VisibleIndex="14" Visible="False">
-                <PropertiesTextEdit>
-                    <Style CssClass="form-control">
-                    </Style>
+                <PropertiesTextEdit>                   
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="PrecioPieza" VisibleIndex="15">
-                <PropertiesTextEdit DisplayFormatInEditMode="True" DisplayFormatString="C2">
-                    <Style CssClass="form-control">
-                    </Style>
+                <PropertiesTextEdit DisplayFormatInEditMode="True" DisplayFormatString="C2">                  
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="PrecioPaquete" VisibleIndex="16" Visible="False">
-                <PropertiesTextEdit DisplayFormatInEditMode="True" DisplayFormatString="C2">
-                    <Style CssClass="form-control">
-                    </Style>
+                <PropertiesTextEdit DisplayFormatInEditMode="True" DisplayFormatString="C2">               
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="PrecioCajaBulto" VisibleIndex="17" Visible="False">
-                <PropertiesTextEdit DisplayFormatInEditMode="True" DisplayFormatString="C2">
-                    <Style CssClass="form-control">
-                    </Style>
+                <PropertiesTextEdit DisplayFormatInEditMode="True" DisplayFormatString="C2">               
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="Imagen" VisibleIndex="18" Visible="False">
@@ -93,9 +75,7 @@
                 <PropertiesComboBox DataSourceID="MarcasDatos" TextField="Marca" ValueField="Id">
                     <ValidationSettings SetFocusOnError="True" ValidationGroup="ProductoNuevo">
                         <RequiredField IsRequired="True" />
-                    </ValidationSettings>
-                    <Style CssClass="form-control">
-                    </Style>
+                    </ValidationSettings>                    
                 </PropertiesComboBox>
             </dx:GridViewDataComboBoxColumn>
             <dx:GridViewDataComboBoxColumn Caption="Material" FieldName="IdMaterial" VisibleIndex="9" Visible="False">
@@ -103,8 +83,6 @@
                     <ValidationSettings SetFocusOnError="True" ValidationGroup="ProductoNuevo">
                         <RequiredField IsRequired="True" />
                     </ValidationSettings>
-                    <Style CssClass="form-control">
-                    </Style>
                 </PropertiesComboBox>
             </dx:GridViewDataComboBoxColumn>
             <dx:GridViewDataComboBoxColumn Caption="Grupo" FieldName="IdGrupo" VisibleIndex="7">
@@ -112,8 +90,6 @@
                     <ValidationSettings SetFocusOnError="True" ValidationGroup="ProductoNuevo">
                         <RequiredField IsRequired="True" />
                     </ValidationSettings>
-                    <Style CssClass="form-control">
-                    </Style>
                 </PropertiesComboBox>
             </dx:GridViewDataComboBoxColumn>
             <dx:GridViewDataTextColumn VisibleIndex="29">
@@ -133,27 +109,14 @@
             </dx:GridViewDataBinaryImageColumn>
             <dx:GridViewDataComboBoxColumn Caption="Unidad" FieldName="IdUnidad" VisibleIndex="11">
                 <PropertiesComboBox DataSourceID="Unidades" TextField="Unidad" ValueField="Id">
-                    <Style CssClass="form-control">
-                    </Style>
+                
                 </PropertiesComboBox>
             </dx:GridViewDataComboBoxColumn>
             <dx:GridViewDataTextColumn Caption="Stock Minimo" FieldName="Min" VisibleIndex="21">
-                <PropertiesTextEdit>
-                    <Style CssClass="form-control">
-                    </Style>
-                </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn Caption="Stock Máximo" FieldName="Max" VisibleIndex="22">
-                <PropertiesTextEdit>
-                    <Style CssClass="form-control">
-                    </Style>
-                </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn Caption="Cantidad Inicial" FieldName="Inicial" VisibleIndex="23">
-                <PropertiesTextEdit>
-                    <Style CssClass="form-control">
-                    </Style>
-                </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataCheckColumn Caption="Producto Aplica IVA" FieldName="Iva" VisibleIndex="25">
             </dx:GridViewDataCheckColumn>
@@ -166,8 +129,6 @@
 					<ValidationSettings SetFocusOnError="True" ValidationGroup="ProductoNuevo">
 						<RequiredField IsRequired="True" />
 					</ValidationSettings>
-					<Style CssClass="form-control">
-					</Style>
 				</PropertiesMemoEdit>
 			</dx:GridViewDataMemoColumn>
         </Columns>

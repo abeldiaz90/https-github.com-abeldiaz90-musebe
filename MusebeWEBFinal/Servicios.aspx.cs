@@ -20,7 +20,7 @@ namespace MusebeWEBFinal
 			if (!Page.IsPostBack)
 			{
 				this.lnkEditar.Visible = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
-				
+
 				llenarSubMenu();
 			}
 		}
@@ -29,13 +29,11 @@ namespace MusebeWEBFinal
 		{
 			DataTable submenu = MenuServicios();
 			var cadenahtml = new StringBuilder();
-			//var indicatorsHtml = new StringBuilder(@"<div class='container'><div class='jumbotron'>");
 
 			for (int i = 0; i <= submenu.Rows.Count - 1; i++)
 			{
-				cadenahtml.AppendLine("<a href='#'><h3>" + submenu.Rows[i][1].ToString() + "</h3><p>" + "<img src='/Imagenes/Servicios/" + submenu.Rows[i][3].ToString() + "' alt ='" + submenu.Rows[i][1].ToString() + "' style='width:200px'></p></a>");
-				
-				//carouselInnerHtml.AppendLine("<p>" + submenu.Rows[i][1].ToString() + "</p>");
+				cadenahtml.AppendLine("<div class='panel panel-default'> <div class='panel-heading'>" + submenu.Rows[i][1].ToString() + "</div><div class='panel-body' style = 'height:500;min-height: 10; max-height: 500;background-image: url(../Imagenes/Servicios/" + submenu.Rows[i][3].ToString() + "'); background - repeat:no - repeat; background - size:cover; margin: 0; '><img src='Imagenes/Servicios/" + submenu.Rows[i][3].ToString() + "' alt ='" + submenu.Rows[i][1].ToString() + "' height='100%' width='100%'></div><div class='panel - footer'>" + submenu.Rows[i][2].ToString() + "<p><a href='detalleservicio.aspx?id=" + submenu.Rows[i][0].ToString() + "' target='blank'>Ver mas detalle</a> </div></div>");
+
 			}
 			anuncios.InnerHtml = cadenahtml + anuncios.InnerHtml;
 		}
@@ -103,6 +101,78 @@ namespace MusebeWEBFinal
 			{
 				File.Delete(targetPath);
 			}
+		}
+		protected void LinkButton2_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				cargardetalle(this.grdServicios.GetRowValues(this.grdServicios.FocusedRowIndex, "Id").ToString());
+				this.popupDetalle.ShowOnPageLoad = true;
+			}
+			catch (Exception ex) { ex.ToString(); }
+		}
+
+		public void cargardetalle(string id)
+		{
+			DataTable Resultado = new DataTable();
+			try
+			{
+				SqlConnection con = new SqlConnection();
+				con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString;
+				con.Open();
+				SqlCommand com = new SqlCommand();
+				com.Connection = con;
+				com.CommandText = "select * from servicios where Id='" + id + "'";
+				com.CommandType = CommandType.Text;
+				com.ExecuteNonQuery();
+				SqlDataAdapter datos = new SqlDataAdapter(com);
+				datos.Fill(Resultado);
+				con.Close();
+				this.htmlServicios.Html = Resultado.Rows[0][5].ToString();
+			}
+
+			catch (Exception ex) { ex.ToString(); }
+		}
+		protected string CodeBehind(string id, string servicio)
+		{
+			string cadena = "";
+			DataTable Resultado = new DataTable();
+			try
+			{
+				SqlConnection con = new SqlConnection();
+				con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString;
+				con.Open();
+				SqlCommand com = new SqlCommand();
+				com.Connection = con;
+				com.CommandText = "select * from servicios where Id='" + id + "'";
+				com.CommandType = CommandType.Text;
+				com.ExecuteNonQuery();
+				SqlDataAdapter datos = new SqlDataAdapter(com);
+				datos.Fill(Resultado);
+				con.Close();
+			}
+			catch (Exception ex) { ex.ToString(); }
+			if (Resultado.Rows.Count > 0)
+			{
+				cadena = Resultado.Rows[0][5].ToString();
+			}
+			return cadena;
+		}
+
+		protected void btnDetalle_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		protected void btnGuardar_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				MUSEBEDataContext db = new MUSEBEDataContext();
+				db.Servicios_Actualizar_Detalle(Int32.Parse(this.grdServicios.GetRowValues(this.grdServicios.FocusedRowIndex, "Id").ToString()), this.htmlServicios.Html);
+				db.SubmitChanges();
+			}
+			catch (Exception ex) { ex.ToString(); }
 		}
 	}
 }

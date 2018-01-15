@@ -47,8 +47,9 @@ namespace MusebeWEBFinal.scripts
 						foreach (var j in query)
 						{
 							carouselInnerHtml.AppendLine(i == 0 ? "<div class='item active' style='margin: auto;'>" : "<div class='item'>");
-							carouselInnerHtml.AppendLine("<img class='img-responsive' src='" + imagesPath + fileName + "' alt='Slide #" + (i + 1) + "'>");
 							carouselInnerHtml.AppendLine("<h3  style='color: black; font-weight: bold; font-size: 20px;'>" + j.Servicio + "</h3><p><label style='color: black;' id='" + imagesPath + fileName + "'>" + j.Descripcion + "</label></p>");
+							carouselInnerHtml.AppendLine("<img class='img-responsive center-block' src='" + imagesPath + fileName + "' alt='Slide #" + (i + 1) + "'>");
+							
 							carouselInnerHtml.AppendLine("</div>");
 							indicatorsHtml.AppendLine(i == 0 ? @"<li data-target='#myCarousel' data-slide-to='" + i + "' class='active'></li>" : @"<li data-target='#myCarousel' data-slide-to='" + i + "' class=''></li>");
 						}

@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Multiservicios Bear Login" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="MusebeWEBFinal.Login" %>
-
+<%@ Register Src="~/menupaginaweb.ascx" TagPrefix="uc1" TagName="menupaginaweb" %>
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -31,8 +31,8 @@
 			}
 
 				.topnav a:hover {
-					background-color: #ddd;
-					color: black;
+					background-color: #F0D27B;
+					color: white;
 				}
 
 			.topnav .icon {
@@ -71,15 +71,15 @@
 
 	<body>
 		<div class="topnav" id="myTopnav">
-			<a href="Index.aspx">Home</a><a href="Servicios.aspx">Servicios</a> <a href="ProductosWeb.aspx">Productos</a> <a href="Somos.aspx">&iquest;Quienes Somos?</a> <a href="Contacto.aspx">Contactanos</a> <a href="Login.aspx">Login</a><a href="Register.aspx">Registrarme</a> <a href="javascript:void(0);" style="font-size: 15px;" class="icon" onclick="myFunction()">&#9776;</a>
+			  <asp:Image ID="Image1" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" /><uc1:menupaginaweb runat="server" id="menupaginaweb" />
 		</div>
 		<div class="pull-right">
 			<p style="color: black" class="d-inline pull-right">
-				&#9742;9381180887 
+				&#9742;<a style="color:black" href="tel:+529381180887">9381180887</a> 
 			</p>
 			<br />
 			<p style="color: black" class="d-inline pull-right">
-				&#9993;ventas@musebe.com.mx
+				&#9993;<a style="color:black" href="mailto:ventas@musebe.com.mx" title="Envienos sus dudas por correo electronico">ventas@musebe.com.mx</a>
 			</p>
 		</div>
 
@@ -99,7 +99,12 @@
 	</body>
 <%--	<div class="modal-content" style="align-content: center">
 		<div class="modal-body" style="align-content: center">--%>
-
+	<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <section id="loginForm" class="panel panel-default">
+            <div class="panel-body">                
+                <h2>Iniciar sesión</h2>
+                <hr />
 			<asp:Login ID="Login1" runat="server" CssClass="User" OnAuthenticate="Login1_Authenticate">
 				<LayoutTemplate>
 					<div id="loginform" class="form-horizontal" role="form">
@@ -123,7 +128,7 @@
 				</LayoutTemplate>
 
 			</asp:Login>
-
+				</div></section></div></div>
 <%--		</div>
 		<div class="modal-footer">
 		</div>

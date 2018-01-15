@@ -10,24 +10,15 @@
 namespace MusebeWEBFinal {
     
     
-    public partial class Configuracion {
+    public partial class menupaginaweb {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// Menu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// fldFondoPagina control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxUploadControl fldFondoPagina;
+        protected global::DevExpress.Web.ASPxMenu Menu;
     }
 }

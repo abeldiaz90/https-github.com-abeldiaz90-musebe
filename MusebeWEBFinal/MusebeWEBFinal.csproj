@@ -90,6 +90,7 @@
     <Content Include="css\full-width-pics.css" />
     <Content Include="Decode.aspx" />
     <Content Include="detail.aspx" />
+    <Content Include="detalleservicio.aspx" />
     <Content Include="Directorio.aspx" />
     <Content Include="Entradas.aspx" />
     <Content Include="Fonts\glyphicons-1-glass.png" />
@@ -907,6 +908,7 @@
     <Content Include="js\jquery.js" />
     <Content Include="Login.aspx" />
     <Content Include="Menu.xslt" />
+    <Content Include="menupaginaweb.ascx" />
     <Content Include="MiEmpresa.aspx" />
     <Content Include="OrdenesCompra.aspx" />
     <Content Include="Principal.Master" />
@@ -1067,6 +1069,13 @@
     <Compile Include="detail.aspx.designer.cs">
       <DependentUpon>detail.aspx</DependentUpon>
     </Compile>
+    <Compile Include="detalleservicio.aspx.cs">
+      <DependentUpon>detalleservicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detalleservicio.aspx.designer.cs">
+      <DependentUpon>detalleservicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Directorio.aspx.cs">
       <DependentUpon>Directorio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1137,6 +1146,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Mensajes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="menupaginaweb.ascx.cs">
+      <DependentUpon>menupaginaweb.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menupaginaweb.ascx.designer.cs">
+      <DependentUpon>menupaginaweb.ascx</DependentUpon>
     </Compile>
     <Compile Include="MiEmpresa.aspx.cs">
       <DependentUpon>MiEmpresa.aspx</DependentUpon>
@@ -1288,7 +1304,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>8227</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

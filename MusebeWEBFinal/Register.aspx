@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Registro" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="MusebeWEBFinal.Register" %>
-
+<%@ Register Src="~/menupaginaweb.ascx" TagPrefix="uc1" TagName="menupaginaweb" %>
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -15,13 +15,13 @@
 					background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
 					background-color: transparent;
 					background-repeat: no-repeat;
-					background-size: contain;
+					background-size: cover;
 					margin: 0;
 				}
 
 				.topnav {
 					overflow: hidden;
-					background-color: #333;
+					background-color: deepskyblue;
 				}
 
 					.topnav a {
@@ -35,8 +35,8 @@
 					}
 
 						.topnav a:hover {
-							background-color: #ddd;
-							color: black;
+							background-color: #F0D27B;
+							color: white;
 						}
 
 					.topnav .icon {
@@ -73,15 +73,15 @@
 				}
 			</style>
 			<div class="topnav" id="myTopnav">
-				<a href="Index.aspx">Home</a><a href="Servicios.aspx">Servicios</a> <a href="ProductosWeb.aspx">Productos</a> <a href="Somos.aspx">&iquest;Quienes Somos?</a> <a href="Contacto.aspx">Contactanos</a> <a href="Login.aspx">Login</a><a href="Register.aspx">Registrarme</a> <a href="javascript:void(0);" style="font-size: 15px;" class="icon" onclick="myFunction()">&#9776;</a>
+							<asp:Image ID="imglogo" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" /><uc1:menupaginaweb runat="server" id="menupaginaweb" />
 			</div>
 			<div class="pull-right">
 				<p style="color: white" class="d-inline pull-right">
-					&#9742;9381180887
+					&#9742;<a href="tel:+529381180887">9381180887</a>
 				</p>
 				<br />
 				<p style="color: white" class="d-inline pull-right">
-					&#9993;ventas@musebe.com.mx
+					&#9993;<a style="color:black" href="mailto:ventas@musebe.com.mx" title="Envienos sus dudas por correo electronico">ventas@musebe.com.mx</a>
 				</p>
 			</div>
 			<div class="panel panel-primary">
