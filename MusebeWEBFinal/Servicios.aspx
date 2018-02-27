@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Multiservicios Bear Catalogo de servicios" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="Servicios.aspx.cs" Inherits="MusebeWEBFinal.Servicios" %>
+
 <%@ Register Src="~/menupaginaweb.ascx" TagPrefix="uc1" TagName="menupaginaweb" %>
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <%@ Register Assembly="DevExpress.Web.ASPxHtmlEditor.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxHtmlEditor" TagPrefix="dx" %>
@@ -8,7 +9,10 @@
 <asp:Content ID="Content3" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
 	<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 	<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+
 		<ContentTemplate>
+			<div class="jumbotron" runat="server" id="encabezadomenu">
+			</div>
 			<asp:LinkButton ID="lnkEditar" runat="server" OnClick="lnkEditar_Click">Editar</asp:LinkButton>
 			<div class="container">
 				<div class="jumbotron" runat="server" id="anuncios">
@@ -33,6 +37,8 @@
 									<DataItemTemplate>
 										<asp:LinkButton ID="LinkButton1" runat="server" OnClick="lnkDetalle_Click">Cargar Foto</asp:LinkButton>
 									</DataItemTemplate>
+									<CellStyle Wrap="True">
+									</CellStyle>
 								</dx:GridViewDataTextColumn>
 								<dx:GridViewDataBinaryImageColumn FieldName="FotoBinaria" ShowInCustomizationForm="True" VisibleIndex="5" Width="20%" Caption="Foto">
 									<PropertiesBinaryImage ImageAlign="Middle" ImageHeight="20%" ImageWidth="20%" ImageSizeMode="FitProportional" IsPng="True">
@@ -44,8 +50,15 @@
 									</PropertiesMemoEdit>
 								</dx:GridViewDataMemoColumn>
 								<dx:GridViewDataTextColumn Caption="Detalles del servicio" ShowInCustomizationForm="True" VisibleIndex="7">
+									<EditFormSettings Visible="False" />
 									<DataItemTemplate>
 										<asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Cargar detalle</asp:LinkButton>
+									</DataItemTemplate>
+								</dx:GridViewDataTextColumn>
+								<dx:GridViewDataTextColumn Caption="Galeria fotografica" ShowInCustomizationForm="True" VisibleIndex="8">
+									<EditFormSettings Visible="False" />
+									<DataItemTemplate>
+										<asp:LinkButton ID="lnkCargarGaleria" runat="server" OnClick="lnkCargarGaleria_Click">Cargar Galeria</asp:LinkButton>
 									</DataItemTemplate>
 								</dx:GridViewDataTextColumn>
 							</Columns>
@@ -97,13 +110,21 @@
 					</dx:PopupControlContentControl>
 				</ContentCollection>
 			</dx:ASPxPopupControl>
-			<dx:ASPxPopupControl ID="popupDetalleDescripcion" runat="server" AllowDragging="True" CloseOnEscape="True" HeaderText="" Maximized="True" Modal="True" PopupElementID="popupFoto" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Theme="Aqua">
+			<dx:ASPxPopupControl ID="popupDetalleDescripcion" runat="server" AllowDragging="True" CloseOnEscape="True" HeaderText="" Maximized="True" Modal="True" PopupElementID="popupFoto" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Theme="Aqua" ShowPageScrollbarWhenModal="True">
 				<ContentCollection>
 					<dx:PopupControlContentControl runat="server">
-						
+						<dx:ASPxFileManager ID="uplGaleria" runat="server" ClientInstanceName="uplGaleria" Theme="Office2003Blue" Settings-AllowedFileExtensions=".jpg,.png,.jpeg">
+							<Settings RootFolder="~\" ThumbnailFolder="~\Thumb\" />
+							<SettingsEditing AllowCopy="True" AllowDelete="True" AllowDownload="True" />
+							<SettingsUpload>
+								<AdvancedModeSettings EnableMultiSelect="True">
+								</AdvancedModeSettings>
+							</SettingsUpload>
+						</dx:ASPxFileManager>
 					</dx:PopupControlContentControl>
 				</ContentCollection>
 			</dx:ASPxPopupControl>
+
 			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
@@ -124,8 +145,8 @@
 				</div>
 			</div>
 
-		
-		<%--	<asp:HiddenField ID="HiddenField1" runat="server" />
+
+			<%--	<asp:HiddenField ID="HiddenField1" runat="server" />
 			<script type="text/javascript">
 				function TestCodeBehind(Idllave, Titulolabel) {
 					document.getElementById("ContentPlaceHolder2_titulo").innerText = Titulolabel;
@@ -150,8 +171,9 @@
 		}
 
 		.topnav {
-			overflow: hidden;
+			/*overflow:hidden;*/
 			background-color: deepskyblue;
+			/*position:relative;*/
 		}
 
 			.topnav a {
@@ -162,11 +184,14 @@
 				padding: 14px 16px;
 				text-decoration: none;
 				font-size: 17px;
+				z-index: 0;
+				position: relative;
 			}
 
 				.topnav a:hover {
 					background-color: #F0D27B;
 					color: white;
+					position: relative;
 				}
 
 			.topnav .icon {
@@ -180,83 +205,50 @@
 
 			.topnav a.icon {
 				float: right;
-				display: block;
+				display: inherit;
 			}
 		}
 
-		@media screen and (max-width: 600px) {
+		@media screen and () {
 			.topnav.responsive {
-				position: relative;
+				position: absolute;
 			}
-
-				.topnav.responsive .icon {
-					position: absolute;
-					right: 0;
-					top: 0;
-				}
-
-				.topnav.responsive a {
-					float: none;
-					display: block;
-					text-align: left;
-				}
-		}
-
-		@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
-
-		.carousel-inner > .item {
-			height: 100vh;
-		}
 
 			.carousel-inner > .item > img {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				-webkit-transform: translate(-50%, -50%);
-				-ms-transform: translate(-50%, -50%);
-				transform: translate(-50%, -50%);
-				max-height: 800px;
-				width: auto;
+				margin: 0 auto;
 			}
 
-		.carousel-control.left,
-		.carousel-control.right {
-			background-image: none;
+			.topnav.responsive .icon {
+				position: relative;
+				right: 0;
+				top: 0;
+			}
+
+			.topnav.responsive a {
+				float: none;
+				display: block;
+				text-align: left;
+			}
+		}
+	</style>
+	<div class="topnav" id="myTopnav">
+		<uc1:menupaginaweb runat="server" ID="menupaginaweb" EnableTheming="true" />
+		<asp:Image ID="imglogo" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" />
+	</div>
+	<script>
+		function myFunction() {
+			var x = document.getElementById("myTopnav");
+			if (x.className === "topnav") {
+				x.className += " responsive";
+			} else {
+				x.className = "topnav";
+			}
 		}
 
-
-	</style>
-
-	<body>
-		<div class="topnav" id="myTopnav">
-       <asp:Image ID="Image1" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" /><uc1:menupaginaweb runat="server" id="menupaginaweb" />
-		</div>
-		<div class="pull-right">
-			<p style="color: black" class="d-inline pull-right">
-				&#9742;<a style="color: black" href="tel:+529381180887">9381180887</a>
-			</p>
-			<br />
-			<p style="color: black" class="d-inline pull-right">
-				&#9993;<a style="color: black" href="mailto:ventas@musebe.com.mx" title="Envienos sus dudas por correo electronico">ventas@musebe.com.mx</a>
-			</p>
-		</div>
+	</script>
 
 
 
-		<script>
-			function myFunction() {
-				var x = document.getElementById("myTopnav");
-				if (x.className === "topnav") {
-					x.className += " responsive";
-				} else {
-					x.className = "topnav";
-				}
-			}
-
-		</script>
-
-
-	</body>
 </asp:Content>
 
 

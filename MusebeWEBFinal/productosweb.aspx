@@ -1,15 +1,14 @@
 ﻿<%@ Page Title="Productos" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="productosweb.aspx.cs" Inherits="MusebeWEBFinal.productosweb" %>
+
 <%@ Register Src="~/menupaginaweb.ascx" TagPrefix="uc1" TagName="menupaginaweb" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 <asp:Content ID="Content3" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
-	<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+	<asp:ScriptManager ID="ScriptManager1" EnablePageMethods="true" runat="server"></asp:ScriptManager>
 	<asp:UpdatePanel ID="UpdatePanel1" runat="server">
 		<ContentTemplate>
-			<style>
-				@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
-
+		<style>
 				body {
 					background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
 					background-color: transparent;
@@ -18,10 +17,11 @@
 					margin: 0;
 				}
 
-
 				.topnav {
-					overflow: hidden;
+					/*overflow:hidden;*/
 					background-color: deepskyblue;
+					/*position:relative;*/
+					
 				}
 
 					.topnav a {
@@ -32,11 +32,14 @@
 						padding: 14px 16px;
 						text-decoration: none;
 						font-size: 17px;
+						z-index:0;
+						position:relative;
 					}
 
 						.topnav a:hover {
 							background-color: #F0D27B;
-					color: white;
+							color: white;
+							position:relative;
 						}
 
 					.topnav .icon {
@@ -50,47 +53,38 @@
 
 					.topnav a.icon {
 						float: right;
-						display: block;
+						display:inherit;
 					}
 				}
 
-				@media screen and (max-width: 600px) {
+				@media screen and () {
 					.topnav.responsive {
-						position: relative;
+						position:absolute;
 					}
 
-						.topnav.responsive .icon {
-							position: absolute;
-							right: 0;
-							top: 0;
-						}
+					.carousel-inner > .item > img {
+						margin: 0 auto;
+					}
 
-						.topnav.responsive a {
-							float: none;
-							display: block;
-							text-align: left;
-						}
+					.topnav.responsive .icon {
+						position: relative;
+						right: 0;
+						top: 0;
+					}
+
+					.topnav.responsive a {
+						float: none;
+						display: block;
+						text-align: left;
+					}
 				}
 			</style>
-
-			<body>
-
-				<div class="topnav" id="myTopnav">
-					<asp:Image ID="imglogo" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" /><uc1:menupaginaweb runat="server" id="menupaginaweb" />
-				</div>
-				<div class="pull-right">
-					<p style="color: black" class="d-inline pull-right">
-						&#9742;<a style="color:black" href="tel:+529381180887">9381180887</a> 
-					</p>
-					<br />
-					<p style="color: black" class="d-inline pull-right">
-						&#9993;<a style="color:black" href="mailto:ventas@musebe.com.mx" title="Envienos sus dudas por correo electronico">ventas@musebe.com.mx</a>
-					</p>
-				</div>
+			<div class="topnav" id="myTopnav">				
+					<uc1:menupaginaweb runat="server" ID="menupaginaweb" EnableTheming="true" />			
+				<asp:Image ID="imglogo" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" />
+			</div>
 				<dx:ASPxMenu ID="subMenuServicios" runat="server"></dx:ASPxMenu>
-
-
-				<script>
+				<script type="text/javascript">
 					function myFunction() {
 						var x = document.getElementById("myTopnav");
 						if (x.className === "topnav") {
@@ -99,7 +93,46 @@
 							x.className = "topnav";
 						}
 					}
+
+					function CallServerMethod(dato) {
+						var s = dato.value;
+						window.location.href = "productosweb.aspx?code=" + s;
+						//alert(s)
+						//testDataVal(s);
+					}
+
+					function testDataVal(DataID) {
+						PageMethods.Compra(DataID, onSuccess, onFailure);
+					}
+
+					function onSuccess(val) {
+						//alert(val);
+						window.location.href = val;
+					}
+
+					function onFailure() { }
+
+					function mostrarcarrito()
+					{
+						popupCarrito.Show();
+					}
 				</script>
+
+
+				<%--		<script src="scripts/jquery-2.1.4.min.js" type="text/javascript" >
+					function CallServerMethod(dato) {
+						console.log(dato);
+						testDataVal(dato);
+					
+						$(document).ready(function () {
+							console.log(dato);
+							alert("<%= Compra("hola") %>");					
+							//document.write(dato);
+							//document.getElementById("Label1").innerHTML = "marro";
+							
+						});
+					}
+				</script>--%>
 
 
 
@@ -120,7 +153,7 @@
 						</div>
 					</div>
 					<dx:ASPxDataView ID="grdProductos" runat="server" DataSourceID="Datos" Width="100%" BackColor="Transparent">
-						<SettingsTableLayout ColumnCount="4" RowsPerPage="4" />
+						<SettingsTableLayout ColumnCount="6" RowsPerPage="6" />
 						<PagerSettings ShowNumericButtons="False"></PagerSettings>
 						<ItemTemplate>
 							<div class="text-center">
@@ -133,14 +166,10 @@
 									Producto</b>: <%--  <asp:Label ID="ProductoLabel" runat="server" Text='<%# Eval("Producto") %>' />
 			<br />--%>
 
-								<asp:Label ID="DescripcionLabel" runat="server" Text='<%# Eval("Descripcion") %>' ForeColor="White" />
+								<asp:Label ID="DescripcionLabel" runat="server" Text='<%# Eval("Descripcion") %>' ForeColor="black" />
 								<br />
 								<b>Clave</b>:
-				<asp:Label ID="ClaveLabel" runat="server" Text='<%# Eval("Clave") %>' />
-								<br />
-								<b style="color: white">Precio: <%# "$ " + String.Format("{0:C2}", Convert.ToString(Eval("PrecioPieza")) ) %></b><br />
-
-
+				<asp:Label ID="ClaveLabel" runat="server" Text='<%# Eval("Clave") %>' ForeColor="Black" />
 
 								<a href="#">
 									<dx:ASPxBinaryImage ID="ASPxBinaryImage1" runat="server" Value='<%# Eval("Imagen") %>' Width="100%" Height="100%" ImageAlign="TextTop">
@@ -151,15 +180,22 @@
 								<button type="button" class="btn btn-default" aria-label="Left Align" title="Detalles">
 									<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
 								</button>
-								<button type="button" class="btn btn-default" aria-label="Left Align" title="Agregar al carrito">
+								<button type="button" class="btn btn-default" aria-label="Left Align" title="Agregar al carrito" onclick="CallServerMethod(<%# Eval("Clave") %>)" value='<%# Eval("Clave") %>' name='<%# Eval("Clave") %>'>
 									<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
 								</button>
-								<br>
-								</br>
+								<%--		<button type="submit" class="btn btn-default" aria-label="Left Align" title="Agregar al carrito" onserverclick="Unnamed_ServerClick" runat="server" value='<%# Eval("Clave") %>' name='<%# Eval("Clave") %>'>
+									<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+								</button>--%>
+								<br></br>
 							</div>
 						</ItemTemplate>
 						<LoadingPanelStyle HorizontalAlign="Center">
 						</LoadingPanelStyle>
+						<PagerPanelLeftTemplate>						
+							<button type="button" class="btn btn-default" aria-label="Left Align" title="Agregar al carrito" onclick="mostrarcarrito()" >
+								<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+							</button>
+						</PagerPanelLeftTemplate>
 					</dx:ASPxDataView>
 					<asp:SqlDataSource ID="Datos" runat="server" ConnectionString="<%$ ConnectionStrings:DB_9B18B8_musebeConnectionString %>" SelectCommand="Productos_Consultar_Visibles" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
 					<asp:SqlDataSource ID="datosbusqueda" runat="server" ConnectionString="<%$ ConnectionStrings:DB_9B18B8_musebeConnectionString %>" SelectCommand="Productos_Consultar_Visibles_Busquedas_Descripcion" SelectCommandType="StoredProcedure">
@@ -167,15 +203,84 @@
 							<asp:ControlParameter ControlID="txtBusqueda" Name="Descripcion" PropertyName="Text" Type="String" />
 						</SelectParameters>
 					</asp:SqlDataSource>
+					<asp:SqlDataSource ID="busquedaGrupos" runat="server" ConnectionString="<%$ ConnectionStrings:DB_9B18B8_musebeConnectionString %>" SelectCommand="Productos_Consultar_Visibles_Busquedas_Grupo" SelectCommandType="StoredProcedure">
+						<SelectParameters>
+							<asp:QueryStringParameter Name="Uuid" QueryStringField="Guid" Type="String" />
+						</SelectParameters>
+					</asp:SqlDataSource>
 				</div>
 				<!-- /.row -->
+				<dx:ASPxPopupControl ID="popupCarrito" runat="server" HeaderText="Mi carrito" Modal="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" MaxHeight="600px" Width="600px" ClientInstanceName="popupCarrito" Theme="Aqua" AllowDragging="True" AllowResize="True" AutoUpdatePosition="True" CloseOnEscape="True" Height="600px" ScrollBars="Auto" ShowMaximizeButton="True" ShowPageScrollbarWhenModal="True">
+		<ContentCollection>
+			<dx:PopupControlContentControl runat="server">
+				<div class="row">
+					<div class="col-md-6">
+						<asp:Label ID="Label1" runat="server" Font-Bold="True"></asp:Label>
+
+					</div>
+					<div class="col-md-6">
+						<dx:ASPxSpinEdit ID="txtCantidad" Caption="Cantidad:" runat="server" Number="0" NullText="Cantidad" CssClass="form-control">
+							<CaptionSettings HorizontalAlign="Left" VerticalAlign="Top" Position="Top" />
+						</dx:ASPxSpinEdit>
+						<dx:ASPxButton ID="btnAgregar" runat="server" OnClick="btnAgregar_Click" Text="Agregar" ClientInstanceName="btnAgregar" Theme="Aqua" CssClass="btn btn-primary">
+						</dx:ASPxButton>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<dx:ASPxGridView ID="grdCotizaciones" runat="server" AutoGenerateColumns="False" DataSourceID="DatosCotizciones" KeyFieldName="Id" Width="100%" EnableTheming="True" Theme="Glass">
+							<Columns>
+								<dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" ShowInCustomizationForm="True" VisibleIndex="0" Width="150px">
+								</dx:GridViewCommandColumn>
+								<dx:GridViewDataTextColumn FieldName="Id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+									<EditFormSettings Visible="False" />
+								</dx:GridViewDataTextColumn>
+								<dx:GridViewDataTextColumn FieldName="Usuario" ShowInCustomizationForm="True" VisibleIndex="2" Visible="False">
+								</dx:GridViewDataTextColumn>
+								<dx:GridViewDataTextColumn FieldName="Descripcion" ShowInCustomizationForm="True" VisibleIndex="3" Caption="Producto" ReadOnly="True">
+									<EditFormSettings Visible="False" />
+								</dx:GridViewDataTextColumn>
+								<dx:GridViewDataTextColumn FieldName="Cantidad" ShowInCustomizationForm="True" VisibleIndex="4" Caption="Cantidad" Width="100px">
+								</dx:GridViewDataTextColumn>
+								<dx:GridViewDataBinaryImageColumn FieldName="imagen" ShowInCustomizationForm="True" VisibleIndex="5">
+									<PropertiesBinaryImage ImageAlign="Middle" ImageHeight="100px" ImageWidth="100px" IsPng="True">
+									</PropertiesBinaryImage>
+								</dx:GridViewDataBinaryImageColumn>
+							</Columns>
+							<SettingsBehavior AllowFocusedRow="True" AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" ConfirmDelete="True" />
+							<Settings ShowFilterRow="True" />
+						</dx:ASPxGridView>
+						<asp:SqlDataSource ID="DatosCotizciones" runat="server" ConnectionString="<%$ ConnectionStrings:DB_9B18B8_musebeConnectionString %>" SelectCommand="PedidosUsuarios" SelectCommandType="StoredProcedure" DeleteCommand="PedidoTemporalEliminarProducto" DeleteCommandType="StoredProcedure" UpdateCommand="PedidoTemporalActualizarProducto" UpdateCommandType="StoredProcedure">
+							<DeleteParameters>
+								<asp:Parameter Name="Id" Type="Int32" />
+							</DeleteParameters>
+							<SelectParameters>
+								<asp:SessionParameter Name="Usuario" SessionField="Usuario" Type="String" />
+							</SelectParameters>
+							<UpdateParameters>
+								<asp:Parameter Name="Id" Type="Int32" />
+								<asp:Parameter Name="Cantidad" Type="Int32" />
+							</UpdateParameters>
+						</asp:SqlDataSource>
+					</div>
+				</div>
 
 
-
+				<dx:ASPxButton ID="btnEnviarPedido" runat="server" Text="Solicitar Cotización" CssClass="btn btn-success" OnClick="btnEnviarPedido_Click" ClientInstanceName="btnEnviarPedido">
+				</dx:ASPxButton>
+				<dx:ASPxButton ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-danger" OnClick="btnCancelar_Click">
+				</dx:ASPxButton>
+			</dx:PopupControlContentControl>
+		</ContentCollection>
+	</dx:ASPxPopupControl>
 			</body>
 
 		</ContentTemplate>
+		<Triggers>
+			<asp:PostBackTrigger ControlID="popupCarrito" />
+		</Triggers>
 	</asp:UpdatePanel>
+	
 </asp:Content>
 <asp:Content ID="Content4" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 </asp:Content>

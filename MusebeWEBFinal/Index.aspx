@@ -20,8 +20,10 @@
 				}
 
 				.topnav {
-					overflow: hidden;
+					/*overflow:hidden;*/
 					background-color: deepskyblue;
+					/*position:relative;*/
+					
 				}
 
 					.topnav a {
@@ -32,11 +34,14 @@
 						padding: 14px 16px;
 						text-decoration: none;
 						font-size: 17px;
+						z-index:0;
+						position:relative;
 					}
 
 						.topnav a:hover {
 							background-color: #F0D27B;
 							color: white;
+							position:relative;
 						}
 
 					.topnav .icon {
@@ -50,13 +55,13 @@
 
 					.topnav a.icon {
 						float: right;
-						display: block;
+						display:inherit;
 					}
 				}
 
 				@media screen and () {
 					.topnav.responsive {
-						position: absolute;
+						position:absolute;
 					}
 
 					.carousel-inner > .item > img {
@@ -64,7 +69,7 @@
 					}
 
 					.topnav.responsive .icon {
-						position: absolute;
+						position: relative;
 						right: 0;
 						top: 0;
 					}
@@ -76,19 +81,9 @@
 					}
 				}
 			</style>
-
-			<div class="topnav" id="myTopnav">
-					
-				<asp:Image ID="imglogo" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" /><uc1:menupaginaweb runat="server" id="menupaginaweb" />
-			</div>
-			<div class="pull-right">
-				<p style="color: black" class="d-inline pull-right">
-					&#9742;<a style="color: black" href="tel:+529381180887">9381180887</a>
-				</p>
-				<br />
-				<p style="color: black" class="d-inline pull-right">
-					&#9993;<a style="color: black" href="mailto:ventas@musebe.com.mx" title="Envienos sus dudas por correo electronico">ventas@musebe.com.mx</a>
-				</p>
+			<div class="topnav" id="myTopnav">				
+					<uc1:menupaginaweb runat="server" ID="menupaginaweb" EnableTheming="true" />			
+				<asp:Image ID="imglogo" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" />
 			</div>
 			<div id="myCarousel" class="carousel slide" data-ride="carousel" style="align-content: center">
 				<!-- Indicators -->
@@ -109,10 +104,10 @@
 			</div>
 			<asp:LinkButton ID="btnEditarGaleria" runat="server" CssClass="btn btn-danger" OnClick="btnEditarGaleria_Click">Editar Galeria</asp:LinkButton>
 			<asp:LinkButton ID="btnEditar" runat="server" CssClass="btn btn-success" OnClick="btnEditar_Click">Editar Contenido Noticias</asp:LinkButton>
-		<%--	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+			<%--	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 				Visita nuestras video Galerias</button>--%>
 
-		<%--	<div class="collapse" id="collapseExample">
+			<%--	<div class="collapse" id="collapseExample">
 				<div class="well">
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 						<div class="panel panel-default">
@@ -229,8 +224,6 @@
 				</ContentCollection>
 
 			</dx:ASPxPopupControl>
-
-
 			<dx:ASPxPopupControl ID="popupEditarGaleria" runat="server" AllowDragging="True" CloseOnEscape="True" HeaderText="Editor de contenido" Maximized="True" Modal="True" PopupElementID="popupEdicion" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" ShowPageScrollbarWhenModal="True" Theme="Office2010Blue" Width="100%">
 				<ContentCollection>
 					<dx:PopupControlContentControl runat="server">

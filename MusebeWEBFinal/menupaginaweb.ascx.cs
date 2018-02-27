@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -155,6 +156,69 @@ namespace MusebeWEBFinal
 					}
 				}
 			}
+		}
+
+		protected void MisDatos_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				this.popupPerfil.ShowOnPageLoad = true;
+				MUSEBEDataContext db = new MUSEBEDataContext();
+				var query = db.Usuarios_Consultar_Datos(this.Page.User.Identity.Name.ToString());
+				foreach (var i in query)
+				{
+					this.txtNombre.Text = i.Nombre;
+					this.txtSegundoNombre.Text = i.Segundo_Nombre;
+					this.txtApellidoPaterno.Text = i.Apellido_Paterno;
+					this.txtApellidoMaterno.Text = i.Apellido_Materno;
+					this.txtCorreo.Text = i.Correo;
+				}
+			}
+			catch (Exception ex)
+			{
+				ex.ToString();
+			}
+		}
+		protected void btnGuardar_Click(object sender, EventArgs e)
+		{
+			MUSEBEDataContext db = new MUSEBEDataContext();
+			db.Usuarios_Modificar_Datos(this.Page.User.Identity.Name.ToString(), this.txtNombre.Text, this.txtSegundoNombre.Text, this.txtApellidoPaterno.Text, this.txtApellidoMaterno.Text, this.txtCorreo.Text);
+			LimpiarFormularioDatos();
+			this.popupPerfil.ShowOnPageLoad = false;
+		}
+		public void LimpiarFormularioDatos()
+		{
+			this.txtNombre.Text = string.Empty;
+			this.txtSegundoNombre.Text = string.Empty;
+			this.txtApellidoPaterno.Text = string.Empty;
+			this.txtApellidoMaterno.Text = string.Empty;
+			this.txtCorreo.Text = string.Empty;
+		}
+
+		protected void lnkPassword_Click(object sender, EventArgs e)
+		{
+
+		}
+		protected void LoginStatus1_LoggingOut(object sender, LoginCancelEventArgs e)
+		{
+			FormsAuthentication.SignOut();
+			Response.Redirect("Servicios.aspx");
+		}
+
+		protected void btnChangePassword_Click(object sender, EventArgs e)
+		{
+			MUSEBEDataContext db = new MUSEBEDataContext();
+			db.Usuarios_Cambiar_Contraseña(this.Page.User.Identity.Name.ToString(), Utilidades.Security.Encrypt(this.txtPasswordNuevoConfirm.Text));
+			Utilidades.Mails n = new Utilidades.Mails();
+			var query = db.Usuarios_Consultar_Datos(this.Page.User.Identity.Name.ToString());
+			foreach (var d in query)
+			{
+				n.Mail(d.Correo, d.Correo, App_GlobalResources.Mensajes.CambioPasswordExitoso, true, "Estimado: <p><b>" + d.Nombre + " " + d.Segundo_Nombre + " " + d.Apellido_Paterno + " " + d.Apellido_Materno + "</b> Le informamos que:" + App_GlobalResources.Mensajes.CambioPasswordExitoso);
+				ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", @"alert('" + App_GlobalResources.Mensajes.CambioPasswordExitoso + "')", true);
+			}
+			this.popupPassword.ShowOnPageLoad = false;
+
+			FormsAuthentication.SignOut();
 		}
 	}
 }

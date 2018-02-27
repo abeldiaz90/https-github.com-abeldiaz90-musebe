@@ -4,6 +4,11 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
+		<div class="panel panel-primary">
+				<div class="panel-heading">Registro</div>
+				<div class="panel-body">
+
+			
 		<div class="form-group">
 			<label for="txtCorreo">Email:</label>
 			<dx:ASPxTextBox ID="txtCorreo" runat="server" Theme="Glass" NullText="jane.doe@example.com" CssClass="form-control" HorizontalAlign="Center" Width="100%">
@@ -24,7 +29,6 @@
 				</ValidationSettings>
 			</dx:ASPxTextBox>
 		</div>
-
 		<div class="form-group">
 			<label for="txtbody">Asunto:</label>
 			<dx:ASPxMemo ID="txtbody" runat="server" Height="71px" Width="100%"  HorizontalAlign="Center" NullText="Contactenos por este medio permitanos ayudarle" Theme="Glass" CssClass="form-control">
@@ -34,90 +38,87 @@
 				</ValidationSettings>
 			</dx:ASPxMemo>
 		</div>
+					</div></div>
 		<asp:LinkButton ID="lnkEnviar" runat="server" OnClick="lnkEnviar_Click" CssClass="btn btn-default">Enviar</asp:LinkButton>		
 
 </asp:Content>
 <asp:Content ID="Content5" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
-	<style>
-		body {
-			background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
-			background-color: transparent;
-			background-repeat:no-repeat;
-			background-size:cover;
-			margin: 0;
-		}
-
-		.topnav {
-			overflow: hidden;
-			background-color: deepskyblue;
-		}
-
-			.topnav a {
-				float: left;
-				display: block;
-				color: #f2f2f2;
-				text-align: center;
-				padding: 14px 16px;
-				text-decoration: none;
-				font-size: 17px;
-			}
-
-				.topnav a:hover {
-					background-color: #F0D27B;
-					color: white;
+<style>
+				body {
+					background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
+					background-color: transparent;
+					background-repeat: no-repeat;
+					background-size: cover;
+					margin: 0;
 				}
 
-			.topnav .icon {
-				display: none;
-			}
-
-		@media screen and (max-width: 600px) {
-			.topnav a:not(:first-child) {
-				display: none;
-			}
-
-			.topnav a.icon {
-				float: right;
-				display: block;
-			}
-		}
-
-		@media screen and (max-width: 600px) {
-			.topnav.responsive {
-				position: relative;
-			}
-
-				.topnav.responsive .icon {
-					position: absolute;
-					right: 0;
-					top: 0;
+				.topnav {
+					/*overflow:hidden;*/
+					background-color: deepskyblue;
+					/*position:relative;*/
+					
 				}
 
-				.topnav.responsive a {
-					float: none;
-					display: block;
-					text-align: left;
+					.topnav a {
+						float: left;
+						display: block;
+						color: #f2f2f2;
+						text-align: center;
+						padding: 14px 16px;
+						text-decoration: none;
+						font-size: 17px;
+						z-index:0;
+						position:relative;
+					}
+
+						.topnav a:hover {
+							background-color: #F0D27B;
+							color: white;
+							position:relative;
+						}
+
+					.topnav .icon {
+						display: none;
+					}
+
+				@media screen and (max-width: 600px) {
+					.topnav a:not(:first-child) {
+						display: none;
+					}
+
+					.topnav a.icon {
+						float: right;
+						display:inherit;
+					}
 				}
-		}
-	</style>
 
-	<body>
-		<div class="topnav" id="myTopnav">
-		
-			<asp:Image ID="imglogo" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" /><uc1:menupaginaweb runat="server" id="menupaginaweb" />
-		</div>
-		<div class="pull-right">
-			<p style="color: black" class="d-inline pull-right">
-				&#9742;<a style="color:black" href="tel:+529381180887">9381180887</a>
-			</p>
-			<br />
-			<p style="color: white" class="d-inline pull-right">
-				&#9993;<a style="color:black" href="mailto:ventas@musebe.com.mx" title="Envienos sus dudas por correo electronico">ventas@musebe.com.mx</a>
-			</p>
-		</div>
+				@media screen and () {
+					.topnav.responsive {
+						position:absolute;
+					}
 
+					.carousel-inner > .item > img {
+						margin: 0 auto;
+					}
 
+					.topnav.responsive .icon {
+						position: relative;
+						right: 0;
+						top: 0;
+					}
 
+					.topnav.responsive a {
+						float: none;
+						display: block;
+						text-align: left;
+					}
+				}
+			</style>
+			<div class="topnav" id="myTopnav">				
+					<uc1:menupaginaweb runat="server" ID="menupaginaweb" EnableTheming="true" />			
+				<asp:Image ID="imglogo" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" />
+			</div>
+	
 		<script>
 			function myFunction() {
 				var x = document.getElementById("myTopnav");
@@ -129,7 +130,7 @@
 			}
 		</script>
 
-	</body>
+	
 </asp:Content>
 
 

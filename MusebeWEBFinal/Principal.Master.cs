@@ -14,7 +14,7 @@ namespace MusebeWEBFinal
     public partial class Principal : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+         {
             if (!Page.IsPostBack)
             {
                 bool val1 = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;

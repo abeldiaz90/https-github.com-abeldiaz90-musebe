@@ -31,15 +31,6 @@ namespace MusebeWEBFinal {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// imglogo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imglogo;
-        
-        /// <summary>
         /// menupaginaweb control.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace MusebeWEBFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::MusebeWEBFinal.menupaginaweb menupaginaweb;
+        
+        /// <summary>
+        /// imglogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imglogo;
         
         /// <summary>
         /// subMenuServicios control.
@@ -110,5 +110,86 @@ namespace MusebeWEBFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource datosbusqueda;
+        
+        /// <summary>
+        /// busquedaGrupos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource busquedaGrupos;
+        
+        /// <summary>
+        /// popupCarrito control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        public global::DevExpress.Web.ASPxPopupControl popupCarrito;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// txtCantidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxSpinEdit txtCantidad;
+        
+        /// <summary>
+        /// btnAgregar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnAgregar;
+        
+        /// <summary>
+        /// grdCotizaciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView grdCotizaciones;
+        
+        /// <summary>
+        /// DatosCotizciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource DatosCotizciones;
+        
+        /// <summary>
+        /// btnEnviarPedido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnEnviarPedido;
+        
+        /// <summary>
+        /// btnCancelar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnCancelar;
     }
 }

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Registro" Language="C#" MasterPageFile="~/MaestraWeb.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="MusebeWEBFinal.Register" %>
+
 <%@ Register Src="~/menupaginaweb.ascx" TagPrefix="uc1" TagName="menupaginaweb" %>
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
@@ -73,25 +74,29 @@
 				}
 			</style>
 			<div class="topnav" id="myTopnav">
-							<asp:Image ID="imglogo" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" /><uc1:menupaginaweb runat="server" id="menupaginaweb" />
+				<div class="pull-right">
+					<p style="color: black" class="d-inline pull-right">
+						<a style="color: black" href="tel:+529381180887">&#9742;9381180887</a>
+					</p>
+					<p style="color: black" class="d-inline pull-right">
+						<asp:LinkButton ID="lnkPedidos" runat="server" OnClick="lnkPedidos_Click">Mis Cotizaciones</asp:LinkButton>
+						<asp:LoginStatus ID="LoginStatus1" runat="server" OnLoggingOut="LoginStatus1_LoggingOut" />
+						<a style="color: black" href="mailto:ventas@musebe.com.mx" title="Envienos sus dudas por correo electronico">&#9993;ventas@musebe.com.mx</a>
+					</p>
+				</div>
+				<asp:Image ID="imglogo" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" /><uc1:menupaginaweb runat="server" ID="menupaginaweb" />
 			</div>
-			<div class="pull-right">
-				<p style="color: white" class="d-inline pull-right">
-					&#9742;<a href="tel:+529381180887">9381180887</a>
-				</p>
-				<br />
-				<p style="color: white" class="d-inline pull-right">
-					&#9993;<a style="color:black" href="mailto:ventas@musebe.com.mx" title="Envienos sus dudas por correo electronico">ventas@musebe.com.mx</a>
-				</p>
-			</div>
-			<div class="panel panel-primary">
-				<div class="panel-heading">Registro</div>
-				<div class="panel-body">
 
+			<div class="panel panel-default">
+				<div class="panel-heading">Datos Personales</div>
+				<div class="panel-body">
 					<div class="row">
 						<div class="col-md-3">
 							<dx:ASPxTextBox ID="txtNombre" runat="server" CssClass="form-control col-xs-3" Caption="Primer Nombre:">
 								<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
+								<ValidationSettings ErrorTextPosition="Bottom" SetFocusOnError="True" ValidationGroup="Registro">
+									<RequiredField IsRequired="True" />
+								</ValidationSettings>
 							</dx:ASPxTextBox>
 						</div>
 						<div class="col-md-3">
@@ -102,7 +107,7 @@
 						<div class="col-md-3">
 							<dx:ASPxTextBox ID="txtApellidoPaterno" runat="server" CssClass="form-control col-xs-3" Caption="Apellido Paterno:">
 								<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
-								<ValidationSettings SetFocusOnError="True" ValidationGroup="Guardar">
+								<ValidationSettings SetFocusOnError="True" ValidationGroup="Registro" ErrorTextPosition="Bottom">
 									<RequiredField IsRequired="True" />
 								</ValidationSettings>
 							</dx:ASPxTextBox>
@@ -112,39 +117,66 @@
 								<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
 							</dx:ASPxTextBox>
 						</div>
-
 					</div>
 					<div class="row">
 						<div class="col-md-3">
 							<dx:ASPxTextBox ID="txtCorreo" runat="server" CssClass="form-control col-xs-3" Caption="E-mail:">
 								<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
+								<ValidationSettings ErrorTextPosition="Bottom" SetFocusOnError="True" ValidationGroup="Registro">
+									<RequiredField IsRequired="True" />
+								</ValidationSettings>
 							</dx:ASPxTextBox>
 						</div>
 						<div class="col-md-3">
 							<dx:ASPxTextBox ID="txtTelefono" runat="server" CssClass="form-control col-xs-3" Caption="Telefono de contacto:">
 								<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
+								<ValidationSettings ErrorTextPosition="Bottom" SetFocusOnError="True" ValidationGroup="Registro">
+									<RequiredField IsRequired="True" />
+								</ValidationSettings>
 							</dx:ASPxTextBox>
 						</div>
 						<div class="col-md-3">
-							<%--<dx:ASPxTextBox ID="txtUsuario" runat="server" CssClass="form-control col-xs-3" Caption="Folio:" ReadOnly="True">
-								<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
-							</dx:ASPxTextBox>--%>
 						</div>
 						<div class="col-md-3">
-							<%--<dx:ASPxTextBox ID="txtMargen" runat="server" Caption="Margen de Ganancia" CssClass="form-control col-xs-3" HorizontalAlign="Center" NullText="Margen de Ganancia">
-								<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
-								<ValidationSettings SetFocusOnError="True" ValidationGroup="Agregar">
-									<RequiredField IsRequired="True" />
-								</ValidationSettings>
-								<FocusedStyle BackColor="#FFFF66" HorizontalAlign="Center" Wrap="True">
-								</FocusedStyle>
-							</dx:ASPxTextBox>--%>
 						</div>
 					</div>
-					<asp:LinkButton ID="lnkGuardar" runat="server" CssClass="btn btn-primary" OnClick="lnkGuardar_Click">Registrarme</asp:LinkButton>
-					<asp:LinkButton ID="lnkCancelar" runat="server" CssClass="btn btn-default" OnClick="lnkCancelar_Click">Cancelar</asp:LinkButton>
-					<asp:LinkButton ID="LinkButton1" runat="server">Olvide mi contraseña</asp:LinkButton>
+					<div class="row">
+						<div class="col-md-3">
+							<dx:ASPxTextBox ID="txtUsuario" runat="server" CssClass="form-control col-xs-3" Caption="Usuario:">
+								<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
+								<ValidationSettings ErrorTextPosition="Bottom" SetFocusOnError="True" ValidationGroup="Registro">
+									<RequiredField IsRequired="True" />
+								</ValidationSettings>
+							</dx:ASPxTextBox>
+						</div>
+						<div class="col-md-3">
+							<dx:ASPxTextBox ID="txtPassword" runat="server" CssClass="form-control col-xs-3" Caption="Password:" Password="true">
+								<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
+								<ValidationSettings ErrorTextPosition="Bottom" SetFocusOnError="True" ValidationGroup="Registro">
+									<RequiredField IsRequired="True" />
+								</ValidationSettings>
+							</dx:ASPxTextBox>
+						</div>
+						<div class="col-md-3">
+							<dx:ASPxTextBox ID="txtPasswordConfirm" runat="server" CssClass="form-control col-xs-3" Caption="Confirme Password:" Password="true">
+								<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
+								<ValidationSettings ErrorTextPosition="Bottom" SetFocusOnError="True" ValidationGroup="Registro">
+									<RequiredField IsRequired="True" />
+								</ValidationSettings>
+							</dx:ASPxTextBox>
+						</div>
+						<div class="col-md-3">
+						</div>
+					</div>
 				</div>
+			</div>
+
+
+			</div>
+			<dx:ASPxButton ID="btnGuardar" runat="server" Text="Registrarme" ValidationGroup="Registro" CssClass="btn btn-primary" OnClick="btnGuardar_Click"></dx:ASPxButton>
+			<asp:LinkButton ID="lnkCancelar" runat="server" CssClass="btn btn-default" OnClick="lnkCancelar_Click">Cancelar</asp:LinkButton>
+
+			</div>
 			</div>
 		</ContentTemplate>
 	</asp:UpdatePanel>

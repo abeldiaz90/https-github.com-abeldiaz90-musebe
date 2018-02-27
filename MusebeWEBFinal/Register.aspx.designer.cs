@@ -31,6 +31,24 @@ namespace MusebeWEBFinal {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
+        /// lnkPedidos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkPedidos;
+        
+        /// <summary>
+        /// LoginStatus1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginStatus LoginStatus1;
+        
+        /// <summary>
         /// imglogo control.
         /// </summary>
         /// <remarks>
@@ -103,13 +121,40 @@ namespace MusebeWEBFinal {
         protected global::DevExpress.Web.ASPxTextBox txtTelefono;
         
         /// <summary>
-        /// lnkGuardar control.
+        /// txtUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkGuardar;
+        protected global::DevExpress.Web.ASPxTextBox txtUsuario;
+        
+        /// <summary>
+        /// txtPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtPassword;
+        
+        /// <summary>
+        /// txtPasswordConfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtPasswordConfirm;
+        
+        /// <summary>
+        /// btnGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnGuardar;
         
         /// <summary>
         /// lnkCancelar control.
@@ -119,14 +164,5 @@ namespace MusebeWEBFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkCancelar;
-        
-        /// <summary>
-        /// LinkButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
     }
 }

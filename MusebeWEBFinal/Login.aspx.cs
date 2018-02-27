@@ -16,11 +16,36 @@ namespace MusebeWEBFinal
 		{
 			if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
 			{
-				Response.Redirect("~/Default.aspx", false);
+				if (Rol() == "1")
+				{
+					Response.Redirect("~/Default.aspx", false);
+				}
+				else
+				{
+					Response.Redirect("~/Index.aspx", false);
+				}
 			}
+			else {  }
 		}
 
+		public string Rol()
+		{
+			SqlConnection con = new SqlConnection();
+			con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString;
+			con.Open();
+			SqlCommand com = new SqlCommand();
+			com.Connection = con;
+			com.CommandText = "select ID_ROL from usuarios where usuario='" + System.Web.HttpContext.Current.User.Identity.Name.ToString() + "'";
+			com.CommandType = CommandType.Text;
+			com.ExecuteNonQuery();
 
+			SqlDataAdapter datos = new SqlDataAdapter(com);
+			DataTable Resultado = new DataTable();
+			datos.Fill(Resultado);
+			con.Close();
+
+			return Resultado.Rows[0][0].ToString();
+		}
 
 		protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
 		{
@@ -40,19 +65,27 @@ namespace MusebeWEBFinal
 				SqlDataAdapter datos = new SqlDataAdapter(com);
 				DataTable Resultado = new DataTable();
 				datos.Fill(Resultado);
-				con.Close();				
+				con.Close();
 				if (Resultado.Rows.Count >= 1)
 				{
 					FormsAuthenticationTicket tkt;
 					string cookiestr;
 					HttpCookie ck;
-					tkt = new FormsAuthenticationTicket(1, Login1.UserName, DateTime.Now, DateTime.Now.AddMinutes(30), false, "Abel Diaz Gonzalez");
+					tkt = new FormsAuthenticationTicket(1, Login1.UserName, DateTime.Now, DateTime.Now.AddMinutes(30), false, this.Login1.UserName);
 					cookiestr = FormsAuthentication.Encrypt(tkt);
 					ck = new HttpCookie(FormsAuthentication.FormsCookieName, cookiestr);
 					ck.Path = FormsAuthentication.FormsCookiePath;
 					Response.Cookies.Add(ck);
 					Session["Usuario"] = this.Login1.UserName;
-					Response.Redirect("~/Default.aspx", false);
+					Session["Rol"] = Resultado.Rows[0]["ID_ROL"].ToString();
+					if (Resultado.Rows[0]["ID_ROL"].ToString() == "")
+					{
+						Response.Redirect("~/Index.aspx", false);
+					}
+					else
+					{
+						Response.Redirect("~/Default.aspx", false);
+					}
 				}
 				else
 				{
@@ -60,6 +93,16 @@ namespace MusebeWEBFinal
 				}
 			}
 			catch (Exception ex) { ex.ToString(); }
+		}
+
+		protected void LinkButton2_Click(object sender, EventArgs e)
+		{
+			Response.Redirect("Register.aspx");
+		}
+
+		protected void Login1_Authenticate1(object sender, AuthenticateEventArgs e)
+		{
+
 		}
 	}
 }

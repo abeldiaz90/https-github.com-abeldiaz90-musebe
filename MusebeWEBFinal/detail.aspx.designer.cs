@@ -10,33 +10,24 @@
 namespace MusebeWEBFinal {
     
     
-    public partial class detail {
+    public partial class detailaspx {
         
         /// <summary>
-        /// lblClave control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lblClave;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblDescripcion control.
+        /// sliders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lblDescripcion;
-        
-        /// <summary>
-        /// imgImagen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxBinaryImage imgImagen;
+        protected global::DevExpress.Web.ASPxImageGallery sliders;
     }
 }

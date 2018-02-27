@@ -33,7 +33,7 @@
 					}
 
 					.topnav {
-						overflow: hidden;
+						overflow:visible;
 						background-color: #333;
 					}
 
@@ -58,7 +58,7 @@
 
 					@media screen and (max-width: 600px) {
 						.topnav a:not(:first-child) {
-							display: none;
+							display:contents;
 						}
 
 						.topnav a.icon {

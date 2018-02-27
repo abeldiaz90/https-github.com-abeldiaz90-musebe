@@ -31,6 +31,15 @@ namespace MusebeWEBFinal {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
+        /// encabezadomenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl encabezadomenu;
+        
+        /// <summary>
         /// lnkEditar control.
         /// </summary>
         /// <remarks>
@@ -130,6 +139,15 @@ namespace MusebeWEBFinal {
         protected global::DevExpress.Web.ASPxPopupControl popupDetalleDescripcion;
         
         /// <summary>
+        /// uplGaleria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxFileManager uplGaleria;
+        
+        /// <summary>
         /// exampleModalLabel control.
         /// </summary>
         /// <remarks>
@@ -166,15 +184,6 @@ namespace MusebeWEBFinal {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl cuerpo;
         
         /// <summary>
-        /// Image1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
-        
-        /// <summary>
         /// menupaginaweb control.
         /// </summary>
         /// <remarks>
@@ -182,5 +191,14 @@ namespace MusebeWEBFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::MusebeWEBFinal.menupaginaweb menupaginaweb;
+        
+        /// <summary>
+        /// imglogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imglogo;
     }
 }

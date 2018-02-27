@@ -19,7 +19,7 @@ namespace MusebeWEBFinal
 		protected void txtEnviar_Click(object sender, EventArgs e)
 		{
 			MailMessage msg = new MailMessage();
-			msg.From = new MailAddress("sifica@musebe.com.mx", "SIFICA", System.Text.Encoding.UTF8);
+			msg.From = new MailAddress("ventas@musebe.com.mx", "Ventas MUSEBE", System.Text.Encoding.UTF8);
 			//msg.From = new MailAddress("Notificaciones@akaaljinspection.com.mx", "SIFICA", System.Text.Encoding.UTF8);
 			msg.Subject = this.txtAsunto.Text;
 			msg.To.Add(FormatMultipleEmailAddresses(this.txtPara.Text));	
@@ -33,8 +33,8 @@ namespace MusebeWEBFinal
 			client.Host = "mail.musebe.com.mx";
 			client.Port = 587;
 			//client.Port = 999;
-			NetworkCredential login = new NetworkCredential("sifica@musebe.com.mx", "Imperio90_");
-			client.EnableSsl = false;
+			NetworkCredential login = new NetworkCredential("ventas@musebe.com.mx", "Imperio90_");
+			//client.EnableSsl = false;
 			//client.UseDefaultCredentials = true;
 			client.Credentials = login;
 

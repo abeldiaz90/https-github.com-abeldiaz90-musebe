@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.Caching;
 using System.Text;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -17,26 +18,64 @@ namespace MusebeWEBFinal
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated && Rol() == "1")
+			{
+				this.lnkEditar.Visible = true;
+			}
+			else
+			{
+				this.lnkEditar.Visible = false;
+			}
 			if (!Page.IsPostBack)
 			{
-				this.lnkEditar.Visible = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
-
 				llenarSubMenu();
 			}
+			if (Page.Request.QueryString["detalle"] != null && Page.Request.QueryString["detalle"] != "")
+			{
+				posicionamientoymostrado(Page.Request.QueryString["detalle"]);
+			}
+		}
+		public string Rol()
+		{
+			SqlConnection con = new SqlConnection();
+			con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString;
+			con.Open();
+			SqlCommand com = new SqlCommand();
+			com.Connection = con;
+			com.CommandText = "select ID_ROL from usuarios where usuario='" + System.Web.HttpContext.Current.User.Identity.Name.ToString() + "'";
+			com.CommandType = CommandType.Text;
+			com.ExecuteNonQuery();
+
+			SqlDataAdapter datos = new SqlDataAdapter(com);
+			DataTable Resultado = new DataTable();
+			datos.Fill(Resultado);
+			con.Close();
+
+			return Resultado.Rows[0][0].ToString();
 		}
 
+		public void posicionamientoymostrado(string servicio)
+		{
+			Response.Redirect("Servicios.aspx#" + servicio);
+			this.popupDetalleDescripcion.ShowOnPageLoad = true;
+		}
 		public void llenarSubMenu()
 		{
 			DataTable submenu = MenuServicios();
 			var cadenahtml = new StringBuilder();
-
+			string submenureferenciassubmenu = "";
+			string acumulador = "";
 			for (int i = 0; i <= submenu.Rows.Count - 1; i++)
 			{
-				cadenahtml.AppendLine("<div class='panel panel-default'> <div class='panel-heading'>" + submenu.Rows[i][1].ToString() + "</div><div class='panel-body' style = 'height:500;min-height: 10; max-height: 500;background-image: url(../Imagenes/Servicios/" + submenu.Rows[i][3].ToString() + "'); background - repeat:no - repeat; background - size:cover; margin: 0; '><img src='Imagenes/Servicios/" + submenu.Rows[i][3].ToString() + "' alt ='" + submenu.Rows[i][1].ToString() + "' height='100%' width='100%'></div><div class='panel - footer'>" + submenu.Rows[i][2].ToString() + "<p><a href='detalleservicio.aspx?id=" + submenu.Rows[i][0].ToString() + "' target='blank'>Ver mas detalle</a> </div></div>");
-
+				submenureferenciassubmenu = "|<a href ='#" + submenu.Rows[i][1].ToString() + "'>" + submenu.Rows[i][1].ToString() + "</a>|";
+				acumulador = acumulador + submenureferenciassubmenu;
+				cadenahtml.AppendLine("<div class='panel panel-default' Id='" + submenu.Rows[i][1].ToString() + "'> <div class='panel-heading'>" + submenu.Rows[i][1].ToString() + "</div><div class='panel-body' style = 'height:500;min-height: 10; max-height: 500;'><img src='Imagenes/Servicios/" + submenu.Rows[i][3].ToString() + "' alt ='" + submenu.Rows[i][1].ToString() + "' height='100%' width='100%'></div><div class='panel - footer'>" + submenu.Rows[i][2].ToString() + "<p><a class='btn btn-primary' role='button' data-toggle='collapse' href='#collapse" + submenu.Rows[i][0].ToString() + "' aria-expanded='false' aria-controls='collapseExample'>Mas Detalle</a><button type='button' class='btn btn-primary' data-toggle='modal' data-target='.bs-example-modal-lg" + submenu.Rows[i][0].ToString() + "' onclick='window.open(\"detail.aspx?Id=" + submenu.Rows[i][0].ToString() + "\")'; >Galeria</button></p><div class='collapse' id='collapse" + submenu.Rows[i][0].ToString() + "'><div class='well'>" + submenu.Rows[i][5].ToString() + "</div></div></div></div>");
 			}
+			encabezadomenu.InnerHtml = acumulador;
 			anuncios.InnerHtml = cadenahtml + anuncios.InnerHtml;
 		}
+
+
 		public DataTable MenuServicios()
 		{
 			DataTable Resultado = new DataTable();
@@ -173,6 +212,33 @@ namespace MusebeWEBFinal
 				db.SubmitChanges();
 			}
 			catch (Exception ex) { ex.ToString(); }
+		}
+
+		protected void lnkCargarGaleria_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				string targetPath = Server.MapPath("Imagenes/Servicios/" + this.grdServicios.GetRowValues(this.grdServicios.FocusedRowIndex, "Id").ToString());
+				if (!Directory.Exists(targetPath))
+				{
+					Directory.CreateDirectory(targetPath);
+				}
+				this.popupDetalleDescripcion.ShowOnPageLoad = true;
+				this.uplGaleria.Settings.RootFolder = "~\\Imagenes\\Servicios\\" + this.grdServicios.GetRowValues(this.grdServicios.FocusedRowIndex, "Id").ToString();
+
+			}
+			catch (Exception ex) { ex.ToString(); }
+		}
+
+		protected void LoginStatus1_LoggingOut(object sender, LoginCancelEventArgs e)
+		{
+			FormsAuthentication.SignOut();
+			Response.Redirect("Servicios.aspx");
+		}
+
+		protected void lnkPedidos_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

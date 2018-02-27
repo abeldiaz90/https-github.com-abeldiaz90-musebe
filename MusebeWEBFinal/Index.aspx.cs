@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.Caching;
 using System.Text;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -18,10 +19,46 @@ namespace MusebeWEBFinal.scripts
 		{
 			if (!Page.IsPostBack)
 			{
-				this.btnEditar.Visible = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
-				this.btnEditarGaleria.Visible = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+				if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+				{
+					if (Rol() == "1")
+					{
+						this.btnEditar.Visible = true;
+						this.btnEditarGaleria.Visible = true;
+					}
+					else
+					{
+						this.btnEditar.Visible = false;
+						this.btnEditarGaleria.Visible = false;
+					}
+				}
+				else
+				{
+					this.btnEditar.Visible = false;
+					this.btnEditarGaleria.Visible = false;
+					//Response.Redirect("login.aspx");
+				}
 				Carrusel();
 			}
+		}
+
+		public string Rol()
+		{
+			SqlConnection con = new SqlConnection();
+			con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString;
+			con.Open();
+			SqlCommand com = new SqlCommand();
+			com.Connection = con;
+			com.CommandText = "select ID_ROL from usuarios where usuario='" + System.Web.HttpContext.Current.User.Identity.Name.ToString() + "'";
+			com.CommandType = CommandType.Text;
+			com.ExecuteNonQuery();
+
+			SqlDataAdapter datos = new SqlDataAdapter(com);
+			DataTable Resultado = new DataTable();
+			datos.Fill(Resultado);
+			con.Close();
+
+			return Resultado.Rows[0][0].ToString();
 		}
 
 		public void Carrusel()
@@ -48,8 +85,8 @@ namespace MusebeWEBFinal.scripts
 						{
 							carouselInnerHtml.AppendLine(i == 0 ? "<div class='item active' style='margin: auto;'>" : "<div class='item'>");
 							carouselInnerHtml.AppendLine("<h3  style='color: black; font-weight: bold; font-size: 20px;'>" + j.Servicio + "</h3><p><label style='color: black;' id='" + imagesPath + fileName + "'>" + j.Descripcion + "</label></p>");
-							carouselInnerHtml.AppendLine("<img class='img-responsive center-block' src='" + imagesPath + fileName + "' alt='Slide #" + (i + 1) + "'>");
-							
+							carouselInnerHtml.AppendLine("<a href='" + j.NavigateUrl + "'><img class='img-responsive center-block' src='" + imagesPath + fileName + "' alt='Slide #" + (i + 1) + "'></a>");
+
 							carouselInnerHtml.AppendLine("</div>");
 							indicatorsHtml.AppendLine(i == 0 ? @"<li data-target='#myCarousel' data-slide-to='" + i + "' class='active'></li>" : @"<li data-target='#myCarousel' data-slide-to='" + i + "' class=''></li>");
 						}
@@ -94,6 +131,19 @@ namespace MusebeWEBFinal.scripts
 		{
 			try { this.popupEditarGaleria.ShowOnPageLoad = true; }
 			catch (Exception ex) { ex.ToString(); }
+		}
+
+		
+
+		protected void lnkPassword_Click(object sender, EventArgs e)
+		{
+
+		}
+
+
+		protected void lnkPedidos_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

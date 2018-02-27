@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="Cotizaciones" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Cotizaciones.aspx.cs" Inherits="MusebeWEBFinal.Cotizaciones" MaintainScrollPositionOnPostback="true" %>
 
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
-<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -385,8 +387,7 @@ Confirm();
             <dx:ASPxPopupControl ID="popupCotizacion" runat="server" HeaderText="Cotización" Maximized="True" Theme="Metropolis" Width="100%">
                 <ContentCollection>
                     <dx:PopupControlContentControl runat="server">
-                        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%" ZoomMode="PageWidth" SizeToReportContent="True">
-                        </rsweb:ReportViewer>
+						<rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="700px" DocumentMapWidth="" SizeToReportContent="True" ZoomMode="PageWidth"></rsweb:ReportViewer>
                     </dx:PopupControlContentControl>
                 </ContentCollection>
             </dx:ASPxPopupControl>
