@@ -22,15 +22,6 @@ namespace MusebeWEBFinal {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// imglogo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imglogo;
-        
-        /// <summary>
         /// menupaginaweb control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace MusebeWEBFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::MusebeWEBFinal.menupaginaweb menupaginaweb;
+        
+        /// <summary>
+        /// imglogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imglogo;
         
         /// <summary>
         /// Login1 control.

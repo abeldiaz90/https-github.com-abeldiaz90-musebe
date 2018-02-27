@@ -7,7 +7,8 @@
 <asp:Content ID="Content3" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
 	<asp:ScriptManager ID="ScriptManager1" runat="server">
 	</asp:ScriptManager>
-	<style>
+	
+<style>
 		body {
 			background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
 			background-color: transparent;
@@ -17,8 +18,9 @@
 		}
 
 		.topnav {
-			overflow: hidden;
+			/*overflow:hidden;*/
 			background-color: deepskyblue;
+			/*position:relative;*/
 		}
 
 			.topnav a {
@@ -29,11 +31,14 @@
 				padding: 14px 16px;
 				text-decoration: none;
 				font-size: 17px;
+				z-index: 0;
+				position: relative;
 			}
 
 				.topnav a:hover {
 					background-color: #F0D27B;
 					color: white;
+					position: relative;
 				}
 
 			.topnav .icon {
@@ -47,57 +52,46 @@
 
 			.topnav a.icon {
 				float: right;
-				display: block;
+				display: inherit;
 			}
 		}
 
-		@media screen and (max-width: 600px) {
+		@media screen and () {
 			.topnav.responsive {
-				position: relative;
+				position: absolute;
 			}
 
-				.topnav.responsive .icon {
-					position: absolute;
-					right: 0;
-					top: 0;
-				}
+			.carousel-inner > .item > img {
+				margin: 0 auto;
+			}
 
-				.topnav.responsive a {
-					float: none;
-					display: block;
-					text-align: left;
-				}
+			.topnav.responsive .icon {
+				position: relative;
+				right: 0;
+				top: 0;
+			}
+
+			.topnav.responsive a {
+				float: none;
+				display: block;
+				text-align: left;
+			}
 		}
 	</style>
-
-	<body>
-		<div class="topnav" id="myTopnav">
-			<div class="pull-right">
-			<p style="color: black" class="d-inline pull-right">
-				<a style="color: black" href="tel:+529381180887">&#9742;9381180887</a>
-			</p>
-			<p style="color: black" class="d-inline pull-right">
-				<a style="color: black" href="mailto:ventas@musebe.com.mx" title="Envienos sus dudas por correo electronico">&#9993;ventas@musebe.com.mx</a>
-			</p>
-		</div>
-			<asp:Image ID="imglogo" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" /><uc1:menupaginaweb runat="server" ID="menupaginaweb" />
-		</div>
-		
-
-
-
-		<script>
-			function myFunction() {
-				var x = document.getElementById("myTopnav");
-				if (x.className === "topnav") {
-					x.className += " responsive";
-				} else {
-					x.className = "topnav";
-				}
+	<div class="topnav" id="myTopnav">
+		<uc1:menupaginaweb runat="server" ID="menupaginaweb" EnableTheming="true" />
+		<asp:Image ID="imglogo" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" />
+	</div>
+	<script>
+		function myFunction() {
+			var x = document.getElementById("myTopnav");
+			if (x.className === "topnav") {
+				x.className += " responsive";
+			} else {
+				x.className = "topnav";
 			}
-		</script>
-
-	</body>
+		}
+	</script>
 	<%--	<div class="modal-content" style="align-content: center">
 		<div class="modal-body" style="align-content: center">--%>
 	<div class="row">

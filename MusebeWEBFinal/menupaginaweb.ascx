@@ -20,8 +20,10 @@
 	</div>
 	<div class="col-md-6">
 		<a href="mailto:ventas@musebe.com.mx" style="color: black; font-size: smaller" title="Envienos sus dudas por correo electronico">✉ventas@musebe.com.mx</a> <a href="tel:+529381180887" style="color: black; font-size: smaller">☎9381180887</a> 
-		Bienvenido:
+		
 		<div class="dropdown col-lg-3">
+			<span>Bienvenido:</span>
+		
 			<button id="dropdownMenu1" aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle btn-group-justified" data-toggle="dropdown" type="button">
 				<asp:LoginName ID="LoginName1" runat="server" />
 				<span class="caret"></span>

@@ -191,7 +191,10 @@ namespace MusebeWEBFinal
 				foreach (var i in detalles)
 				{
 					this.Label1.Text = i.Descripcion;
+					this.imgProducto.Value = i.Imagen;
+					
 				}
+				this.imgProducto.DataBind();
 
 				this.popupCarrito.ShowOnPageLoad = true;
 			}
