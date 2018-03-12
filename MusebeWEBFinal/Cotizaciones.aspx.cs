@@ -39,7 +39,7 @@ namespace MusebeWEBFinal
 			try
 			{
 				MUSEBEDataContext db = new MUSEBEDataContext();
-				db.COTIZACIONES_INSERTAR(this.txtFolio.Text, this.FechaCotizacion.Date, "", Int32.Parse(this.cboClientes.SelectedItem.Value.ToString()), Int32.Parse(this.cboContacto.SelectedItem.Value.ToString()), float.Parse(this.txtMargen.Text), this.Page.User.Identity.Name.ToString(), this.txtTitulo.Text, Int32.Parse(this.cboTipoMoneda.SelectedItem.Value.ToString()), Int32.Parse(this.cboFormaPago.SelectedItem.Value.ToString()), this.txtReferencia.Text, Int32.Parse(this.cboMetodoPago.SelectedItem.Value.ToString()), this.txtTiempoEntrega.Text, this.txtLugarEntrega.Text,null);
+				db.COTIZACIONES_INSERTAR(this.txtFolio.Text, this.FechaCotizacion.Date, "", Int32.Parse(this.cboClientes.SelectedItem.Value.ToString()), Int32.Parse(this.cboContacto.SelectedItem.Value.ToString()), 0, this.Page.User.Identity.Name.ToString(), this.txtTitulo.Text, Int32.Parse(this.cboTipoMoneda.SelectedItem.Value.ToString()), Int32.Parse(this.cboFormaPago.SelectedItem.Value.ToString()), this.txtReferencia.Text, Int32.Parse(this.cboMetodoPago.SelectedItem.Value.ToString()), this.txtTiempoEntrega.Text, this.txtLugarEntrega.Text, null);
 				db.Cotizaciones_Detalle_Insertar(this.txtFolio.Text, this.txtItem.Text, float.Parse(this.txtCantidad.Text));
 
 				this.grdArticulos.DataBind();
@@ -168,7 +168,7 @@ namespace MusebeWEBFinal
 			try
 			{
 				MUSEBEDataContext db = new MUSEBEDataContext();
-				db.COTIZACIONES_INSERTAR(this.txtFolio.Text, this.FechaCotizacion.Date, "", Int32.Parse(this.cboClientes.SelectedItem.Value.ToString()), Int32.Parse(this.cboContacto.SelectedItem.Value.ToString()), float.Parse(this.txtMargen.Text), this.Page.User.Identity.Name.ToString(), this.txtTitulo.Text, Int32.Parse(this.cboTipoMoneda.SelectedItem.Value.ToString()), Int32.Parse(this.cboFormaPago.SelectedItem.Value.ToString()), this.txtReferencia.Text, Int32.Parse(this.cboMetodoPago.SelectedItem.Value.ToString()), this.txtTiempoEntrega.Text, this.txtLugarEntrega.Text,null);
+				db.COTIZACIONES_INSERTAR(this.txtFolio.Text, this.FechaCotizacion.Date, "", Int32.Parse(this.cboClientes.SelectedItem.Value.ToString()), Int32.Parse(this.cboContacto.SelectedItem.Value.ToString()), 0, this.Page.User.Identity.Name.ToString(), this.txtTitulo.Text, Int32.Parse(this.cboTipoMoneda.SelectedItem.Value.ToString()), Int32.Parse(this.cboFormaPago.SelectedItem.Value.ToString()), this.txtReferencia.Text, Int32.Parse(this.cboMetodoPago.SelectedItem.Value.ToString()), this.txtTiempoEntrega.Text, this.txtLugarEntrega.Text, null);
 				this.grdArticulos.DataBind();
 				ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", @"alert('" + App_GlobalResources.Mensajes.Guardar + "')", true);
 			}
@@ -181,7 +181,7 @@ namespace MusebeWEBFinal
 				if (this.grdArticulos.VisibleRowCount >= 1)
 				{
 					MUSEBEDataContext db = new MUSEBEDataContext();
-					db.COTIZACIONES_INSERTAR(this.txtFolio.Text, this.FechaCotizacion.Date, "", Int32.Parse(this.cboClientes.SelectedItem.Value.ToString()), Int32.Parse(this.cboContacto.SelectedItem.Value.ToString()), float.Parse(this.txtMargen.Text), this.Page.User.Identity.Name.ToString(), this.txtTitulo.Text, Int32.Parse(this.cboTipoMoneda.SelectedItem.Value.ToString()), Int32.Parse(this.cboFormaPago.SelectedItem.Value.ToString()), this.txtReferencia.Text, Int32.Parse(this.cboMetodoPago.SelectedItem.Value.ToString()), this.txtTiempoEntrega.Text, this.txtLugarEntrega.Text,null);
+					db.COTIZACIONES_INSERTAR(this.txtFolio.Text, this.FechaCotizacion.Date, "", Int32.Parse(this.cboClientes.SelectedItem.Value.ToString()), Int32.Parse(this.cboContacto.SelectedItem.Value.ToString()), 0, this.Page.User.Identity.Name.ToString(), this.txtTitulo.Text, Int32.Parse(this.cboTipoMoneda.SelectedItem.Value.ToString()), Int32.Parse(this.cboFormaPago.SelectedItem.Value.ToString()), this.txtReferencia.Text, Int32.Parse(this.cboMetodoPago.SelectedItem.Value.ToString()), this.txtTiempoEntrega.Text, this.txtLugarEntrega.Text, null);
 				}
 				else
 				{
@@ -225,7 +225,6 @@ namespace MusebeWEBFinal
 			this.cboContacto.DataBind();
 			this.cboContacto.SelectedIndex = 1;
 			this.txtTelefono.Text = string.Empty;
-			this.txtMargen.Text = string.Empty;
 			this.cboTipoMoneda.Text = string.Empty;
 			this.cboTipoMoneda.SelectedIndex = 1;
 			this.cboFormaPago.Text = string.Empty;
@@ -251,11 +250,11 @@ namespace MusebeWEBFinal
 		internal int BuscarId(int Id)
 		{
 			MUSEBEDataContext db = new MUSEBEDataContext();
-			var Q=db.CotizacionporSolicitud(Id);
+			var Q = db.CotizacionporSolicitud(Id);
 			int id = 0;
 			foreach (var i in Q)
 			{
-				id=i.Id;
+				id = i.Id;
 			}
 			return id;
 		}
@@ -268,10 +267,9 @@ namespace MusebeWEBFinal
 			{
 				this.txtReferencia.Text = i.Referencia;
 				this.txtFolio.Text = i.Folio;
-				this.txtMargen.Text = i.Margen.Value.ToString();
 				this.txtTitulo.Text = i.Titulo;
 				this.txtTiempoEntrega.Text = i.TiempoEntrega;
-				this.txtLugarEntrega.Text = i.LugarEntrega;		
+				this.txtLugarEntrega.Text = i.LugarEntrega;
 				this.txtCorreo.Text = string.Empty;
 				this.txtCorreo.Text = i.Email;
 				this.txtTelefono.Text = i.Telefono;
@@ -282,16 +280,16 @@ namespace MusebeWEBFinal
 
 				this.cboContacto.Items.Clear();
 				LlenarDirectorio(this.cboClientes.SelectedItem.Value.ToString());
-			
+
 				//this.cboContacto.DataBind();
 				this.cboContacto.Items.FindByValue(i.IdContacto.ToString()).Selected = true;
 
-			
+
 				this.cboTipoMoneda.Items.FindByValue(i.IdPrecioLista.ToString()).Selected = true;
 				this.cboFormaPago.Items.FindByValue(i.IdFormaPago.ToString()).Selected = true;
 				this.FechaCotizacion.Date = i.Fecha.Value;
 				DatosContacto();
-			
+
 
 			}
 			this.grdArticulos.DataBind();
@@ -305,28 +303,59 @@ namespace MusebeWEBFinal
 		{
 			try
 			{
-				this.popupCotizacion.ShowOnPageLoad = true;
-				this.ReportViewer1.ProcessingMode = ProcessingMode.Local;
-				LocalReport report = new LocalReport();
-				report.EnableExternalImages = true;
-				report.ReportPath = "Reportes/Cotizacion.rdlc";
-				DataTable ds = Cotizacion();
-				ReportDataSource dsMain = new ReportDataSource();
-				dsMain.Name = "CotizacionImprimir";
-				dsMain.Value = ds;
-				report.DataSources.Clear();
-				report.DataSources.Add(dsMain);
-				report.Refresh();
-				this.ReportViewer1.Visible = true;
-				this.ReportViewer1.LocalReport.ReportPath = Server.MapPath("Reportes/Cotizacion.rdlc");
-				this.ReportViewer1.LocalReport.DataSources.Clear();
-				this.ReportViewer1.LocalReport.DataSources.Add(dsMain);
-				this.ReportViewer1.DocumentMapCollapsed = true;
-				this.ReportViewer1.ShowPrintButton = true;
-				this.ReportViewer1.LocalReport.Refresh();
+				if (ValidaMargenGanancia(this.txtFolio.Text) >= 1)
+				{
+					ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(),
+						"err_msg",
+						"alert('!Existe mas de una partida sin margen de ganancia, Capturelas antes de Imprimir!');",
+						true);
+					return;
+				}
+				else
+				{
+					this.popupCotizacion.ShowOnPageLoad = true;
+					this.ReportViewer1.ProcessingMode = ProcessingMode.Local;
+					LocalReport report = new LocalReport();
+					report.EnableExternalImages = true;
+					report.ReportPath = "Reportes/Cotizacion.rdlc";
+					DataTable ds = Cotizacion();
+					ReportDataSource dsMain = new ReportDataSource();
+					dsMain.Name = "CotizacionImprimir";
+					dsMain.Value = ds;
+					report.DataSources.Clear();
+					report.DataSources.Add(dsMain);
+					report.Refresh();
+					this.ReportViewer1.Visible = true;
+					this.ReportViewer1.LocalReport.ReportPath = Server.MapPath("Reportes/Cotizacion.rdlc");
+					this.ReportViewer1.LocalReport.DataSources.Clear();
+					this.ReportViewer1.LocalReport.DataSources.Add(dsMain);
+					this.ReportViewer1.DocumentMapCollapsed = true;
+					this.ReportViewer1.ShowPrintButton = true;
+					this.ReportViewer1.LocalReport.Refresh();
+				}
 			}
 			catch (Exception ex) { ex.ToString(); }
 		}
+
+		internal int ValidaMargenGanancia(String Folio)
+		{
+			DataTable Conteo = new DataTable();
+			SqlConnection con = new SqlConnection();
+			con.ConnectionString = ConfigurationManager.ConnectionStrings["Conexion"].ToString();
+			con.Open();
+			SqlCommand com = new SqlCommand();
+			com.Connection = con;
+			com.CommandType = CommandType.StoredProcedure;
+			com.CommandText = "Cotizaciones_Validacion_MargenGanancia_Conteo";
+			com.Parameters.AddWithValue("@FolioCotizacion", this.txtFolio.Text);
+			com.CommandTimeout = 0;
+			com.ExecuteNonQuery();
+			SqlDataAdapter Datos = new SqlDataAdapter(com);
+			Datos.Fill(Conteo);
+			con.Close();
+			return Int32.Parse(Conteo.Rows[0][0].ToString());
+		}
+
 		public DataTable Cotizacion()
 		{
 			DataTable Resultado = new DataTable();

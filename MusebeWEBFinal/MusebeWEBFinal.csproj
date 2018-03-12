@@ -1298,6 +1298,7 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\CotizacionDescuento.rdlc" />
     <EmbeddedResource Include="Reportes\Pedidos.rdlc" />
     <None Include="MUSEBE.dbml.layout">
       <DependentUpon>MUSEBE.dbml</DependentUpon>

@@ -97,14 +97,6 @@
                             </dx:ASPxTextBox>
                         </div>
                         <div class="col-md-3">
-                            <dx:ASPxTextBox ID="txtMargen" runat="server" Caption="Margen de Ganancia" CssClass="form-control col-xs-3" HorizontalAlign="Center" NullText="Margen de Ganancia">
-                                <CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
-                                <ValidationSettings SetFocusOnError="True" ValidationGroup="Agregar">
-                                    <RequiredField IsRequired="True" />
-                                </ValidationSettings>
-                                <FocusedStyle BackColor="#FFFF66" HorizontalAlign="Center" Wrap="True">
-                                </FocusedStyle>
-                            </dx:ASPxTextBox>
                         </div>
                     </div>
 
@@ -157,46 +149,83 @@
                             <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" VisibleIndex="0">
                             </dx:GridViewCommandColumn>
                             <dx:GridViewDataTextColumn FieldName="Partida" ReadOnly="True" VisibleIndex="1">
+                            	<EditFormSettings Visible="False" />
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn FieldName="Id" ReadOnly="True" Visible="False" VisibleIndex="13">
+                            <dx:GridViewDataTextColumn FieldName="Id" ReadOnly="True" Visible="False" VisibleIndex="19">
                                 <EditFormSettings Visible="False" />
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn FieldName="IdProducto" Visible="False" VisibleIndex="14">
+                            <dx:GridViewDataTextColumn FieldName="IdProducto" Visible="False" VisibleIndex="20">
                             </dx:GridViewDataTextColumn>
                             <dx:GridViewDataTextColumn Caption="Código de Articulo" FieldName="clave" VisibleIndex="4">
+                            	<EditFormSettings Visible="False" />
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn FieldName="Producto" VisibleIndex="15" Visible="False">
+                            <dx:GridViewDataTextColumn FieldName="Producto" VisibleIndex="21" Visible="False">
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn FieldName="PrecioUnitario" VisibleIndex="8" Caption="Precio Unitario Compra">
-                                <PropertiesTextEdit DisplayFormatString="C2">
+                            <dx:GridViewDataTextColumn FieldName="PrecioUnitario" VisibleIndex="9" Caption="Precio Unitario Compra">
+                                <PropertiesTextEdit DisplayFormatString="c2" DisplayFormatInEditMode="True">
                                 </PropertiesTextEdit>
                             </dx:GridViewDataTextColumn>
                             <dx:GridViewDataTextColumn FieldName="Descripcion" VisibleIndex="6" Caption="Descripción de Articulo">
+                            	<EditFormSettings Visible="False" />
                             </dx:GridViewDataTextColumn>
                             <dx:GridViewDataTextColumn FieldName="Unidad" VisibleIndex="7">
+                            	<EditFormSettings Visible="False" />
                             </dx:GridViewDataTextColumn>
                             <dx:GridViewDataTextColumn FieldName="Marca" VisibleIndex="5">
+                            	<EditFormSettings Visible="False" />
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn FieldName="Grupo" VisibleIndex="2">
+                            <dx:GridViewDataTextColumn FieldName="Cantidad" VisibleIndex="11">
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn FieldName="Cantidad" VisibleIndex="10">
-                            </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn FieldName="SubTotal" ReadOnly="True" VisibleIndex="11" Caption="Importe Compra">
+                            <dx:GridViewDataTextColumn FieldName="SubTotal" ReadOnly="True" VisibleIndex="12" Caption="Importe Compra">
                                 <PropertiesTextEdit DisplayFormatString="C2">
                                 </PropertiesTextEdit>
+                            	<EditFormSettings Visible="False" />
                             </dx:GridViewDataTextColumn>
                             <dx:GridViewDataBinaryImageColumn FieldName="Imagen" VisibleIndex="3">
                                 <PropertiesBinaryImage ImageHeight="100px" ImageWidth="100px">
                                 </PropertiesBinaryImage>
                             </dx:GridViewDataBinaryImageColumn>
-                            <dx:GridViewDataTextColumn Caption="Precio Unitario Venta" FieldName="PrecioMargen" VisibleIndex="9">
+                            <dx:GridViewDataTextColumn Caption="Precio Unitario Venta" FieldName="PrecioMargen" VisibleIndex="10">
                                 <PropertiesTextEdit DisplayFormatInEditMode="True" DisplayFormatString="c2">
                                 </PropertiesTextEdit>
+                            	<EditFormSettings Visible="False" />
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn Caption="Importe Venta" FieldName="subtotalMargen" VisibleIndex="12">
+                            <dx:GridViewDataTextColumn Caption="Importe Venta" FieldName="subtotalMargen" VisibleIndex="13">
                                 <PropertiesTextEdit DisplayFormatInEditMode="True" DisplayFormatString="c2">
                                 </PropertiesTextEdit>
+                            	<EditFormSettings Visible="False" />
                             </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn FieldName="Grupo" VisibleIndex="2">
+                            	<EditFormSettings Visible="False" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataSpinEditColumn Caption="Margen de Ganancia" FieldName="MargenGanancia" VisibleIndex="8">
+								<PropertiesSpinEdit DisplayFormatString="{0}%" MaxValue="100" NumberFormat="Percent">
+								</PropertiesSpinEdit>
+							</dx:GridViewDataSpinEditColumn>
+							<dx:GridViewDataSpinEditColumn Caption="Descuento" FieldName="Descuento" VisibleIndex="14">
+								<PropertiesSpinEdit DisplayFormatString="{0}%" LargeIncrement="1" MaxValue="100" NumberFormat="Percent">
+								</PropertiesSpinEdit>
+							</dx:GridViewDataSpinEditColumn>
+							<dx:GridViewDataTextColumn Caption="Descuento Unitario" FieldName="DescuentoEfectivoUnitario" VisibleIndex="15">
+								<PropertiesTextEdit DisplayFormatInEditMode="True" DisplayFormatString="c2">
+								</PropertiesTextEdit>
+								<EditFormSettings Visible="False" />
+							</dx:GridViewDataTextColumn>
+							<dx:GridViewDataTextColumn Caption="Precio Unitario con Descuento" FieldName="PrecioUnitarioConDescuento" VisibleIndex="16">
+								<PropertiesTextEdit DisplayFormatInEditMode="True" DisplayFormatString="c2">
+								</PropertiesTextEdit>
+								<EditFormSettings Visible="False" />
+							</dx:GridViewDataTextColumn>
+							<dx:GridViewDataTextColumn Caption="Descuento Total" FieldName="DescuentoTotal" VisibleIndex="17">
+								<PropertiesTextEdit DisplayFormatInEditMode="True" DisplayFormatString="c2">
+								</PropertiesTextEdit>
+								<EditFormSettings Visible="False" />
+							</dx:GridViewDataTextColumn>
+							<dx:GridViewDataTextColumn Caption="Precio Total con Descuento" FieldName="TotalConDescuento" VisibleIndex="18">
+								<PropertiesTextEdit DisplayFormatInEditMode="True" DisplayFormatString="c2">
+								</PropertiesTextEdit>
+								<EditFormSettings Visible="False" />
+							</dx:GridViewDataTextColumn>
                         </Columns>
                         <SettingsBehavior AllowFocusedRow="True" AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" ConfirmDelete="True" />
                         <Settings ShowFilterRow="True" ShowGroupPanel="True" />
@@ -208,7 +237,7 @@
                             </Cell>
                         </Styles>
                     </dx:ASPxGridView>
-                    <asp:SqlDataSource ID="ArticulosListado" runat="server" ConnectionString="<%$ ConnectionStrings:DB_9B18B8_musebeConnectionString %>" SelectCommand="Cotizaciones_Consultar_Detalle" SelectCommandType="StoredProcedure" DeleteCommand="Cotizaciones_Consultar_Detalle_Eliminar" DeleteCommandType="StoredProcedure">
+                    <asp:SqlDataSource ID="ArticulosListado" runat="server" ConnectionString="<%$ ConnectionStrings:DB_9B18B8_musebeConnectionString %>" SelectCommand="Cotizaciones_Consultar_Detalle" SelectCommandType="StoredProcedure" DeleteCommand="Cotizaciones_Consultar_Detalle_Eliminar" DeleteCommandType="StoredProcedure" UpdateCommand="Cotizaciones_Detalle_Modificar" UpdateCommandType="StoredProcedure">
                         <DeleteParameters>
                             <asp:ControlParameter ControlID="txtFolio" Name="FolioCotizacion" PropertyName="Text" Type="String" />
                             <asp:Parameter Name="Id" Type="Int32" />
@@ -216,6 +245,13 @@
                         <SelectParameters>
                             <asp:ControlParameter ControlID="txtFolio" Name="FolioCotizacion" PropertyName="Text" Type="String" />
                         </SelectParameters>
+                    	<UpdateParameters>
+							<asp:Parameter Name="Id" Type="Int32" />
+							<asp:Parameter Name="MargenGanancia" Type="Single" />
+							<asp:Parameter Name="PrecioUnitario" Type="Decimal" />
+							<asp:Parameter Name="Descuento" Type="Single" />
+							<asp:Parameter Name="Cantidad" Type="Int32" />
+						</UpdateParameters>
                     </asp:SqlDataSource>
                 </div>
             </div>

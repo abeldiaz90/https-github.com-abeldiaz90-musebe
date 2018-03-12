@@ -12,10 +12,10 @@
               <Width>1.88145cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.97591cm</Width>
+              <Width>1.67284cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.89796cm</Width>
+              <Width>2.12844cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.79068cm</Width>
@@ -51,7 +51,8 @@
                             <TextRun>
                               <Value>No.</Value>
                               <Style>
-                                <FontFamily>Arial Narrow</FontFamily>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -66,7 +67,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>#b7dee8</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -86,7 +87,8 @@
                             <TextRun>
                               <Value>Grupo</Value>
                               <Style>
-                                <FontFamily>Arial Narrow</FontFamily>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -101,7 +103,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>#b7dee8</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -121,7 +123,8 @@
                             <TextRun>
                               <Value>Imagen</Value>
                               <Style>
-                                <FontFamily>Arial Narrow</FontFamily>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -136,7 +139,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>#b7dee8</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -154,9 +157,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Clave</Value>
+                              <Value>Codigo de Articulo</Value>
                               <Style>
-                                <FontFamily>Arial Narrow</FontFamily>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -171,7 +175,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>#b7dee8</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -191,7 +195,8 @@
                             <TextRun>
                               <Value>Marca</Value>
                               <Style>
-                                <FontFamily>Arial Narrow</FontFamily>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -206,7 +211,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>#b7dee8</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -226,7 +231,8 @@
                             <TextRun>
                               <Value>Descripcion</Value>
                               <Style>
-                                <FontFamily>Arial Narrow</FontFamily>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -241,7 +247,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>#b7dee8</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -261,7 +267,8 @@
                             <TextRun>
                               <Value>Cant.</Value>
                               <Style>
-                                <FontFamily>Arial Narrow</FontFamily>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -276,7 +283,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>#b7dee8</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -296,7 +303,8 @@
                             <TextRun>
                               <Value>Unidad</Value>
                               <Style>
-                                <FontFamily>Arial Narrow</FontFamily>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -311,7 +319,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>#b7dee8</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -331,7 +339,8 @@
                             <TextRun>
                               <Value>Precio Unitario</Value>
                               <Style>
-                                <FontFamily>Arial Narrow</FontFamily>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -346,7 +355,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>#b7dee8</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -366,7 +375,8 @@
                             <TextRun>
                               <Value>Importe</Value>
                               <Style>
-                                <FontFamily>Arial Narrow</FontFamily>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -381,7 +391,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>PaleTurquoise</BackgroundColor>
+                        <BackgroundColor>#b7dee8</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -406,6 +416,7 @@
                             <TextRun>
                               <Value>=Fields!IdPartida.Value</Value>
                               <Style>
+                                <FontFamily>nirmala UI</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -439,6 +450,7 @@
                             <TextRun>
                               <Value>=Fields!Grupo.Value</Value>
                               <Style>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -487,6 +499,7 @@
                             <TextRun>
                               <Value>=Fields!clave.Value</Value>
                               <Style>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -520,6 +533,7 @@
                             <TextRun>
                               <Value>=Fields!Marca.Value</Value>
                               <Style>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -553,6 +567,7 @@
                             <TextRun>
                               <Value>=Fields!Descripcion.Value</Value>
                               <Style>
+                                <FontFamily>nirmala UI semilight</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -586,6 +601,7 @@
                             <TextRun>
                               <Value>=Fields!Cantidad.Value</Value>
                               <Style>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -619,6 +635,7 @@
                             <TextRun>
                               <Value>=Fields!Unidad.Value</Value>
                               <Style>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -633,7 +650,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Khaki</BackgroundColor>
+                        <BackgroundColor>#fde9d9</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -653,6 +670,7 @@
                             <TextRun>
                               <Value>=Fields!PrecioUnitario.Value</Value>
                               <Style>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <Format>'$' #,0.00;('$' #,0.00)</Format>
                               </Style>
@@ -668,7 +686,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Khaki</BackgroundColor>
+                        <BackgroundColor>#fde9d9</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -689,6 +707,7 @@
                             <TextRun>
                               <Value>=Fields!Total.Value</Value>
                               <Style>
+                                <FontFamily>Nirmala UI Semilight</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <Format>'$' #,0.00;('$' #,0.00)</Format>
                               </Style>
@@ -704,7 +723,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Khaki</BackgroundColor>
+                        <BackgroundColor>#fde9d9</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -747,7 +766,7 @@
         <Top>0.14111cm</Top>
         <Left>0.47307cm</Left>
         <Height>2.11984cm</Height>
-        <Width>18.96913cm</Width>
+        <Width>18.89657cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -764,6 +783,7 @@
                 <Value>="Esperando que los productos y servicios sean de su interés nos encontramos a su entera disposición para resolver cualquier duda o pregunta en particular.&lt;p&gt;Atentamente&lt;/p&gt;"</Value>
                 <MarkupType>HTML</MarkupType>
                 <Style>
+                  <FontFamily>Nirmala UI Semilight</FontFamily>
                   <FontSize>8pt</FontSize>
                 </Style>
               </TextRun>
@@ -772,7 +792,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>2.39242cm</Top>
+        <Top>2.43734cm</Top>
         <Left>0.4731cm</Left>
         <Height>0.6cm</Height>
         <Width>18.94413cm</Width>
@@ -787,8 +807,70 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Image Name="imgFirma">
+        <Source>Embedded</Source>
+        <Value>firmaarmando</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>3.03734cm</Top>
+        <Left>0.4731cm</Left>
+        <Height>1.61093cm</Height>
+        <Width>2.75273cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox26">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Armando Bear Cuevas</Value>
+                <Style>
+                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Gerente General</Value>
+                <Style>
+                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox26</rd:DefaultName>
+        <Top>4.68548cm</Top>
+        <Left>0.4731cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.74354cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>2.99242cm</Height>
+    <Height>5.28548cm</Height>
     <Style />
   </Body>
   <Width>19.52625cm</Width>
@@ -946,7 +1028,7 @@
             <Border>
               <Style>Solid</Style>
             </Border>
-            <BackgroundColor>PaleTurquoise</BackgroundColor>
+            <BackgroundColor>#b7dee8</BackgroundColor>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -1014,7 +1096,7 @@
             <Border>
               <Style>Solid</Style>
             </Border>
-            <BackgroundColor>PaleTurquoise</BackgroundColor>
+            <BackgroundColor>#b7dee8</BackgroundColor>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -1081,7 +1163,7 @@
             <Border>
               <Style>Solid</Style>
             </Border>
-            <BackgroundColor>PaleTurquoise</BackgroundColor>
+            <BackgroundColor>#b7dee8</BackgroundColor>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -1148,7 +1230,7 @@
             <Border>
               <Style>Solid</Style>
             </Border>
-            <BackgroundColor>PaleTurquoise</BackgroundColor>
+            <BackgroundColor>#b7dee8</BackgroundColor>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -1215,7 +1297,7 @@
             <Border>
               <Style>Solid</Style>
             </Border>
-            <BackgroundColor>PaleTurquoise</BackgroundColor>
+            <BackgroundColor>#b7dee8</BackgroundColor>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -1262,7 +1344,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.96333cm</Height>
+      <Height>3.12209cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1273,6 +1355,7 @@
                 <TextRun>
                   <Value>="Precios de lista en " &amp; First(Fields!PreciosLista.Value, "CotizacionImprimir")</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1281,7 +1364,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox30</rd:DefaultName>
-          <Top>0.22312cm</Top>
+          <Top>0.54062cm</Top>
           <Left>0.4731cm</Left>
           <Height>0.6cm</Height>
           <Width>5.96604cm</Width>
@@ -1304,6 +1387,7 @@
                 <TextRun>
                   <Value>Precios no incluyen IVA</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1312,7 +1396,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox31</rd:DefaultName>
-          <Top>0.92895cm</Top>
+          <Top>1.24645cm</Top>
           <Left>0.44811cm</Left>
           <Height>0.6cm</Height>
           <Width>5.96604cm</Width>
@@ -1336,6 +1420,7 @@
                 <TextRun>
                   <Value>="Método de Pago: " &amp; First(Fields!MetodoPago.Value, "CotizacionImprimir")</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1344,7 +1429,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox31</rd:DefaultName>
-          <Top>0.92895cm</Top>
+          <Top>1.24645cm</Top>
           <Left>7.09968cm</Left>
           <Height>0.6cm</Height>
           <Width>5.80082cm</Width>
@@ -1368,6 +1453,7 @@
                 <TextRun>
                   <Value>="Forma de Pago: " &amp; First(Fields!FormaPago.Value, "CotizacionImprimir")</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1376,7 +1462,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox30</rd:DefaultName>
-          <Top>0.22311cm</Top>
+          <Top>0.54061cm</Top>
           <Left>7.09969cm</Left>
           <Height>0.6cm</Height>
           <Width>5.80082cm</Width>
@@ -1400,6 +1486,7 @@
                 <TextRun>
                   <Value>Vigencia: Cotización válida por 1 mes</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1408,7 +1495,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox31</rd:DefaultName>
-          <Top>1.63479cm</Top>
+          <Top>1.95229cm</Top>
           <Left>7.09968cm</Left>
           <Height>0.6cm</Height>
           <Width>5.80082cm</Width>
@@ -1432,6 +1519,7 @@
                 <TextRun>
                   <Value>="Tiempo de Entrega: " &amp; First(Fields!TiempoEntrega.Value, "CotizacionImprimir")</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1440,7 +1528,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox31</rd:DefaultName>
-          <Top>0.81167cm</Top>
+          <Top>1.12917cm</Top>
           <Left>13.36239cm</Left>
           <Height>0.6cm</Height>
           <Width>6.05484cm</Width>
@@ -1464,6 +1552,7 @@
                 <TextRun>
                   <Value>="Referencia: " &amp; First(Fields!Referencia.Value, "CotizacionImprimir")</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1472,7 +1561,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox30</rd:DefaultName>
-          <Top>0.10583cm</Top>
+          <Top>0.42333cm</Top>
           <Left>13.3624cm</Left>
           <Height>0.6cm</Height>
           <Width>6.05484cm</Width>
@@ -1496,6 +1585,7 @@
                 <TextRun>
                   <Value>="Lugar de Entrega: " &amp; First(Fields!LugarEntrega.Value, "CotizacionImprimir")</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1504,7 +1594,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox31</rd:DefaultName>
-          <Top>1.5175cm</Top>
+          <Top>1.835cm</Top>
           <Left>13.36239cm</Left>
           <Height>0.71729cm</Height>
           <Width>6.05485cm</Width>
@@ -1538,7 +1628,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>2.41118cm</Top>
+          <Top>2.72868cm</Top>
           <Left>9.545cm</Left>
           <Height>0.39341cm</Height>
           <Width>2.5cm</Width>
@@ -1555,6 +1645,88 @@
             <WritingMode>Horizontal</WritingMode>
           </Style>
         </Textbox>
+        <Textbox Name="Textbox38">
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Precios sujetos a cambio sin previo aviso</Value>
+                  <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox31</rd:DefaultName>
+          <Top>2.02284cm</Top>
+          <Left>0.4731cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.96604cm</Width>
+          <ZIndex>9</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+            <WritingMode>Horizontal</WritingMode>
+          </Style>
+        </Textbox>
+        <Rectangle Name="Rectangle1">
+          <ReportItems>
+            <Textbox Name="Textbox25">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Condiciones Comerciales</Value>
+                      <Style>
+                        <FontFamily>Nirmala UI Semilight</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox25</rd:DefaultName>
+              <Left>0.02795cm</Left>
+              <Height>0.43479cm</Height>
+              <Width>18.92153cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <BackgroundColor>#b7dee8</BackgroundColor>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <KeepTogether>true</KeepTogether>
+          <Left>0.42016cm</Left>
+          <Height>2.92925cm</Height>
+          <Width>19.10609cm</Width>
+          <ZIndex>10</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Rectangle>
       </ReportItems>
       <Style>
         <Border>
@@ -1770,6 +1942,14 @@ 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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="firmaarmando">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
   <Language>es-MX</Language>

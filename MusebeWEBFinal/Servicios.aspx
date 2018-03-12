@@ -11,11 +11,9 @@
 	<asp:UpdatePanel ID="UpdatePanel1" runat="server">
 
 		<ContentTemplate>
-			<div class="jumbotron" runat="server" id="encabezadomenu">
-			</div>
 			<asp:LinkButton ID="lnkEditar" runat="server" OnClick="lnkEditar_Click">Editar</asp:LinkButton>
 			<div class="container">
-				<div class="jumbotron" runat="server" id="anuncios">
+				<div class="jumbotron" runat="server" id="anuncios" style="height:auto">
 				</div>
 			</div>
 			<dx:ASPxPopupControl ID="popupServicios" runat="server" ClientInstanceName="popupServicios" CloseOnEscape="True" Maximized="True" Modal="True" Width="100%" HeaderText="Catalogo de Servicios" Theme="Aqua">
@@ -107,6 +105,18 @@
 						<asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" OnClick="btnGuardar_Click" Text="Guardar" />
 						<dx:ASPxHtmlEditor ID="htmlServicios" runat="server" Height="500px" Theme="Aqua" Width="100%">
 						</dx:ASPxHtmlEditor>
+					</dx:PopupControlContentControl>
+				</ContentCollection>
+			</dx:ASPxPopupControl>
+			<dx:ASPxPopupControl ID="popupServiciosCotizacion" runat="server" ClientInstanceName="popupServiciosCotizacion" CloseOnEscape="True" HeaderText="Solicitud de Cotización" Modal="True" PopupElementID="popupServiciosCotizacion" ShowMaximizeButton="True" ShowPageScrollbarWhenModal="True" ShowShadow="False" Theme="Glass">
+				<ContentCollection>
+					<dx:PopupControlContentControl runat="server">
+						<dx:ASPxComboBox ID="cboServicios" runat="server" Caption="Seleccione el Servicio" DataSourceID="servicioslistado" TextField="Servicio" ValueField="Id">
+						</dx:ASPxComboBox>
+						<asp:SqlDataSource ID="servicioslistado" runat="server" ConnectionString="<%$ ConnectionStrings:DB_9B18B8_musebeConnectionString %>" SelectCommand="Servicios_Consultar" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+						<dx:ASPxTextBox ID="Personas" runat="server" Caption="Para cuantas Personas" HorizontalAlign="Center" Width="170px">
+						</dx:ASPxTextBox>
+						<br />
 					</dx:PopupControlContentControl>
 				</ContentCollection>
 			</dx:ASPxPopupControl>
@@ -244,7 +254,14 @@
 				x.className = "topnav";
 			}
 		}
-
+		function CallServerMethod(dato) {
+			var s = dato.value;
+			console.log(s);
+			window.location.href = "servicios.aspx?code=" + s;
+			
+			//alert(s)
+			//testDataVal(s);
+		}
 	</script>
 
 

@@ -34,6 +34,10 @@ namespace MusebeWEBFinal
 			{
 				posicionamientoymostrado(Page.Request.QueryString["detalle"]);
 			}
+			if (Page.Request.QueryString["code"] != null && Page.Request.QueryString["code"] != "")
+			{
+				FormularioCotizacion();
+			}
 		}
 		public string Rol()
 		{
@@ -54,6 +58,11 @@ namespace MusebeWEBFinal
 			return Resultado.Rows[0][0].ToString();
 		}
 
+		void FormularioCotizacion()
+		{
+
+		}
+
 		public void posicionamientoymostrado(string servicio)
 		{
 			Response.Redirect("Servicios.aspx#" + servicio);
@@ -69,10 +78,10 @@ namespace MusebeWEBFinal
 			{
 				submenureferenciassubmenu = "|<a href ='#" + submenu.Rows[i][1].ToString() + "'>" + submenu.Rows[i][1].ToString() + "</a>|";
 				acumulador = acumulador + submenureferenciassubmenu;
-				cadenahtml.AppendLine("<div class='panel panel-default' Id='" + submenu.Rows[i][1].ToString() + "'> <div class='panel-heading'>" + submenu.Rows[i][1].ToString() + "</div><div class='panel-body' style = 'height:500;min-height: 10; max-height: 500;'><img src='Imagenes/Servicios/" + submenu.Rows[i][3].ToString() + "' alt ='" + submenu.Rows[i][1].ToString() + "' height='100%' width='100%'></div><div class='panel - footer'>" + submenu.Rows[i][2].ToString() + "<p><a class='btn btn-primary' role='button' data-toggle='collapse' href='#collapse" + submenu.Rows[i][0].ToString() + "' aria-expanded='false' aria-controls='collapseExample'>Mas Detalle</a><button type='button' class='btn btn-primary' data-toggle='modal' data-target='.bs-example-modal-lg" + submenu.Rows[i][0].ToString() + "' onclick='window.open(\"detail.aspx?Id=" + submenu.Rows[i][0].ToString() + "\")'; >Galeria</button></p><div class='collapse' id='collapse" + submenu.Rows[i][0].ToString() + "'><div class='well'>" + submenu.Rows[i][5].ToString() + "</div></div></div></div>");
+				cadenahtml.AppendLine("<div class='panel panel-default' Id='" + submenu.Rows[i][1].ToString() + "'> <div class='panel-heading'>" + submenu.Rows[i][1].ToString() + "</div><div class='panel-body' style = 'height:500;min-height: 10; max-height: 500;'><img src='Imagenes/Servicios/" + submenu.Rows[i][3].ToString() + "' alt ='" + submenu.Rows[i][1].ToString() + "' height='100%' width='100%'></div><div class='panel - footer'>" + submenu.Rows[i][2].ToString() + "<p><a class='btn btn-primary' role='button' data-toggle='collapse' href='#collapse" + submenu.Rows[i][0].ToString() + "' aria-expanded='false' aria-controls='collapseExample'>Mas Detalle</a><button type='button' class='btn btn-primary' data-toggle='modal' data-target='.bs-example-modal-lg" + submenu.Rows[i][0].ToString() + "' onclick='window.open(\"detail.aspx?Id=" + submenu.Rows[i][0].ToString() + "\")'; >Galeria</button><button type='button' class='btn btn-success' data-toggle='modal' data-target='.bs-example-modal-lg" + submenu.Rows[i][0].ToString() + "' onclick='popupServiciosCotizacion.Show()'>Solicitar Cotización</button></p><div class='collapse' id='collapse" + submenu.Rows[i][0].ToString() + "'><div class='well'>" + submenu.Rows[i][5].ToString() + "</div></div></div></div>");
 			}
-			encabezadomenu.InnerHtml = acumulador;
-			anuncios.InnerHtml = cadenahtml + anuncios.InnerHtml;
+			//encabezadomenu.InnerHtml = acumulador;
+			anuncios.InnerHtml = acumulador+ cadenahtml + anuncios.InnerHtml;
 		}
 
 
