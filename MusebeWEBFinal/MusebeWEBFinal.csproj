@@ -82,6 +82,9 @@
     <Content Include="bin\AjaxControlToolkit.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="bin\Microsoft.ReportViewer.WebForms.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Compras.aspx" />
     <Content Include="Configuracion.aspx" />
     <Content Include="Contacto.aspx" />
@@ -922,9 +925,6 @@
     <Content Include="ProductosDatos.xsc">
       <DependentUpon>ProductosDatos.xsd</DependentUpon>
     </Content>
-    <Content Include="CotizacionImprimir.xsc">
-      <DependentUpon>CotizacionImprimir.xsd</DependentUpon>
-    </Content>
     <Content Include="ComprasDatos.xsc">
       <DependentUpon>ComprasDatos.xsd</DependentUpon>
     </Content>
@@ -936,6 +936,13 @@
     <Content Include="ComprasDatos.xss">
       <DependentUpon>ComprasDatos.xsd</DependentUpon>
     </Content>
+    <Content Include="MaestraWeb.Master" />
+    <Content Include="DB_9B18B8_musebeDataSet.xsc">
+      <DependentUpon>DB_9B18B8_musebeDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="CotizacionImprimir.xsc">
+      <DependentUpon>CotizacionImprimir.xsd</DependentUpon>
+    </Content>
     <None Include="CotizacionImprimir.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CotizacionImprimir.Designer.cs</LastGenOutput>
@@ -943,10 +950,6 @@
     </None>
     <Content Include="CotizacionImprimir.xss">
       <DependentUpon>CotizacionImprimir.xsd</DependentUpon>
-    </Content>
-    <Content Include="MaestraWeb.Master" />
-    <Content Include="DB_9B18B8_musebeDataSet.xsc">
-      <DependentUpon>DB_9B18B8_musebeDataSet.xsd</DependentUpon>
     </Content>
     <None Include="DB_9B18B8_musebeDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
@@ -965,6 +968,7 @@
       <DependentUpon>ProductosDatos.xsd</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\Musebe.pubxml" />
+    <None Include="Properties\PublishProfiles\musebepublish.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
     <None Include="Properties\PublishProfiles\Sistema.pubxml" />
     <None Include="Web.Debug.config">

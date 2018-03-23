@@ -7,11 +7,11 @@
 <head runat="server">
 	<title>Multiservicios BEAR</title>
 	<link rel="icon" type="image/png" href="/Imagenes/Logo/logo.jpg" />
-	<link rel="stylesheet" href="Scripts/bootstrap.min.css">
-	<link rel="stylesheet" href="dist/css/bootstrapValidator.css" />
-	<script type="text/javascript" src="Scripts/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
-	<script type="text/javascript" src="dist/js/bootstrapValidator.js"></script>
+	<link rel="stylesheet" href="scripts/bootstrap.min.css">
+	<link rel="stylesheet" href="scripts/bootstrapValidator.css" />
+	<script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src="scripts/bootstrapValidator.js"></script>
 	<asp:ContentPlaceHolder ID="head" runat="server">
 	</asp:ContentPlaceHolder>
 </head>

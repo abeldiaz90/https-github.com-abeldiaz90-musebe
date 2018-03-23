@@ -9,7 +9,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CotizacionImprimirTableAdapter" GeneratorDataComponentClassName="CotizacionImprimirTableAdapter" Name="CotizacionImprimir" UserDataComponentName="CotizacionImprimirTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DB_9B18B8_musebeConnectionString (Web.config)" DbObjectName="DB_9B18B8_musebe.dbo.CotizacionImprimir" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DB_9B18B8_musebeConnectionString (Web.config)" DbObjectName="DB_9B18B8_musebe.dbo.CotizacionImprimir" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.CotizacionImprimir</CommandText>
@@ -22,6 +22,7 @@
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="IdPartida" DataSetColumn="IdPartida" />
               <Mapping SourceColumn="id" DataSetColumn="id" />
               <Mapping SourceColumn="IdCotizacion" DataSetColumn="IdCotizacion" />
               <Mapping SourceColumn="FolioCotizacion" DataSetColumn="FolioCotizacion" />
@@ -33,7 +34,6 @@
               <Mapping SourceColumn="Grupo" DataSetColumn="Grupo" />
               <Mapping SourceColumn="Marca" DataSetColumn="Marca" />
               <Mapping SourceColumn="Imagen" DataSetColumn="Imagen" />
-              <Mapping SourceColumn="IdPartida" DataSetColumn="IdPartida" />
               <Mapping SourceColumn="clave" DataSetColumn="clave" />
               <Mapping SourceColumn="Unidad" DataSetColumn="Unidad" />
               <Mapping SourceColumn="Total" DataSetColumn="Total" />
@@ -47,8 +47,11 @@
               <Mapping SourceColumn="TiempoEntrega" DataSetColumn="TiempoEntrega" />
               <Mapping SourceColumn="Referencia" DataSetColumn="Referencia" />
               <Mapping SourceColumn="LugarEntrega" DataSetColumn="LugarEntrega" />
-              <Mapping SourceColumn="FormaPago1" DataSetColumn="FormaPago1" />
               <Mapping SourceColumn="MetodoPago" DataSetColumn="MetodoPago" />
+              <Mapping SourceColumn="PrecioUnitarioConDescuento" DataSetColumn="PrecioUnitarioConDescuento" />
+              <Mapping SourceColumn="DescuentoEfectivoUnitario" DataSetColumn="DescuentoEfectivoUnitario" />
+              <Mapping SourceColumn="DescuentoTotal" DataSetColumn="DescuentoTotal" />
+              <Mapping SourceColumn="TotalConDescuento" DataSetColumn="TotalConDescuento" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -63,6 +66,7 @@
         <xs:element name="CotizacionImprimir" msprop:Generator_TableClassName="CotizacionImprimirDataTable" msprop:Generator_TableVarName="tableCotizacionImprimir" msprop:Generator_TablePropName="_CotizacionImprimir" msprop:Generator_RowDeletingName="CotizacionImprimirRowDeleting" msprop:Generator_RowChangingName="CotizacionImprimirRowChanging" msprop:Generator_RowEvHandlerName="CotizacionImprimirRowChangeEventHandler" msprop:Generator_RowDeletedName="CotizacionImprimirRowDeleted" msprop:Generator_UserTableName="CotizacionImprimir" msprop:Generator_RowChangedName="CotizacionImprimirRowChanged" msprop:Generator_RowEvArgName="CotizacionImprimirRowChangeEvent" msprop:Generator_RowClassName="CotizacionImprimirRow">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="IdPartida" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnIdPartida" msprop:Generator_ColumnPropNameInRow="IdPartida" msprop:Generator_ColumnPropNameInTable="IdPartidaColumn" msprop:Generator_UserColumnName="IdPartida" type="xs:long" minOccurs="0" />
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="IdCotizacion" msprop:Generator_ColumnVarNameInTable="columnIdCotizacion" msprop:Generator_ColumnPropNameInRow="IdCotizacion" msprop:Generator_ColumnPropNameInTable="IdCotizacionColumn" msprop:Generator_UserColumnName="IdCotizacion" type="xs:int" minOccurs="0" />
               <xs:element name="FolioCotizacion" msprop:Generator_ColumnVarNameInTable="columnFolioCotizacion" msprop:Generator_ColumnPropNameInRow="FolioCotizacion" msprop:Generator_ColumnPropNameInTable="FolioCotizacionColumn" msprop:Generator_UserColumnName="FolioCotizacion" minOccurs="0">
@@ -104,7 +108,6 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Imagen" msprop:Generator_ColumnVarNameInTable="columnImagen" msprop:Generator_ColumnPropNameInRow="Imagen" msprop:Generator_ColumnPropNameInTable="ImagenColumn" msprop:Generator_UserColumnName="Imagen" type="xs:base64Binary" minOccurs="0" />
-              <xs:element name="IdPartida" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnIdPartida" msprop:Generator_ColumnPropNameInRow="IdPartida" msprop:Generator_ColumnPropNameInTable="IdPartidaColumn" msprop:Generator_UserColumnName="IdPartida" type="xs:long" minOccurs="0" />
               <xs:element name="clave" msprop:Generator_ColumnVarNameInTable="columnclave" msprop:Generator_ColumnPropNameInRow="clave" msprop:Generator_ColumnPropNameInTable="claveColumn" msprop:Generator_UserColumnName="clave" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -178,13 +181,6 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="FormaPago1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFormaPago1" msprop:Generator_ColumnPropNameInRow="FormaPago1" msprop:Generator_ColumnPropNameInTable="FormaPago1Column" msprop:Generator_UserColumnName="FormaPago1" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="22" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="MetodoPago" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMetodoPago" msprop:Generator_ColumnPropNameInRow="MetodoPago" msprop:Generator_ColumnPropNameInTable="MetodoPagoColumn" msprop:Generator_UserColumnName="MetodoPago" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -192,6 +188,10 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="PrecioUnitarioConDescuento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPrecioUnitarioConDescuento" msprop:Generator_ColumnPropNameInRow="PrecioUnitarioConDescuento" msprop:Generator_ColumnPropNameInTable="PrecioUnitarioConDescuentoColumn" msprop:Generator_UserColumnName="PrecioUnitarioConDescuento" type="xs:float" minOccurs="0" />
+              <xs:element name="DescuentoEfectivoUnitario" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescuentoEfectivoUnitario" msprop:Generator_ColumnPropNameInRow="DescuentoEfectivoUnitario" msprop:Generator_ColumnPropNameInTable="DescuentoEfectivoUnitarioColumn" msprop:Generator_UserColumnName="DescuentoEfectivoUnitario" type="xs:float" minOccurs="0" />
+              <xs:element name="DescuentoTotal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescuentoTotal" msprop:Generator_ColumnPropNameInRow="DescuentoTotal" msprop:Generator_ColumnPropNameInTable="DescuentoTotalColumn" msprop:Generator_UserColumnName="DescuentoTotal" type="xs:float" minOccurs="0" />
+              <xs:element name="TotalConDescuento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalConDescuento" msprop:Generator_ColumnPropNameInRow="TotalConDescuento" msprop:Generator_ColumnPropNameInTable="TotalConDescuentoColumn" msprop:Generator_UserColumnName="TotalConDescuento" type="xs:float" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

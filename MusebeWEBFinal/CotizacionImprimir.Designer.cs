@@ -279,6 +279,8 @@ namespace MusebeWEBFinal {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class CotizacionImprimirDataTable : global::System.Data.TypedTableBase<CotizacionImprimirRow> {
             
+            private global::System.Data.DataColumn columnIdPartida;
+            
             private global::System.Data.DataColumn columnid;
             
             private global::System.Data.DataColumn columnIdCotizacion;
@@ -300,8 +302,6 @@ namespace MusebeWEBFinal {
             private global::System.Data.DataColumn columnMarca;
             
             private global::System.Data.DataColumn columnImagen;
-            
-            private global::System.Data.DataColumn columnIdPartida;
             
             private global::System.Data.DataColumn columnclave;
             
@@ -329,9 +329,15 @@ namespace MusebeWEBFinal {
             
             private global::System.Data.DataColumn columnLugarEntrega;
             
-            private global::System.Data.DataColumn columnFormaPago1;
-            
             private global::System.Data.DataColumn columnMetodoPago;
+            
+            private global::System.Data.DataColumn columnPrecioUnitarioConDescuento;
+            
+            private global::System.Data.DataColumn columnDescuentoEfectivoUnitario;
+            
+            private global::System.Data.DataColumn columnDescuentoTotal;
+            
+            private global::System.Data.DataColumn columnTotalConDescuento;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -364,6 +370,14 @@ namespace MusebeWEBFinal {
             protected CotizacionImprimirDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdPartidaColumn {
+                get {
+                    return this.columnIdPartida;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -451,14 +465,6 @@ namespace MusebeWEBFinal {
             public global::System.Data.DataColumn ImagenColumn {
                 get {
                     return this.columnImagen;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IdPartidaColumn {
-                get {
-                    return this.columnIdPartida;
                 }
             }
             
@@ -568,17 +574,41 @@ namespace MusebeWEBFinal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FormaPago1Column {
+            public global::System.Data.DataColumn MetodoPagoColumn {
                 get {
-                    return this.columnFormaPago1;
+                    return this.columnMetodoPago;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MetodoPagoColumn {
+            public global::System.Data.DataColumn PrecioUnitarioConDescuentoColumn {
                 get {
-                    return this.columnMetodoPago;
+                    return this.columnPrecioUnitarioConDescuento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescuentoEfectivoUnitarioColumn {
+                get {
+                    return this.columnDescuentoEfectivoUnitario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescuentoTotalColumn {
+                get {
+                    return this.columnDescuentoTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalConDescuentoColumn {
+                get {
+                    return this.columnTotalConDescuento;
                 }
             }
             
@@ -620,6 +650,7 @@ namespace MusebeWEBFinal {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CotizacionImprimirRow AddCotizacionImprimirRow(
+                        long IdPartida, 
                         int IdCotizacion, 
                         string FolioCotizacion, 
                         float Cantidad, 
@@ -630,7 +661,6 @@ namespace MusebeWEBFinal {
                         string Grupo, 
                         string Marca, 
                         byte[] Imagen, 
-                        long IdPartida, 
                         string clave, 
                         string Unidad, 
                         float Total, 
@@ -644,10 +674,14 @@ namespace MusebeWEBFinal {
                         string TiempoEntrega, 
                         string Referencia, 
                         string LugarEntrega, 
-                        string FormaPago1, 
-                        string MetodoPago) {
+                        string MetodoPago, 
+                        float PrecioUnitarioConDescuento, 
+                        float DescuentoEfectivoUnitario, 
+                        float DescuentoTotal, 
+                        float TotalConDescuento) {
                 CotizacionImprimirRow rowCotizacionImprimirRow = ((CotizacionImprimirRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        IdPartida,
                         null,
                         IdCotizacion,
                         FolioCotizacion,
@@ -659,7 +693,6 @@ namespace MusebeWEBFinal {
                         Grupo,
                         Marca,
                         Imagen,
-                        IdPartida,
                         clave,
                         Unidad,
                         Total,
@@ -673,8 +706,11 @@ namespace MusebeWEBFinal {
                         TiempoEntrega,
                         Referencia,
                         LugarEntrega,
-                        FormaPago1,
-                        MetodoPago};
+                        MetodoPago,
+                        PrecioUnitarioConDescuento,
+                        DescuentoEfectivoUnitario,
+                        DescuentoTotal,
+                        TotalConDescuento};
                 rowCotizacionImprimirRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCotizacionImprimirRow);
                 return rowCotizacionImprimirRow;
@@ -704,6 +740,7 @@ namespace MusebeWEBFinal {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnIdPartida = base.Columns["IdPartida"];
                 this.columnid = base.Columns["id"];
                 this.columnIdCotizacion = base.Columns["IdCotizacion"];
                 this.columnFolioCotizacion = base.Columns["FolioCotizacion"];
@@ -715,7 +752,6 @@ namespace MusebeWEBFinal {
                 this.columnGrupo = base.Columns["Grupo"];
                 this.columnMarca = base.Columns["Marca"];
                 this.columnImagen = base.Columns["Imagen"];
-                this.columnIdPartida = base.Columns["IdPartida"];
                 this.columnclave = base.Columns["clave"];
                 this.columnUnidad = base.Columns["Unidad"];
                 this.columnTotal = base.Columns["Total"];
@@ -729,13 +765,18 @@ namespace MusebeWEBFinal {
                 this.columnTiempoEntrega = base.Columns["TiempoEntrega"];
                 this.columnReferencia = base.Columns["Referencia"];
                 this.columnLugarEntrega = base.Columns["LugarEntrega"];
-                this.columnFormaPago1 = base.Columns["FormaPago1"];
                 this.columnMetodoPago = base.Columns["MetodoPago"];
+                this.columnPrecioUnitarioConDescuento = base.Columns["PrecioUnitarioConDescuento"];
+                this.columnDescuentoEfectivoUnitario = base.Columns["DescuentoEfectivoUnitario"];
+                this.columnDescuentoTotal = base.Columns["DescuentoTotal"];
+                this.columnTotalConDescuento = base.Columns["TotalConDescuento"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnIdPartida = new global::System.Data.DataColumn("IdPartida", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdPartida);
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
                 this.columnIdCotizacion = new global::System.Data.DataColumn("IdCotizacion", typeof(int), null, global::System.Data.MappingType.Element);
@@ -758,8 +799,6 @@ namespace MusebeWEBFinal {
                 base.Columns.Add(this.columnMarca);
                 this.columnImagen = new global::System.Data.DataColumn("Imagen", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnImagen);
-                this.columnIdPartida = new global::System.Data.DataColumn("IdPartida", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIdPartida);
                 this.columnclave = new global::System.Data.DataColumn("clave", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnclave);
                 this.columnUnidad = new global::System.Data.DataColumn("Unidad", typeof(string), null, global::System.Data.MappingType.Element);
@@ -786,12 +825,19 @@ namespace MusebeWEBFinal {
                 base.Columns.Add(this.columnReferencia);
                 this.columnLugarEntrega = new global::System.Data.DataColumn("LugarEntrega", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLugarEntrega);
-                this.columnFormaPago1 = new global::System.Data.DataColumn("FormaPago1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFormaPago1);
                 this.columnMetodoPago = new global::System.Data.DataColumn("MetodoPago", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMetodoPago);
+                this.columnPrecioUnitarioConDescuento = new global::System.Data.DataColumn("PrecioUnitarioConDescuento", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrecioUnitarioConDescuento);
+                this.columnDescuentoEfectivoUnitario = new global::System.Data.DataColumn("DescuentoEfectivoUnitario", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescuentoEfectivoUnitario);
+                this.columnDescuentoTotal = new global::System.Data.DataColumn("DescuentoTotal", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescuentoTotal);
+                this.columnTotalConDescuento = new global::System.Data.DataColumn("TotalConDescuento", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalConDescuento);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
+                this.columnIdPartida.ReadOnly = true;
                 this.columnid.AutoIncrement = true;
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
@@ -802,7 +848,6 @@ namespace MusebeWEBFinal {
                 this.columnDescripcion.MaxLength = 2147483647;
                 this.columnGrupo.MaxLength = 2147483647;
                 this.columnMarca.MaxLength = 50;
-                this.columnIdPartida.ReadOnly = true;
                 this.columnclave.MaxLength = 2147483647;
                 this.columnUnidad.MaxLength = 2147483647;
                 this.columnTotal.ReadOnly = true;
@@ -817,10 +862,12 @@ namespace MusebeWEBFinal {
                 this.columnTiempoEntrega.MaxLength = 2147483647;
                 this.columnReferencia.MaxLength = 2147483647;
                 this.columnLugarEntrega.MaxLength = 2147483647;
-                this.columnFormaPago1.ReadOnly = true;
-                this.columnFormaPago1.MaxLength = 22;
                 this.columnMetodoPago.ReadOnly = true;
                 this.columnMetodoPago.MaxLength = 22;
+                this.columnPrecioUnitarioConDescuento.ReadOnly = true;
+                this.columnDescuentoEfectivoUnitario.ReadOnly = true;
+                this.columnDescuentoTotal.ReadOnly = true;
+                this.columnTotalConDescuento.ReadOnly = true;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_CotizacionImprimir");
                 this.ExtendedProperties.Add("Generator_UserTableName", "CotizacionImprimir");
             }
@@ -961,6 +1008,22 @@ namespace MusebeWEBFinal {
             internal CotizacionImprimirRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableCotizacionImprimir = ((CotizacionImprimirDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long IdPartida {
+                get {
+                    try {
+                        return ((long)(this[this.tableCotizacionImprimir.IdPartidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IdPartida\' in table \'CotizacionImprimir\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCotizacionImprimir.IdPartidaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1131,22 +1194,6 @@ namespace MusebeWEBFinal {
                 }
                 set {
                     this[this.tableCotizacionImprimir.ImagenColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long IdPartida {
-                get {
-                    try {
-                        return ((long)(this[this.tableCotizacionImprimir.IdPartidaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'IdPartida\' in table \'CotizacionImprimir\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCotizacionImprimir.IdPartidaColumn] = value;
                 }
             }
             
@@ -1360,22 +1407,6 @@ namespace MusebeWEBFinal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string FormaPago1 {
-                get {
-                    try {
-                        return ((string)(this[this.tableCotizacionImprimir.FormaPago1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FormaPago1\' in table \'CotizacionImprimir\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCotizacionImprimir.FormaPago1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MetodoPago {
                 get {
                     try {
@@ -1388,6 +1419,85 @@ namespace MusebeWEBFinal {
                 set {
                     this[this.tableCotizacionImprimir.MetodoPagoColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float PrecioUnitarioConDescuento {
+                get {
+                    try {
+                        return ((float)(this[this.tableCotizacionImprimir.PrecioUnitarioConDescuentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PrecioUnitarioConDescuento\' in table \'CotizacionImprimir\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCotizacionImprimir.PrecioUnitarioConDescuentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float DescuentoEfectivoUnitario {
+                get {
+                    try {
+                        return ((float)(this[this.tableCotizacionImprimir.DescuentoEfectivoUnitarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescuentoEfectivoUnitario\' in table \'CotizacionImprimir\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCotizacionImprimir.DescuentoEfectivoUnitarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float DescuentoTotal {
+                get {
+                    try {
+                        return ((float)(this[this.tableCotizacionImprimir.DescuentoTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescuentoTotal\' in table \'CotizacionImprimir\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCotizacionImprimir.DescuentoTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float TotalConDescuento {
+                get {
+                    try {
+                        return ((float)(this[this.tableCotizacionImprimir.TotalConDescuentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalConDescuento\' in table \'CotizacionImprimir\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableCotizacionImprimir.TotalConDescuentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdPartidaNull() {
+                return this.IsNull(this.tableCotizacionImprimir.IdPartidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdPartidaNull() {
+                this[this.tableCotizacionImprimir.IdPartidaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1508,18 +1618,6 @@ namespace MusebeWEBFinal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetImagenNull() {
                 this[this.tableCotizacionImprimir.ImagenColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsIdPartidaNull() {
-                return this.IsNull(this.tableCotizacionImprimir.IdPartidaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetIdPartidaNull() {
-                this[this.tableCotizacionImprimir.IdPartidaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1680,18 +1778,6 @@ namespace MusebeWEBFinal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFormaPago1Null() {
-                return this.IsNull(this.tableCotizacionImprimir.FormaPago1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFormaPago1Null() {
-                this[this.tableCotizacionImprimir.FormaPago1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMetodoPagoNull() {
                 return this.IsNull(this.tableCotizacionImprimir.MetodoPagoColumn);
             }
@@ -1700,6 +1786,54 @@ namespace MusebeWEBFinal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetMetodoPagoNull() {
                 this[this.tableCotizacionImprimir.MetodoPagoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPrecioUnitarioConDescuentoNull() {
+                return this.IsNull(this.tableCotizacionImprimir.PrecioUnitarioConDescuentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPrecioUnitarioConDescuentoNull() {
+                this[this.tableCotizacionImprimir.PrecioUnitarioConDescuentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescuentoEfectivoUnitarioNull() {
+                return this.IsNull(this.tableCotizacionImprimir.DescuentoEfectivoUnitarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescuentoEfectivoUnitarioNull() {
+                this[this.tableCotizacionImprimir.DescuentoEfectivoUnitarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescuentoTotalNull() {
+                return this.IsNull(this.tableCotizacionImprimir.DescuentoTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescuentoTotalNull() {
+                this[this.tableCotizacionImprimir.DescuentoTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTotalConDescuentoNull() {
+                return this.IsNull(this.tableCotizacionImprimir.TotalConDescuentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTotalConDescuentoNull() {
+                this[this.tableCotizacionImprimir.TotalConDescuentoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1862,6 +1996,7 @@ namespace MusebeWEBFinal.CotizacionImprimirTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "CotizacionImprimir";
+            tableMapping.ColumnMappings.Add("IdPartida", "IdPartida");
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("IdCotizacion", "IdCotizacion");
             tableMapping.ColumnMappings.Add("FolioCotizacion", "FolioCotizacion");
@@ -1873,7 +2008,6 @@ namespace MusebeWEBFinal.CotizacionImprimirTableAdapters {
             tableMapping.ColumnMappings.Add("Grupo", "Grupo");
             tableMapping.ColumnMappings.Add("Marca", "Marca");
             tableMapping.ColumnMappings.Add("Imagen", "Imagen");
-            tableMapping.ColumnMappings.Add("IdPartida", "IdPartida");
             tableMapping.ColumnMappings.Add("clave", "clave");
             tableMapping.ColumnMappings.Add("Unidad", "Unidad");
             tableMapping.ColumnMappings.Add("Total", "Total");
@@ -1887,8 +2021,11 @@ namespace MusebeWEBFinal.CotizacionImprimirTableAdapters {
             tableMapping.ColumnMappings.Add("TiempoEntrega", "TiempoEntrega");
             tableMapping.ColumnMappings.Add("Referencia", "Referencia");
             tableMapping.ColumnMappings.Add("LugarEntrega", "LugarEntrega");
-            tableMapping.ColumnMappings.Add("FormaPago1", "FormaPago1");
             tableMapping.ColumnMappings.Add("MetodoPago", "MetodoPago");
+            tableMapping.ColumnMappings.Add("PrecioUnitarioConDescuento", "PrecioUnitarioConDescuento");
+            tableMapping.ColumnMappings.Add("DescuentoEfectivoUnitario", "DescuentoEfectivoUnitario");
+            tableMapping.ColumnMappings.Add("DescuentoTotal", "DescuentoTotal");
+            tableMapping.ColumnMappings.Add("TotalConDescuento", "TotalConDescuento");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

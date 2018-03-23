@@ -313,11 +313,18 @@ namespace MusebeWEBFinal
 				}
 				else
 				{
+					int numerodescuentos = ValidarDescuentos(this.txtFolio.Text);
+
 					this.popupCotizacion.ShowOnPageLoad = true;
 					this.ReportViewer1.ProcessingMode = ProcessingMode.Local;
 					LocalReport report = new LocalReport();
 					report.EnableExternalImages = true;
-					report.ReportPath = "Reportes/Cotizacion.rdlc";
+					if (numerodescuentos >= 1)
+					{
+						report.ReportPath = "Reportes/CotizacionDescuento.rdlc";
+					}
+					else { report.ReportPath = "Reportes/Cotizacion.rdlc"; }
+
 					DataTable ds = Cotizacion();
 					ReportDataSource dsMain = new ReportDataSource();
 					dsMain.Name = "CotizacionImprimir";
@@ -326,7 +333,15 @@ namespace MusebeWEBFinal
 					report.DataSources.Add(dsMain);
 					report.Refresh();
 					this.ReportViewer1.Visible = true;
-					this.ReportViewer1.LocalReport.ReportPath = Server.MapPath("Reportes/Cotizacion.rdlc");
+					if (numerodescuentos >= 1)
+					{
+						this.ReportViewer1.LocalReport.ReportPath = Server.MapPath("Reportes/CotizacionDescuento.rdlc");
+					}
+					else
+					{
+						this.ReportViewer1.LocalReport.ReportPath = Server.MapPath("Reportes/Cotizacion.rdlc");
+					}
+
 					this.ReportViewer1.LocalReport.DataSources.Clear();
 					this.ReportViewer1.LocalReport.DataSources.Add(dsMain);
 					this.ReportViewer1.DocumentMapCollapsed = true;
@@ -336,6 +351,9 @@ namespace MusebeWEBFinal
 			}
 			catch (Exception ex) { ex.ToString(); }
 		}
+
+
+
 
 		internal int ValidaMargenGanancia(String Folio)
 		{
@@ -347,6 +365,25 @@ namespace MusebeWEBFinal
 			com.Connection = con;
 			com.CommandType = CommandType.StoredProcedure;
 			com.CommandText = "Cotizaciones_Validacion_MargenGanancia_Conteo";
+			com.Parameters.AddWithValue("@FolioCotizacion", this.txtFolio.Text);
+			com.CommandTimeout = 0;
+			com.ExecuteNonQuery();
+			SqlDataAdapter Datos = new SqlDataAdapter(com);
+			Datos.Fill(Conteo);
+			con.Close();
+			return Int32.Parse(Conteo.Rows[0][0].ToString());
+		}
+
+		internal int ValidarDescuentos(String Folio)
+		{
+			DataTable Conteo = new DataTable();
+			SqlConnection con = new SqlConnection();
+			con.ConnectionString = ConfigurationManager.ConnectionStrings["Conexion"].ToString();
+			con.Open();
+			SqlCommand com = new SqlCommand();
+			com.Connection = con;
+			com.CommandType = CommandType.StoredProcedure;
+			com.CommandText = "Cotizaciones_Validacion_Descuentos";
 			com.Parameters.AddWithValue("@FolioCotizacion", this.txtFolio.Text);
 			com.CommandTimeout = 0;
 			com.ExecuteNonQuery();
@@ -398,7 +435,6 @@ namespace MusebeWEBFinal
 			}
 			catch (Exception ex) { ex.ToString(); }
 		}
-
 		public void OnConfirm(object sender, EventArgs e)
 		{
 			string confirmValue = "";
@@ -415,7 +451,6 @@ namespace MusebeWEBFinal
 
 			}
 		}
-
 		public void EnviarCorreo()
 		{
 			this.ReportViewer1.ProcessingMode = ProcessingMode.Local;
@@ -530,7 +565,6 @@ namespace MusebeWEBFinal
 				return;
 			}
 		}
-
 		private string FormatMultipleEmailAddresses(string emailAddresses)
 		{
 			var delimiters = new[] { ',', ';' };
@@ -539,7 +573,6 @@ namespace MusebeWEBFinal
 
 			return string.Join(",", addresses);
 		}
-
 		public DataTable ObtenerLogoEmpresa()
 		{
 			DataTable Requsicion = new DataTable();
@@ -562,7 +595,6 @@ namespace MusebeWEBFinal
 			catch (Exception ex) { ex.ToString(); }
 			return Requsicion;
 		}
-
 		protected void btnEnviarCorreo_Click(object sender, EventArgs e)
 		{
 			EnviarCorreo();

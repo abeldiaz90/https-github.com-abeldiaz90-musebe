@@ -67,7 +67,7 @@
                                     <RequiredField IsRequired="True" />
                                 </ValidationSettings>
                             </dx:ASPxComboBox>
-                            <asp:SqlDataSource ID="ClientesDatos" runat="server" ConnectionString="Data Source=SQL5033.SmarterASP.NET;Initial Catalog=DB_9B18B8_musebe;Persist Security Info=True;User ID=DB_9B18B8_musebe_admin;Password=Imperio90" ProviderName="System.Data.SqlClient" SelectCommand="Clientes_Consultar_Activos" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="ClientesDatos" runat="server" ConnectionString="<%$ ConnectionStrings:DB_9B18B8_musebeConnectionString %>" SelectCommand="Clientes_Consultar_Activos" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                         </div>
 
                     </div>
@@ -420,10 +420,10 @@ Confirm();
                 </ContentCollection>
             </dx:ASPxPopupControl>
 
-            <dx:ASPxPopupControl ID="popupCotizacion" runat="server" HeaderText="Cotización" Maximized="True" Theme="Metropolis" Width="100%">
+            <dx:ASPxPopupControl ID="popupCotizacion" runat="server" HeaderText="Cotización" Maximized="True" Theme="Metropolis" Width="700px" RenderIFrameForPopupElements="True" ScrollBars="Auto" ShowMaximizeButton="True" ShowPageScrollbarWhenModal="True">
                 <ContentCollection>
                     <dx:PopupControlContentControl runat="server">
-						<rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="700px" DocumentMapWidth="" SizeToReportContent="True" ZoomMode="PageWidth"></rsweb:ReportViewer>
+						<rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="700px" DocumentMapWidth="" ZoomMode="PageWidth" BorderStyle="Solid" Height="100%"></rsweb:ReportViewer>
                     </dx:PopupControlContentControl>
                 </ContentCollection>
             </dx:ASPxPopupControl>

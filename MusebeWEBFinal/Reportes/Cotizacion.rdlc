@@ -12,10 +12,10 @@
               <Width>1.88145cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.67284cm</Width>
+              <Width>1.35917cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.12844cm</Width>
+              <Width>2.38678cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.79068cm</Width>
@@ -766,22 +766,19 @@
         <Top>0.14111cm</Top>
         <Left>0.47307cm</Left>
         <Height>2.11984cm</Height>
-        <Width>18.89657cm</Width>
+        <Width>18.84124cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox3">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
+      <Textbox Name="Textbox30">
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Esperando que los productos y servicios sean de su interés nos encontramos a su entera disposición para resolver cualquier duda o pregunta en particular.&lt;p&gt;Atentamente&lt;/p&gt;"</Value>
-                <MarkupType>HTML</MarkupType>
+                <Value>="Precios de lista en " &amp; First(Fields!PreciosLista.Value, "CotizacionImprimir")</Value>
                 <Style>
                   <FontFamily>Nirmala UI Semilight</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -791,45 +788,295 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>2.43734cm</Top>
-        <Left>0.4731cm</Left>
+        <rd:DefaultName>Textbox30</rd:DefaultName>
+        <Top>2.83916cm</Top>
+        <Left>0.47308cm</Left>
         <Height>0.6cm</Height>
-        <Width>18.94413cm</Width>
+        <Width>5.64856cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
+          <WritingMode>Horizontal</WritingMode>
         </Style>
       </Textbox>
-      <Image Name="imgFirma">
-        <Source>Embedded</Source>
-        <Value>firmaarmando</Value>
-        <Sizing>FitProportional</Sizing>
-        <Top>3.03734cm</Top>
-        <Left>0.4731cm</Left>
-        <Height>1.61093cm</Height>
-        <Width>2.75273cm</Width>
+      <Textbox Name="Textbox31">
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Precios no incluyen IVA</Value>
+                <Style>
+                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox31</rd:DefaultName>
+        <Top>3.58464cm</Top>
+        <Left>0.47308cm</Left>
+        <Height>0.56036cm</Height>
+        <Width>5.62357cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <WritingMode>Horizontal</WritingMode>
         </Style>
-      </Image>
-      <Textbox Name="Textbox26">
-        <CanGrow>true</CanGrow>
+      </Textbox>
+      <Textbox Name="Textbox32">
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Método de Pago: " &amp; First(Fields!MetodoPago.Value, "CotizacionImprimir")</Value>
+                <Style>
+                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox31</rd:DefaultName>
+        <Top>3.545cm</Top>
+        <Left>6.99675cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.56125cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <WritingMode>Horizontal</WritingMode>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox33">
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Forma de Pago: " &amp; First(Fields!FormaPago.Value, "CotizacionImprimir")</Value>
+                <Style>
+                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox30</rd:DefaultName>
+        <Top>2.83916cm</Top>
+        <Left>6.99676cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.56125cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <WritingMode>Horizontal</WritingMode>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox34">
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Vigencia: Cotización válida por 1 mes</Value>
+                <Style>
+                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox31</rd:DefaultName>
+        <Top>4.25084cm</Top>
+        <Left>6.99675cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.56125cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <WritingMode>Horizontal</WritingMode>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox35">
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Tiempo de Entrega: " &amp; First(Fields!TiempoEntrega.Value, "CotizacionImprimir")</Value>
+                <Style>
+                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox31</rd:DefaultName>
+        <Top>3.58464cm</Top>
+        <Left>13.28446cm</Left>
+        <Height>0.52945cm</Height>
+        <Width>6.05484cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <WritingMode>Horizontal</WritingMode>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox36">
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Referencia: " &amp; First(Fields!Referencia.Value, "CotizacionImprimir")</Value>
+                <Style>
+                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox30</rd:DefaultName>
+        <Top>2.83916cm</Top>
+        <Left>13.28447cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.08517cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <WritingMode>Horizontal</WritingMode>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox37">
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Lugar de Entrega: " &amp; First(Fields!LugarEntrega.Value, "CotizacionImprimir")</Value>
+                <Style>
+                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox31</rd:DefaultName>
+        <Top>4.2552cm</Top>
+        <Left>13.28446cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.08518cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <WritingMode>Horizontal</WritingMode>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox38">
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Precios sujetos a cambio sin previo aviso</Value>
+                <Style>
+                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox31</rd:DefaultName>
+        <Top>4.21992cm</Top>
+        <Left>0.44809cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.64856cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <WritingMode>Horizontal</WritingMode>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox25">
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Armando Bear Cuevas</Value>
+                <Value>Condiciones Comerciales</Value>
                 <Style>
                   <FontFamily>Nirmala UI Semilight</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -837,32 +1084,22 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Gerente General</Value>
-                <Style>
-                  <FontFamily>Nirmala UI Semilight</FontFamily>
-                  <FontSize>8pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox26</rd:DefaultName>
-        <Top>4.68548cm</Top>
-        <Left>0.4731cm</Left>
-        <Height>0.6cm</Height>
-        <Width>3.74354cm</Width>
-        <ZIndex>3</ZIndex>
+        <rd:DefaultName>Textbox25</rd:DefaultName>
+        <Top>2.33151cm</Top>
+        <Left>0.42312cm</Left>
+        <Height>0.50766cm</Height>
+        <Width>18.89119cm</Width>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <BackgroundColor>#b7dee8</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -870,13 +1107,13 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>5.28548cm</Height>
+    <Height>5.10215cm</Height>
     <Style />
   </Body>
-  <Width>19.52625cm</Width>
+  <Width>19.47492cm</Width>
   <Page>
     <PageHeader>
-      <Height>7.15849cm</Height>
+      <Height>6.62932cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -887,8 +1124,8 @@
           <Sizing>FitProportional</Sizing>
           <Top>0.10292in</Top>
           <Left>0.18625in</Left>
-          <Height>0.92131in</Height>
-          <Width>2.48959in</Width>
+          <Height>1.03242in</Height>
+          <Width>1.2921in</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -954,7 +1191,7 @@
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.10292in</Top>
           <Left>5.35292in</Left>
-          <Height>0.51736in</Height>
+          <Height>0.48611in</Height>
           <Width>2.29166in</Width>
           <ZIndex>1</ZIndex>
           <Style>
@@ -975,6 +1212,7 @@
                 <TextRun>
                   <Value>=First(Fields!FolioCotizacion.Value, "CotizacionImprimir")</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1008,6 +1246,7 @@
                 <TextRun>
                   <Value>="FECHA"</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
@@ -1043,6 +1282,7 @@
                 <TextRun>
                   <Value>=First(Fields!Fecha.Value, "CotizacionImprimir")</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                     <Format>dd-MMM-yy</Format>
                   </Style>
@@ -1054,7 +1294,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>2.27254cm</Top>
+          <Top>2.23726cm</Top>
           <Left>16.52037cm</Left>
           <Height>0.47637cm</Height>
           <Width>2.89687cm</Width>
@@ -1077,6 +1317,7 @@
                 <TextRun>
                   <Value>Cotizacion de Suministros</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1111,6 +1352,7 @@
                 <TextRun>
                   <Value>=First(Fields!Cliente.Value, "CotizacionImprimir")</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1144,6 +1386,7 @@
                 <TextRun>
                   <Value>Cliente</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1178,6 +1421,7 @@
                 <TextRun>
                   <Value>=First(Fields!Contacto.Value, "CotizacionImprimir")</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1188,7 +1432,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>3.58026cm</Top>
+          <Top>3.56058cm</Top>
           <Left>8.07659cm</Left>
           <Height>0.51165cm</Height>
           <Width>5.45042cm</Width>
@@ -1211,6 +1455,7 @@
                 <TextRun>
                   <Value>Contacto</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1245,6 +1490,7 @@
                 <TextRun>
                   <Value>=First(Fields!telefono.Value, "CotizacionImprimir")</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1255,7 +1501,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>3.58026cm</Top>
+          <Top>3.56058cm</Top>
           <Left>14.54891cm</Left>
           <Height>0.51165cm</Height>
           <Width>4.86834cm</Width>
@@ -1278,6 +1524,7 @@
                 <TextRun>
                   <Value EvaluationMode="Constant">Telefono de contacto:</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1313,6 +1560,7 @@
                   <Value>="&lt;b&gt;Atn.Estimado: " &amp; First(Fields!Contacto.Value, "CotizacionImprimir") +"&lt;/b&gt;&lt;p&gt;Atendiendo a su amable solicitud presentamos a continuación la lista de precios de los artículos de su interés, en caso de requerir algún artículo no incluído favor de hacernos saber y haremos todo lo posible por suministrarlo. Para nosotros es un placer poner a su servicio nuestra compañía.&lt;/p&gt;"</Value>
                   <MarkupType>HTML</MarkupType>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>9pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1323,8 +1571,8 @@
           <rd:DefaultName>Textbox27</rd:DefaultName>
           <Top>4.36245cm</Top>
           <Left>0.44811cm</Left>
-          <Height>2.69021cm</Height>
-          <Width>18.96913cm</Width>
+          <Height>2.19632cm</Height>
+          <Width>18.89119cm</Width>
           <ZIndex>12</ZIndex>
           <Style>
             <Border>
@@ -1344,271 +1592,69 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>3.12209cm</Height>
+      <Height>3.96368cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox30">
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>="Precios de lista en " &amp; First(Fields!PreciosLista.Value, "CotizacionImprimir")</Value>
-                  <Style>
-                    <FontFamily>Nirmala UI Semilight</FontFamily>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox30</rd:DefaultName>
-          <Top>0.54062cm</Top>
-          <Left>0.4731cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.96604cm</Width>
+        <Image Name="imgFirma">
+          <Source>Embedded</Source>
+          <Value>firmaarmando</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>1.05861cm</Top>
+          <Left>0.39517cm</Left>
+          <Height>1.15232cm</Height>
+          <Width>3.74354cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-            <WritingMode>Horizontal</WritingMode>
           </Style>
-        </Textbox>
-        <Textbox Name="Textbox31">
+        </Image>
+        <Textbox Name="Textbox26">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Precios no incluyen IVA</Value>
+                  <Value>Armando Bear Cuevas</Value>
                   <Style>
                     <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Gerente General</Value>
+                  <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox31</rd:DefaultName>
-          <Top>1.24645cm</Top>
-          <Left>0.44811cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.96604cm</Width>
+          <rd:DefaultName>Textbox26</rd:DefaultName>
+          <Top>1.89343cm</Top>
+          <Left>0.39517cm</Left>
+          <Height>0.81167cm</Height>
+          <Width>3.74354cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
-            <VerticalAlign>Middle</VerticalAlign>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
             <PaddingBottom>2pt</PaddingBottom>
-            <WritingMode>Horizontal</WritingMode>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox32">
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>="Método de Pago: " &amp; First(Fields!MetodoPago.Value, "CotizacionImprimir")</Value>
-                  <Style>
-                    <FontFamily>Nirmala UI Semilight</FontFamily>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox31</rd:DefaultName>
-          <Top>1.24645cm</Top>
-          <Left>7.09968cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.80082cm</Width>
-          <ZIndex>2</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-            <WritingMode>Horizontal</WritingMode>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox33">
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>="Forma de Pago: " &amp; First(Fields!FormaPago.Value, "CotizacionImprimir")</Value>
-                  <Style>
-                    <FontFamily>Nirmala UI Semilight</FontFamily>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox30</rd:DefaultName>
-          <Top>0.54061cm</Top>
-          <Left>7.09969cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.80082cm</Width>
-          <ZIndex>3</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-            <WritingMode>Horizontal</WritingMode>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox34">
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Vigencia: Cotización válida por 1 mes</Value>
-                  <Style>
-                    <FontFamily>Nirmala UI Semilight</FontFamily>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox31</rd:DefaultName>
-          <Top>1.95229cm</Top>
-          <Left>7.09968cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.80082cm</Width>
-          <ZIndex>4</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-            <WritingMode>Horizontal</WritingMode>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox35">
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>="Tiempo de Entrega: " &amp; First(Fields!TiempoEntrega.Value, "CotizacionImprimir")</Value>
-                  <Style>
-                    <FontFamily>Nirmala UI Semilight</FontFamily>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox31</rd:DefaultName>
-          <Top>1.12917cm</Top>
-          <Left>13.36239cm</Left>
-          <Height>0.6cm</Height>
-          <Width>6.05484cm</Width>
-          <ZIndex>5</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-            <WritingMode>Horizontal</WritingMode>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox36">
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>="Referencia: " &amp; First(Fields!Referencia.Value, "CotizacionImprimir")</Value>
-                  <Style>
-                    <FontFamily>Nirmala UI Semilight</FontFamily>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox30</rd:DefaultName>
-          <Top>0.42333cm</Top>
-          <Left>13.3624cm</Left>
-          <Height>0.6cm</Height>
-          <Width>6.05484cm</Width>
-          <ZIndex>6</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-            <WritingMode>Horizontal</WritingMode>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox37">
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>="Lugar de Entrega: " &amp; First(Fields!LugarEntrega.Value, "CotizacionImprimir")</Value>
-                  <Style>
-                    <FontFamily>Nirmala UI Semilight</FontFamily>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox31</rd:DefaultName>
-          <Top>1.835cm</Top>
-          <Left>13.36239cm</Left>
-          <Height>0.71729cm</Height>
-          <Width>6.05485cm</Width>
-          <ZIndex>7</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-            <WritingMode>Horizontal</WritingMode>
           </Style>
         </Textbox>
         <Textbox Name="Textbox2">
@@ -1618,6 +1664,7 @@
                 <TextRun>
                   <Value>=Globals!PageNumber &amp; " de " &amp; Globals!TotalPages</Value>
                   <Style>
+                    <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
@@ -1628,11 +1675,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>2.72868cm</Top>
-          <Left>9.545cm</Left>
+          <Top>2.21093cm</Top>
+          <Left>16.8393cm</Left>
           <Height>0.39341cm</Height>
           <Width>2.5cm</Width>
-          <ZIndex>8</ZIndex>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1645,12 +1692,14 @@
             <WritingMode>Horizontal</WritingMode>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox38">
+        <Textbox Name="Textbox3">
+          <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Precios sujetos a cambio sin previo aviso</Value>
+                  <Value>="Esperando que los productos y servicios sean de su interés nos encontramos a su entera disposición para resolver cualquier duda o pregunta en particular.&lt;p&gt;Atentamente&lt;/p&gt;"</Value>
+                  <MarkupType>HTML</MarkupType>
                   <Style>
                     <FontFamily>Nirmala UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
@@ -1660,73 +1709,22 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox31</rd:DefaultName>
-          <Top>2.02284cm</Top>
-          <Left>0.4731cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.96604cm</Width>
-          <ZIndex>9</ZIndex>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>0.03528cm</Top>
+          <Left>0.39517cm</Left>
+          <Height>1.28792cm</Height>
+          <Width>18.97447cm</Width>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
-            <VerticalAlign>Middle</VerticalAlign>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
             <PaddingBottom>2pt</PaddingBottom>
-            <WritingMode>Horizontal</WritingMode>
           </Style>
         </Textbox>
-        <Rectangle Name="Rectangle1">
-          <ReportItems>
-            <Textbox Name="Textbox25">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Condiciones Comerciales</Value>
-                      <Style>
-                        <FontFamily>Nirmala UI Semilight</FontFamily>
-                        <FontSize>8pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox25</rd:DefaultName>
-              <Left>0.02795cm</Left>
-              <Height>0.43479cm</Height>
-              <Width>18.92153cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <BackgroundColor>#b7dee8</BackgroundColor>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-          </ReportItems>
-          <KeepTogether>true</KeepTogether>
-          <Left>0.42016cm</Left>
-          <Height>2.92925cm</Height>
-          <Width>19.10609cm</Width>
-          <ZIndex>10</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Rectangle>
       </ReportItems>
       <Style>
         <Border>
@@ -1760,6 +1758,10 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="IdPartida">
+          <DataField>IdPartida</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
         <Field Name="id">
           <DataField>id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -1803,10 +1805,6 @@
         <Field Name="Imagen">
           <DataField>Imagen</DataField>
           <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="IdPartida">
-          <DataField>IdPartida</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
         <Field Name="clave">
           <DataField>clave</DataField>
@@ -1860,18 +1858,30 @@
           <DataField>LugarEntrega</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="FormaPago1">
-          <DataField>FormaPago1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="MetodoPago">
           <DataField>MetodoPago</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="PrecioUnitarioConDescuento">
+          <DataField>PrecioUnitarioConDescuento</DataField>
+          <rd:TypeName>System.Single</rd:TypeName>
+        </Field>
+        <Field Name="DescuentoEfectivoUnitario">
+          <DataField>DescuentoEfectivoUnitario</DataField>
+          <rd:TypeName>System.Single</rd:TypeName>
+        </Field>
+        <Field Name="DescuentoTotal">
+          <DataField>DescuentoTotal</DataField>
+          <rd:TypeName>System.Single</rd:TypeName>
+        </Field>
+        <Field Name="TotalConDescuento">
+          <DataField>TotalConDescuento</DataField>
+          <rd:TypeName>System.Single</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>CotizacionImprimir</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\abeld\OneDrive\Documentos\Visual Studio 2013\Projects\Musebe\musebe\MusebeWEBFinal\CotizacionImprimir.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\abeld\Documents\GitHub\musebe\MusebeWEBFinal\CotizacionImprimir.xsd</rd:SchemaPath>
         <rd:TableName>CotizacionImprimir</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

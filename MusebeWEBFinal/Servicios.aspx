@@ -108,7 +108,7 @@
 					</dx:PopupControlContentControl>
 				</ContentCollection>
 			</dx:ASPxPopupControl>
-			<dx:ASPxPopupControl ID="popupServiciosCotizacion" runat="server" ClientInstanceName="popupServiciosCotizacion" CloseOnEscape="True" HeaderText="Solicitud de Cotización" Modal="True" PopupElementID="popupServiciosCotizacion" ShowMaximizeButton="True" ShowPageScrollbarWhenModal="True" ShowShadow="False" Theme="Glass">
+			<dx:ASPxPopupControl ID="popupServiciosCotizacion" runat="server" ClientInstanceName="popupServiciosCotizacion" CloseOnEscape="True" HeaderText="Solicitud de Cotización" Modal="True" PopupElementID="popupServiciosCotizacion" ShowMaximizeButton="True" ShowPageScrollbarWhenModal="True" ShowShadow="False" Theme="Glass" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter">
 				<ContentCollection>
 					<dx:PopupControlContentControl runat="server">
 						<dx:ASPxComboBox ID="cboServicios" runat="server" Caption="Seleccione el Servicio" DataSourceID="servicioslistado" TextField="Servicio" ValueField="Id">
