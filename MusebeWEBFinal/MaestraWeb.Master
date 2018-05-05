@@ -11,7 +11,7 @@
 	<link rel="icon" type="image/png" href="/Imagenes/Logo/logo.jpg" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Multiservicios,Cafe,Cafeteria,Cafetería,cathering,higienicos,articulos">
+	<meta name="description" content="Multiservicios,Cafe,Cafeteria,Cafetería,cathering,higienicos,articulos,taquizas,banquetes">
 	<meta name="author" content="Abel Diaz Gonzalez">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -121,7 +121,7 @@
 						<div class="row">
 							<div class="col-lg-12">
 								<p class="text-center" style="color: black">Copyright &copy; <a style="color:black" href="index.aspx">MultiServicios BEAR S.A. de C.V.</a></p>
-								<p class="text-center" style="color: black">&#9742;<a style="color:black" href="tel:+529381180887">9381180887</a> Cel. &#9742;<a style="color:black" href="tel:+527821459584"> 7821459584</a> <a style="color:black" href="mailto:ventas@musebe.com.mx" title="Envienos sus dudas por correo electronico">ventas@musebe.com.mx</a> </p>
+								<p class="text-center" style="color: black">Tel. Oficina :&#9742;<a style="color:black" href="#" id="lnkTelefonoOficina" runat="server"><dx:ASPxLabel ID="tel" runat="server" Text=""></dx:ASPxLabel></a> Cel. &#128241;<a style="color:black" href="#" id="lnkTelefonoCelular" runat="server"><dx:ASPxLabel ID="cel" runat="server" Text=""></dx:ASPxLabel></a><a style="color:black" href="#" id="linkcorreo" runat="server" title="Envienos sus dudas por correo electronico">  &#9993;<dx:ASPxLabel ID="mail" runat="server" Text=""></dx:ASPxLabel></a> </p>
 							</div>
 						</div>
 						<!-- /.row -->

@@ -8,7 +8,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+	<asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <script type="text/javascript">
                 function Confirm() {
@@ -97,6 +97,7 @@
                             </dx:ASPxTextBox>
                         </div>
                         <div class="col-md-3">
+                        	<asp:HiddenField ID="Letra" runat="server" />
                         </div>
                     </div>
 
@@ -145,6 +146,11 @@
                         </div>
                     </div>
                     <dx:ASPxGridView ID="grdArticulos" runat="server" AutoGenerateColumns="False" DataSourceID="ArticulosListado" EnableTheming="True" KeyFieldName="Id" Theme="Metropolis" Width="100%" ClientInstanceName="grdArticulos">
+                        <TotalSummary>
+							<dx:ASPxSummaryItem DisplayFormat="c2" FieldName="TotalConDescuento" ShowInColumn="Precio Total con Descuento" ShowInGroupFooterColumn="Precio Total con Descuento" SummaryType="Sum" ValueDisplayFormat="c2" />
+							<dx:ASPxSummaryItem DisplayFormat="c2" FieldName="DescuentoTotal" ShowInColumn="Descuento Total" ShowInGroupFooterColumn="Descuento Total" SummaryType="Sum" ValueDisplayFormat="c2" />
+							<dx:ASPxSummaryItem DisplayFormat="c2" FieldName="SubTotal" ShowInColumn="Importe Venta" ShowInGroupFooterColumn="Importe Venta" SummaryType="Sum" ValueDisplayFormat="c2" />
+						</TotalSummary>
                         <Columns>
                             <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" VisibleIndex="0">
                             </dx:GridViewCommandColumn>
@@ -228,7 +234,7 @@
 							</dx:GridViewDataTextColumn>
                         </Columns>
                         <SettingsBehavior AllowFocusedRow="True" AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" ConfirmDelete="True" />
-                        <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+                        <Settings ShowFilterRow="True" ShowGroupPanel="True" ShowFooter="True" />
                         <SettingsSearchPanel Visible="True" />
                         <Styles>
                             <Header Font-Bold="True" HorizontalAlign="Center" VerticalAlign="Middle" Wrap="True">
@@ -420,10 +426,11 @@ Confirm();
                 </ContentCollection>
             </dx:ASPxPopupControl>
 
-            <dx:ASPxPopupControl ID="popupCotizacion" runat="server" HeaderText="Cotización" Maximized="True" Theme="Metropolis" Width="700px" RenderIFrameForPopupElements="True" ScrollBars="Auto" ShowMaximizeButton="True" ShowPageScrollbarWhenModal="True">
+            <dx:ASPxPopupControl ID="popupCotizacion" runat="server" HeaderText="Cotización" Maximized="True" Theme="Metropolis" Width="1000px" RenderIFrameForPopupElements="True" ScrollBars="Auto" ShowMaximizeButton="True" ShowPageScrollbarWhenModal="True">
                 <ContentCollection>
                     <dx:PopupControlContentControl runat="server">
-						<rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="700px" DocumentMapWidth="" ZoomMode="PageWidth" BorderStyle="Solid" Height="100%"></rsweb:ReportViewer>
+						<rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%" ZoomMode="PageWidth">
+						</rsweb:ReportViewer>
                     </dx:PopupControlContentControl>
                 </ContentCollection>
             </dx:ASPxPopupControl>

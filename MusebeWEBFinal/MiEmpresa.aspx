@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-         <div class="page-header">
+		 <div class="page-header">
         <h1>Mis Empresas</h1>
     </div>
     <dx:ASPxGridView ID="grdEmpresas" runat="server" AutoGenerateColumns="False" DataSourceID="Datos" EnableTheming="True" KeyFieldName="Id" Theme="Metropolis" Width="100%">
@@ -17,30 +17,33 @@
         </dx:GridViewDataTextColumn>
         <dx:GridViewDataTextColumn FieldName="Direccion" VisibleIndex="3">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Telefono" VisibleIndex="4">
+        <dx:GridViewDataTextColumn FieldName="Telefono" VisibleIndex="4" Caption="Telefono Oficina">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Correo" VisibleIndex="5">
+        <dx:GridViewDataTextColumn FieldName="Correo" VisibleIndex="6">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Pagina" VisibleIndex="6">
+        <dx:GridViewDataTextColumn FieldName="Pagina" VisibleIndex="7">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="RFC" VisibleIndex="7">
+        <dx:GridViewDataTextColumn FieldName="RFC" VisibleIndex="8">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataCheckColumn FieldName="Activo" VisibleIndex="8">
+        <dx:GridViewDataCheckColumn FieldName="Activo" VisibleIndex="9">
         </dx:GridViewDataCheckColumn>
-        <dx:GridViewDataTextColumn VisibleIndex="10">
+        <dx:GridViewDataTextColumn VisibleIndex="11">
             <EditFormSettings Visible="False" />
             <DataItemTemplate>
                 <asp:LinkButton ID="LinkButton1" runat="server" OnClick="lnkButtonLogo_Click">Logo</asp:LinkButton>
             </DataItemTemplate>
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataBinaryImageColumn Caption="Logo" FieldName="Logo" VisibleIndex="9">
+        <dx:GridViewDataBinaryImageColumn Caption="Logo" FieldName="Logo" VisibleIndex="10">
             <PropertiesBinaryImage AlternateText="Logo" ImageAlign="Middle" ImageHeight="100px" ImageWidth="100px">
             </PropertiesBinaryImage>
             <EditFormSettings Visible="False" />
         </dx:GridViewDataBinaryImageColumn>
+    	<dx:GridViewDataTextColumn Caption="Celular" FieldName="Celular" VisibleIndex="5">
+		</dx:GridViewDataTextColumn>
     </Columns>
     <SettingsBehavior AllowFocusedRow="True" AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" ConfirmDelete="True" />
     <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+    	<SettingsDataSecurity AllowDelete="False" AllowInsert="False" />
     <SettingsSearchPanel Visible="True" />
     <Styles>
         <Header Font-Bold="True" HorizontalAlign="Center" VerticalAlign="Middle" Wrap="True">
@@ -57,6 +60,7 @@
         <asp:Parameter Name="Empresa" Type="String" />
         <asp:Parameter Name="Direccion" Type="String" />
         <asp:Parameter Name="Telefono" Type="String" />
+        <asp:Parameter Name="Celular" Type="String" />
         <asp:Parameter Name="Correo" Type="String" />
         <asp:Parameter Name="Pagina" Type="String" />
         <asp:Parameter Name="RFC" Type="String" />
@@ -66,6 +70,7 @@
         <asp:Parameter Name="Empresa" Type="String" />
         <asp:Parameter Name="Direccion" Type="String" />
         <asp:Parameter Name="Telefono" Type="String" />
+        <asp:Parameter Name="Celular" Type="String" />
         <asp:Parameter Name="Correo" Type="String" />
         <asp:Parameter Name="Pagina" Type="String" />
         <asp:Parameter Name="RFC" Type="String" />

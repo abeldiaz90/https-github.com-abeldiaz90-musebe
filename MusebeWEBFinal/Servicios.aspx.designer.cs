@@ -130,15 +130,6 @@ namespace MusebeWEBFinal {
         protected global::DevExpress.Web.ASPxPopupControl popupServiciosCotizacion;
         
         /// <summary>
-        /// cboServicios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox cboServicios;
-        
-        /// <summary>
         /// servicioslistado control.
         /// </summary>
         /// <remarks>
@@ -148,6 +139,15 @@ namespace MusebeWEBFinal {
         protected global::System.Web.UI.WebControls.SqlDataSource servicioslistado;
         
         /// <summary>
+        /// lsServicios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxListBox lsServicios;
+        
+        /// <summary>
         /// Personas control.
         /// </summary>
         /// <remarks>
@@ -155,6 +155,42 @@ namespace MusebeWEBFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox Personas;
+        
+        /// <summary>
+        /// txtDescripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxMemo txtDescripcion;
+        
+        /// <summary>
+        /// txtNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtNombre;
+        
+        /// <summary>
+        /// txtTelefono control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtTelefono;
+        
+        /// <summary>
+        /// txtCorreo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtCorreo;
         
         /// <summary>
         /// popupDetalleDescripcion control.

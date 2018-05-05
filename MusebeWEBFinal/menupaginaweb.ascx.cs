@@ -16,6 +16,22 @@ namespace MusebeWEBFinal
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			LlenarMenu();
+			Etiquetado();
+		}
+
+
+		void Etiquetado()
+		{
+			MUSEBEDataContext db = new MUSEBEDataContext();
+			var emp = db.Empresas_Consultar_Todas();
+			foreach (var i in emp)
+			{
+				
+				this.lblTel.Text = i.Telefono;
+				this.lblCorreo.Text = i.Correo;
+				linkcorreo.HRef = "mailto:"+i.Correo;
+				linktelefono.HRef = "tel:+" + i.Telefono;
+			}
 		}
 		public void LlenarMenu()
 		{

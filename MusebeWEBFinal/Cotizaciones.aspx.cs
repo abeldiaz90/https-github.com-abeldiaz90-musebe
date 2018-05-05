@@ -39,7 +39,7 @@ namespace MusebeWEBFinal
 			try
 			{
 				MUSEBEDataContext db = new MUSEBEDataContext();
-				db.COTIZACIONES_INSERTAR(this.txtFolio.Text, this.FechaCotizacion.Date, "", Int32.Parse(this.cboClientes.SelectedItem.Value.ToString()), Int32.Parse(this.cboContacto.SelectedItem.Value.ToString()), 0, this.Page.User.Identity.Name.ToString(), this.txtTitulo.Text, Int32.Parse(this.cboTipoMoneda.SelectedItem.Value.ToString()), Int32.Parse(this.cboFormaPago.SelectedItem.Value.ToString()), this.txtReferencia.Text, Int32.Parse(this.cboMetodoPago.SelectedItem.Value.ToString()), this.txtTiempoEntrega.Text, this.txtLugarEntrega.Text, null);
+				db.COTIZACIONES_INSERTAR(this.txtFolio.Text, this.FechaCotizacion.Date, "", Int32.Parse(this.cboClientes.SelectedItem.Value.ToString()), Int32.Parse(this.cboContacto.SelectedItem.Value.ToString()), 0, this.Page.User.Identity.Name.ToString(), this.txtTitulo.Text, Int32.Parse(this.cboTipoMoneda.SelectedItem.Value.ToString()), Int32.Parse(this.cboFormaPago.SelectedItem.Value.ToString()), this.txtReferencia.Text, Int32.Parse(this.cboMetodoPago.SelectedItem.Value.ToString()), this.txtTiempoEntrega.Text, this.txtLugarEntrega.Text, null, this.Letra.Value);
 				db.Cotizaciones_Detalle_Insertar(this.txtFolio.Text, this.txtItem.Text, float.Parse(this.txtCantidad.Text));
 
 				this.grdArticulos.DataBind();
@@ -146,8 +146,9 @@ namespace MusebeWEBFinal
 				datos.Fill(Directorio);
 				if (Directorio != null)
 				{
-					string asciichar = (Convert.ToChar(65)).ToString();
-					FolioNumero = Directorio.Rows[0][0].ToString() + '.' + asciichar;
+					//string asciichar = (Convert.ToChar(65)).ToString();
+					this.Letra.Value = Directorio.Rows[0][1].ToString();
+					FolioNumero = Directorio.Rows[0][0].ToString();
 				}
 				else
 				{
@@ -168,7 +169,7 @@ namespace MusebeWEBFinal
 			try
 			{
 				MUSEBEDataContext db = new MUSEBEDataContext();
-				db.COTIZACIONES_INSERTAR(this.txtFolio.Text, this.FechaCotizacion.Date, "", Int32.Parse(this.cboClientes.SelectedItem.Value.ToString()), Int32.Parse(this.cboContacto.SelectedItem.Value.ToString()), 0, this.Page.User.Identity.Name.ToString(), this.txtTitulo.Text, Int32.Parse(this.cboTipoMoneda.SelectedItem.Value.ToString()), Int32.Parse(this.cboFormaPago.SelectedItem.Value.ToString()), this.txtReferencia.Text, Int32.Parse(this.cboMetodoPago.SelectedItem.Value.ToString()), this.txtTiempoEntrega.Text, this.txtLugarEntrega.Text, null);
+				db.COTIZACIONES_INSERTAR(this.txtFolio.Text, this.FechaCotizacion.Date, "", Int32.Parse(this.cboClientes.SelectedItem.Value.ToString()), Int32.Parse(this.cboContacto.SelectedItem.Value.ToString()), 0, this.Page.User.Identity.Name.ToString(), this.txtTitulo.Text, Int32.Parse(this.cboTipoMoneda.SelectedItem.Value.ToString()), Int32.Parse(this.cboFormaPago.SelectedItem.Value.ToString()), this.txtReferencia.Text, Int32.Parse(this.cboMetodoPago.SelectedItem.Value.ToString()), this.txtTiempoEntrega.Text, this.txtLugarEntrega.Text, null, this.Letra.Value);
 				this.grdArticulos.DataBind();
 				ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", @"alert('" + App_GlobalResources.Mensajes.Guardar + "')", true);
 			}
@@ -181,7 +182,7 @@ namespace MusebeWEBFinal
 				if (this.grdArticulos.VisibleRowCount >= 1)
 				{
 					MUSEBEDataContext db = new MUSEBEDataContext();
-					db.COTIZACIONES_INSERTAR(this.txtFolio.Text, this.FechaCotizacion.Date, "", Int32.Parse(this.cboClientes.SelectedItem.Value.ToString()), Int32.Parse(this.cboContacto.SelectedItem.Value.ToString()), 0, this.Page.User.Identity.Name.ToString(), this.txtTitulo.Text, Int32.Parse(this.cboTipoMoneda.SelectedItem.Value.ToString()), Int32.Parse(this.cboFormaPago.SelectedItem.Value.ToString()), this.txtReferencia.Text, Int32.Parse(this.cboMetodoPago.SelectedItem.Value.ToString()), this.txtTiempoEntrega.Text, this.txtLugarEntrega.Text, null);
+					db.COTIZACIONES_INSERTAR(this.txtFolio.Text, this.FechaCotizacion.Date, "", Int32.Parse(this.cboClientes.SelectedItem.Value.ToString()), Int32.Parse(this.cboContacto.SelectedItem.Value.ToString()), 0, this.Page.User.Identity.Name.ToString(), this.txtTitulo.Text, Int32.Parse(this.cboTipoMoneda.SelectedItem.Value.ToString()), Int32.Parse(this.cboFormaPago.SelectedItem.Value.ToString()), this.txtReferencia.Text, Int32.Parse(this.cboMetodoPago.SelectedItem.Value.ToString()), this.txtTiempoEntrega.Text, this.txtLugarEntrega.Text, null, this.Letra.Value);
 				}
 				else
 				{
@@ -242,7 +243,12 @@ namespace MusebeWEBFinal
 			{
 				this.popupCotizaciones.ShowOnPageLoad = false;
 				LimpiezaGeneral();
+				//Response.Redirect("Cotizaciones.aspx");
 				Editar(Int32.Parse(this.grdRequisiciones.GetRowValues(this.grdRequisiciones.FocusedRowIndex, "Id").ToString()));
+				if (this.Request.QueryString.ToString().Contains("request="))
+				{
+					this.Request.QueryString.ToString().Replace("request=", "");
+				}
 			}
 			catch (Exception ex) { ex.ToString(); }
 		}
@@ -273,7 +279,7 @@ namespace MusebeWEBFinal
 				this.txtCorreo.Text = string.Empty;
 				this.txtCorreo.Text = i.Email;
 				this.txtTelefono.Text = i.Telefono;
-
+				this.Letra.Value = i.Letra;
 				this.cboClientes.Items.Clear();
 				this.cboClientes.DataBind();
 				this.cboClientes.Items.FindByValue(i.IdCliente.ToString()).Selected = true;
@@ -296,7 +302,13 @@ namespace MusebeWEBFinal
 		}
 		protected void btnNuevaRevision_Click(object sender, EventArgs e)
 		{
-			try { }
+			try
+			{
+				MUSEBEDataContext db = new MUSEBEDataContext();
+				db.Cotizaciones_Nueva_Revision(this.grdRequisiciones.GetRowValues(this.grdRequisiciones.FocusedRowIndex,"Folio").ToString());
+				db.SubmitChanges();
+				this.grdRequisiciones.DataBind();
+			}
 			catch (Exception ex) { ex.ToString(); }
 		}
 		protected void btnImprimir_Click(object sender, EventArgs e)

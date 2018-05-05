@@ -5,7 +5,7 @@
 		<dx:ASPxMenu ID="Menu" runat="server" NameField="MenuText" NavigateUrlField="destUrl"
 			TextField="MenuText" AccessibilityCompliant="True" AutoSeparators="All"
 			ClientIDMode="AutoID"
-			GutterWidth="0px" HorizontalAlign="Center" ImageUrlField="ImageUrlField" ShowPopOutImages="True"
+			GutterWidth="0px" HorizontalAlign="Center" ImageUrlField="ImageUrlField" 
 			ToolTipField="tooltip" RenderMode="Lightweight"
 			ItemImagePosition="Bottom" ShowAsToolbar="True"
 			VerticalAlign="Middle" AllowSelectItem="True" EnableAdaptivity="true"
@@ -19,11 +19,12 @@
 		</dx:ASPxMenu>
 	</div>
 	<div class="col-md-6">
-		<a href="mailto:ventas@musebe.com.mx" style="color: black; font-size: smaller" title="Envienos sus dudas por correo electronico">✉ventas@musebe.com.mx</a> <a href="tel:+529381180887" style="color: black; font-size: smaller">☎9381180887</a> 
-		
+		<a href="#" id="linkcorreo" runat="server" style="color: black; font-size: smaller" title="Envienos sus dudas por correo electronico">&#9993;<dx:ASPxLabel ID="lblCorreo" runat="server" Text=""></dx:ASPxLabel></a>
+		<a href="#" id="linktelefono" runat="server" style="color: black; font-size: smaller">&#9742;<dx:ASPxLabel ID="lblTel" runat="server" Text=""></dx:ASPxLabel></a>
+
 		<div class="dropdown col-lg-3">
 			<span>Bienvenido:</span>
-		
+
 			<button id="dropdownMenu1" aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle btn-group-justified" data-toggle="dropdown" type="button">
 				<asp:LoginName ID="LoginName1" runat="server" />
 				<span class="caret"></span>

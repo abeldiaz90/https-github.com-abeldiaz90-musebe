@@ -33,7 +33,7 @@ namespace MusebeWEBFinal
     #endregion
 		
 		public MUSEBEDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DB_9B18B8_musebeConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DB_9B18B8_musebeConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -341,13 +341,6 @@ namespace MusebeWEBFinal
 			return ((ISingleResult<PedidosConsultaFolioResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.COTIZACIONES_INSERTAR")]
-		public int COTIZACIONES_INSERTAR([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Folio", DbType="VarChar(MAX)")] string folio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fecha", DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Requisicion", DbType="VarChar(MAX)")] string requisicion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCliente", DbType="Int")] System.Nullable<int> idCliente, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdContacto", DbType="Int")] System.Nullable<int> idContacto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Margen", DbType="Real")] System.Nullable<float> margen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(MAX)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(MAX)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdPrecioLista", DbType="Int")] System.Nullable<int> idPrecioLista, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFormaPago", DbType="Int")] System.Nullable<int> idFormaPago, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Referencia", DbType="VarChar(MAX)")] string referencia, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdMetodoPago", DbType="Int")] System.Nullable<int> idMetodoPago, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TiempoEntrega", DbType="VarChar(MAX)")] string tiempoEntrega, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LugarEntrega", DbType="VarChar(MAX)")] string lugarEntrega, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdSol", DbType="Int")] System.Nullable<int> idSol)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), folio, fecha, requisicion, idCliente, idContacto, margen, usuario, titulo, idPrecioLista, idFormaPago, referencia, idMetodoPago, tiempoEntrega, lugarEntrega, idSol);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CotizacionporSolicitud")]
 		public ISingleResult<CotizacionporSolicitudResult> CotizacionporSolicitud([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdSolicitud", DbType="Int")] System.Nullable<int> idSolicitud)
 		{
@@ -366,6 +359,43 @@ namespace MusebeWEBFinal
 		public int SolicitudaRequisicion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdSolicitud", DbType="Int")] System.Nullable<int> idSolicitud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UsuarioParametro", DbType="VarChar(MAX)")] string usuarioParametro)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSolicitud, usuarioParametro);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Empresas_Consultar_Todas")]
+		public ISingleResult<Empresas_Consultar_TodasResult> Empresas_Consultar_Todas()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Empresas_Consultar_TodasResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.COTIZACIONES_INSERTAR")]
+		public int COTIZACIONES_INSERTAR(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Folio", DbType="VarChar(MAX)")] string folio, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fecha", DbType="DateTime")] System.Nullable<System.DateTime> fecha, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Requisicion", DbType="VarChar(MAX)")] string requisicion, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCliente", DbType="Int")] System.Nullable<int> idCliente, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdContacto", DbType="Int")] System.Nullable<int> idContacto, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Margen", DbType="Real")] System.Nullable<float> margen, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(MAX)")] string usuario, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(MAX)")] string titulo, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdPrecioLista", DbType="Int")] System.Nullable<int> idPrecioLista, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFormaPago", DbType="Int")] System.Nullable<int> idFormaPago, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Referencia", DbType="VarChar(MAX)")] string referencia, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdMetodoPago", DbType="Int")] System.Nullable<int> idMetodoPago, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TiempoEntrega", DbType="VarChar(MAX)")] string tiempoEntrega, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="LugarEntrega", DbType="VarChar(MAX)")] string lugarEntrega, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdSol", DbType="Int")] System.Nullable<int> idSol, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Letra", DbType="VarChar(MAX)")] string letra)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), folio, fecha, requisicion, idCliente, idContacto, margen, usuario, titulo, idPrecioLista, idFormaPago, referencia, idMetodoPago, tiempoEntrega, lugarEntrega, idSol, letra);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Cotizaciones_Nueva_Revision")]
+		public int Cotizaciones_Nueva_Revision([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Folio", DbType="VarChar(MAX)")] string folio)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), folio);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -2661,6 +2691,194 @@ namespace MusebeWEBFinal
 				if ((this._Telefono != value))
 				{
 					this._Telefono = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Empresas_Consultar_TodasResult
+	{
+		
+		private int _Id;
+		
+		private string _Empresa;
+		
+		private string _Direccion;
+		
+		private string _Telefono;
+		
+		private string _Correo;
+		
+		private string _Pagina;
+		
+		private string _RFC;
+		
+		private System.Data.Linq.Binary _Logo;
+		
+		private System.Nullable<bool> _Activo;
+		
+		private string _Celular;
+		
+		public Empresas_Consultar_TodasResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Empresa", DbType="VarChar(50)")]
+		public string Empresa
+		{
+			get
+			{
+				return this._Empresa;
+			}
+			set
+			{
+				if ((this._Empresa != value))
+				{
+					this._Empresa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Direccion", DbType="VarChar(MAX)")]
+		public string Direccion
+		{
+			get
+			{
+				return this._Direccion;
+			}
+			set
+			{
+				if ((this._Direccion != value))
+				{
+					this._Direccion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono", DbType="VarChar(10)")]
+		public string Telefono
+		{
+			get
+			{
+				return this._Telefono;
+			}
+			set
+			{
+				if ((this._Telefono != value))
+				{
+					this._Telefono = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Correo", DbType="VarChar(50)")]
+		public string Correo
+		{
+			get
+			{
+				return this._Correo;
+			}
+			set
+			{
+				if ((this._Correo != value))
+				{
+					this._Correo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pagina", DbType="VarChar(50)")]
+		public string Pagina
+		{
+			get
+			{
+				return this._Pagina;
+			}
+			set
+			{
+				if ((this._Pagina != value))
+				{
+					this._Pagina = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RFC", DbType="VarChar(13)")]
+		public string RFC
+		{
+			get
+			{
+				return this._RFC;
+			}
+			set
+			{
+				if ((this._RFC != value))
+				{
+					this._RFC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Logo", DbType="Image")]
+		public System.Data.Linq.Binary Logo
+		{
+			get
+			{
+				return this._Logo;
+			}
+			set
+			{
+				if ((this._Logo != value))
+				{
+					this._Logo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activo", DbType="Bit")]
+		public System.Nullable<bool> Activo
+		{
+			get
+			{
+				return this._Activo;
+			}
+			set
+			{
+				if ((this._Activo != value))
+				{
+					this._Activo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Celular", DbType="VarChar(10)")]
+		public string Celular
+		{
+			get
+			{
+				return this._Celular;
+			}
+			set
+			{
+				if ((this._Celular != value))
+				{
+					this._Celular = value;
 				}
 			}
 		}

@@ -111,10 +111,24 @@
 			<dx:ASPxPopupControl ID="popupServiciosCotizacion" runat="server" ClientInstanceName="popupServiciosCotizacion" CloseOnEscape="True" HeaderText="Solicitud de Cotización" Modal="True" PopupElementID="popupServiciosCotizacion" ShowMaximizeButton="True" ShowPageScrollbarWhenModal="True" ShowShadow="False" Theme="Glass" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter">
 				<ContentCollection>
 					<dx:PopupControlContentControl runat="server">
-						<dx:ASPxComboBox ID="cboServicios" runat="server" Caption="Seleccione el Servicio" DataSourceID="servicioslistado" TextField="Servicio" ValueField="Id">
-						</dx:ASPxComboBox>
 						<asp:SqlDataSource ID="servicioslistado" runat="server" ConnectionString="<%$ ConnectionStrings:DB_9B18B8_musebeConnectionString %>" SelectCommand="Servicios_Consultar" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-						<dx:ASPxTextBox ID="Personas" runat="server" Caption="Para cuantas Personas" HorizontalAlign="Center" Width="170px">
+						<dx:ASPxListBox ID="lsServicios" runat="server" Caption="Seleccione los servicios" DataSourceID="servicioslistado" SelectionMode="CheckColumn" TextField="Servicio" Theme="Aqua" ValueField="Id" Width="100%">
+							<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
+						</dx:ASPxListBox>
+						<dx:ASPxTextBox ID="Personas" runat="server" Caption="Para cuantas Personas" HorizontalAlign="Center" Width="100%" Theme="Aqua">
+							<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
+						</dx:ASPxTextBox>
+						<dx:ASPxMemo ID="txtDescripcion" runat="server" Caption="Descripción de los servicios deseados:" Height="71px" Theme="Aqua" Width="100%">
+							<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
+						</dx:ASPxMemo>
+						<dx:ASPxTextBox ID="txtNombre" runat="server" AutoResizeWithContainer="True" Caption="Nombre Completo:" Width="100%">
+							<CaptionSettings Position="Top" />
+						</dx:ASPxTextBox>
+						<dx:ASPxTextBox ID="txtTelefono" runat="server" AutoResizeWithContainer="True" Caption=" Telefono:" Width="100%">
+							<CaptionSettings Position="Top" />
+						</dx:ASPxTextBox>
+						<dx:ASPxTextBox ID="txtCorreo" runat="server" AutoResizeWithContainer="True" Caption="Correo:" Width="100%">
+							<CaptionSettings Position="Top" />
 						</dx:ASPxTextBox>
 						<br />
 					</dx:PopupControlContentControl>

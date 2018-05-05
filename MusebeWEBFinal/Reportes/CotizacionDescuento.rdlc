@@ -2179,7 +2179,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>CotizacionImprimir</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\abeld\Documents\GitHub\musebe\MusebeWEBFinal\CotizacionImprimir.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\81602\Documents\GitHub\musebe\MusebeWEBFinal\CotizacionImprimir.xsd</rd:SchemaPath>
         <rd:TableName>CotizacionImprimir</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
