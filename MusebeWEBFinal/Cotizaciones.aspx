@@ -98,6 +98,7 @@
                         </div>
                         <div class="col-md-3">
                         	<asp:HiddenField ID="Letra" runat="server" />
+                        	<asp:HiddenField ID="Numero" runat="server" />
                         </div>
                     </div>
 
@@ -281,10 +282,11 @@
                         <div class="col-md-4">
                             <dx:ASPxComboBox ID="cboFormaPago" runat="server" Caption="Forma de Pago:" CssClass="form-control" Theme="Metropolis">
                                 <Items>
-                                    <dx:ListEditItem Text="Efectivo" Value="1" />
+                                    <dx:ListEditItem Text="Contado" Value="1" />
                                     <dx:ListEditItem Text="Credito a 15 Dias" Value="2" />
                                     <dx:ListEditItem Text="Credito a 30 Dias" Value="3" />
                                     <dx:ListEditItem Text="Credito a 60 Dias" Value="4" />
+                                	<dx:ListEditItem Text="Credito a 120 dias" Value="5" />
                                 </Items>
                                 <CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
                                 <ValidationSettings CausesValidation="True" SetFocusOnError="True" ValidationGroup="Agregar">
@@ -303,7 +305,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <dx:ASPxComboBox ID="cboMetodoPago" runat="server" CssClass="form-control" ValueType="System.String" Theme="Metropolis" Caption="Método de Pago">
+                            <dx:ASPxComboBox ID="cboMetodoPago" runat="server" CssClass="form-control" Theme="Metropolis" Caption="Método de Pago">
                                 <CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
                                 <Items>
                                     <dx:ListEditItem Text="Cheques" Value="1" />
@@ -410,6 +412,10 @@ Confirm();
                                         </dx:ASPxButton>
                                     </DataItemTemplate>
                                 </dx:GridViewDataTextColumn>
+                            	<dx:GridViewDataTextColumn Caption="Letra" FieldName="Letra" ShowInCustomizationForm="True" Visible="False" VisibleIndex="11">
+								</dx:GridViewDataTextColumn>
+								<dx:GridViewDataTextColumn Caption="Numero" FieldName="Numero" ShowInCustomizationForm="True" Visible="False" VisibleIndex="12">
+								</dx:GridViewDataTextColumn>
                             </Columns>
                             <SettingsBehavior AllowFocusedRow="True" AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" />
                             <Settings ShowFilterRow="True" ShowGroupPanel="True" />

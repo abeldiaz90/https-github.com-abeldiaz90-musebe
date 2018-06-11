@@ -132,13 +132,6 @@ namespace MusebeWEBFinal
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CotizacionCopiar")]
-		public int CotizacionCopiar([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Entradas_Obtener_Folio")]
 		public ISingleResult<Entradas_Obtener_FolioResult> Entradas_Obtener_Folio()
 		{
@@ -348,11 +341,11 @@ namespace MusebeWEBFinal
 			return ((ISingleResult<CotizacionporSolicitudResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Cotizaciones_Abrir")]
-		public ISingleResult<Cotizaciones_AbrirResult> Cotizaciones_Abrir([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCotizacion", DbType="Int")] System.Nullable<int> idCotizacion)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Empresas_Consultar_Todas")]
+		public ISingleResult<Empresas_Consultar_TodasResult> Empresas_Consultar_Todas()
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCotizacion);
-			return ((ISingleResult<Cotizaciones_AbrirResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Empresas_Consultar_TodasResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SolicitudaRequisicion")]
@@ -360,13 +353,6 @@ namespace MusebeWEBFinal
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSolicitud, usuarioParametro);
 			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Empresas_Consultar_Todas")]
-		public ISingleResult<Empresas_Consultar_TodasResult> Empresas_Consultar_Todas()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<Empresas_Consultar_TodasResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.COTIZACIONES_INSERTAR")]
@@ -386,16 +372,31 @@ namespace MusebeWEBFinal
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TiempoEntrega", DbType="VarChar(MAX)")] string tiempoEntrega, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="LugarEntrega", DbType="VarChar(MAX)")] string lugarEntrega, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdSol", DbType="Int")] System.Nullable<int> idSol, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Letra", DbType="VarChar(MAX)")] string letra)
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Letra", DbType="VarChar(MAX)")] string letra, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Numero", DbType="Int")] System.Nullable<int> numero)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), folio, fecha, requisicion, idCliente, idContacto, margen, usuario, titulo, idPrecioLista, idFormaPago, referencia, idMetodoPago, tiempoEntrega, lugarEntrega, idSol, letra);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), folio, fecha, requisicion, idCliente, idContacto, margen, usuario, titulo, idPrecioLista, idFormaPago, referencia, idMetodoPago, tiempoEntrega, lugarEntrega, idSol, letra, numero);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Cotizaciones_Abrir")]
+		public ISingleResult<Cotizaciones_AbrirResult> Cotizaciones_Abrir([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCotizacion", DbType="Int")] System.Nullable<int> idCotizacion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCotizacion);
+			return ((ISingleResult<Cotizaciones_AbrirResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Cotizaciones_Nueva_Revision")]
 		public int Cotizaciones_Nueva_Revision([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Folio", DbType="VarChar(MAX)")] string folio)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), folio);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CotizacionCopiar")]
+		public int CotizacionCopiar([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -2346,6 +2347,194 @@ namespace MusebeWEBFinal
 		}
 	}
 	
+	public partial class Empresas_Consultar_TodasResult
+	{
+		
+		private int _Id;
+		
+		private string _Empresa;
+		
+		private string _Direccion;
+		
+		private string _Telefono;
+		
+		private string _Correo;
+		
+		private string _Pagina;
+		
+		private string _RFC;
+		
+		private System.Data.Linq.Binary _Logo;
+		
+		private System.Nullable<bool> _Activo;
+		
+		private string _Celular;
+		
+		public Empresas_Consultar_TodasResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Empresa", DbType="VarChar(50)")]
+		public string Empresa
+		{
+			get
+			{
+				return this._Empresa;
+			}
+			set
+			{
+				if ((this._Empresa != value))
+				{
+					this._Empresa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Direccion", DbType="VarChar(MAX)")]
+		public string Direccion
+		{
+			get
+			{
+				return this._Direccion;
+			}
+			set
+			{
+				if ((this._Direccion != value))
+				{
+					this._Direccion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono", DbType="VarChar(10)")]
+		public string Telefono
+		{
+			get
+			{
+				return this._Telefono;
+			}
+			set
+			{
+				if ((this._Telefono != value))
+				{
+					this._Telefono = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Correo", DbType="VarChar(50)")]
+		public string Correo
+		{
+			get
+			{
+				return this._Correo;
+			}
+			set
+			{
+				if ((this._Correo != value))
+				{
+					this._Correo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pagina", DbType="VarChar(50)")]
+		public string Pagina
+		{
+			get
+			{
+				return this._Pagina;
+			}
+			set
+			{
+				if ((this._Pagina != value))
+				{
+					this._Pagina = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RFC", DbType="VarChar(13)")]
+		public string RFC
+		{
+			get
+			{
+				return this._RFC;
+			}
+			set
+			{
+				if ((this._RFC != value))
+				{
+					this._RFC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Logo", DbType="Image")]
+		public System.Data.Linq.Binary Logo
+		{
+			get
+			{
+				return this._Logo;
+			}
+			set
+			{
+				if ((this._Logo != value))
+				{
+					this._Logo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activo", DbType="Bit")]
+		public System.Nullable<bool> Activo
+		{
+			get
+			{
+				return this._Activo;
+			}
+			set
+			{
+				if ((this._Activo != value))
+				{
+					this._Activo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Celular", DbType="VarChar(10)")]
+		public string Celular
+		{
+			get
+			{
+				return this._Celular;
+			}
+			set
+			{
+				if ((this._Celular != value))
+				{
+					this._Celular = value;
+				}
+			}
+		}
+	}
+	
 	public partial class Cotizaciones_AbrirResult
 	{
 		
@@ -2379,9 +2568,11 @@ namespace MusebeWEBFinal
 		
 		private System.Nullable<int> _IdMetodoPago;
 		
-		private string _Letra;
+		private System.Nullable<char> _Letra;
 		
 		private System.Nullable<int> _IdSolicitud;
+		
+		private System.Nullable<int> _Numero;
 		
 		private string _Email;
 		
@@ -2631,8 +2822,8 @@ namespace MusebeWEBFinal
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Letra", DbType="NChar(10)")]
-		public string Letra
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Letra", DbType="Char(1)")]
+		public System.Nullable<char> Letra
 		{
 			get
 			{
@@ -2659,6 +2850,22 @@ namespace MusebeWEBFinal
 				if ((this._IdSolicitud != value))
 				{
 					this._IdSolicitud = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Numero", DbType="Int")]
+		public System.Nullable<int> Numero
+		{
+			get
+			{
+				return this._Numero;
+			}
+			set
+			{
+				if ((this._Numero != value))
+				{
+					this._Numero = value;
 				}
 			}
 		}
@@ -2691,194 +2898,6 @@ namespace MusebeWEBFinal
 				if ((this._Telefono != value))
 				{
 					this._Telefono = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Empresas_Consultar_TodasResult
-	{
-		
-		private int _Id;
-		
-		private string _Empresa;
-		
-		private string _Direccion;
-		
-		private string _Telefono;
-		
-		private string _Correo;
-		
-		private string _Pagina;
-		
-		private string _RFC;
-		
-		private System.Data.Linq.Binary _Logo;
-		
-		private System.Nullable<bool> _Activo;
-		
-		private string _Celular;
-		
-		public Empresas_Consultar_TodasResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this._Id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Empresa", DbType="VarChar(50)")]
-		public string Empresa
-		{
-			get
-			{
-				return this._Empresa;
-			}
-			set
-			{
-				if ((this._Empresa != value))
-				{
-					this._Empresa = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Direccion", DbType="VarChar(MAX)")]
-		public string Direccion
-		{
-			get
-			{
-				return this._Direccion;
-			}
-			set
-			{
-				if ((this._Direccion != value))
-				{
-					this._Direccion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono", DbType="VarChar(10)")]
-		public string Telefono
-		{
-			get
-			{
-				return this._Telefono;
-			}
-			set
-			{
-				if ((this._Telefono != value))
-				{
-					this._Telefono = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Correo", DbType="VarChar(50)")]
-		public string Correo
-		{
-			get
-			{
-				return this._Correo;
-			}
-			set
-			{
-				if ((this._Correo != value))
-				{
-					this._Correo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pagina", DbType="VarChar(50)")]
-		public string Pagina
-		{
-			get
-			{
-				return this._Pagina;
-			}
-			set
-			{
-				if ((this._Pagina != value))
-				{
-					this._Pagina = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RFC", DbType="VarChar(13)")]
-		public string RFC
-		{
-			get
-			{
-				return this._RFC;
-			}
-			set
-			{
-				if ((this._RFC != value))
-				{
-					this._RFC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Logo", DbType="Image")]
-		public System.Data.Linq.Binary Logo
-		{
-			get
-			{
-				return this._Logo;
-			}
-			set
-			{
-				if ((this._Logo != value))
-				{
-					this._Logo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activo", DbType="Bit")]
-		public System.Nullable<bool> Activo
-		{
-			get
-			{
-				return this._Activo;
-			}
-			set
-			{
-				if ((this._Activo != value))
-				{
-					this._Activo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Celular", DbType="VarChar(10)")]
-		public string Celular
-		{
-			get
-			{
-				return this._Celular;
-			}
-			set
-			{
-				if ((this._Celular != value))
-				{
-					this._Celular = value;
 				}
 			}
 		}

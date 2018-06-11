@@ -316,12 +316,13 @@ namespace MusebeWEBFinal
 
 
 			SmtpClient client = new SmtpClient();
-			client.Host = "mail.musebe.com.mx";
-			client.Port = 587;
-			NetworkCredential login = new NetworkCredential("ventas@musebe.com.mx", "Imperio90_");
-			//client.EnableSsl = true;
-			client.UseDefaultCredentials = true;
+			client.Host = "smtp.gmail.com";
+			client.Port = 465;
+			NetworkCredential login = new NetworkCredential("ventas@musebe.com.mx", "Imperio90_1");
+			client.EnableSsl = true;
+			//client.UseDefaultCredentials = true;
 			client.Credentials = login;
+		
 
 			try
 			{

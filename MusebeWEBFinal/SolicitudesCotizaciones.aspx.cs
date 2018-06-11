@@ -36,7 +36,10 @@ namespace MusebeWEBFinal
 		{
 			try
 			{
-				Response.Redirect("Cotizaciones.aspx?request="+ this.grdCotizacionesNoAtendidas.GetRowValues(this.grdCotizacionesNoAtendidas.FocusedRowIndex, "IdPedido").ToString());
+				Session["IdPedido"] = this.grdCotizacionesNoAtendidas.GetRowValues(this.grdCotizacionesNoAtendidas.FocusedRowIndex, "IdPedido").ToString();
+				Response.Redirect("Cotizaciones.aspx");
+				//Response.Redirect("Cotizaciones.aspx?request="+ this.grdCotizacionesNoAtendidas.GetRowValues(this.grdCotizacionesNoAtendidas.FocusedRowIndex, "IdPedido").ToString());
+
 			}
 			catch (Exception ex) { ex.ToString(); }
 		}

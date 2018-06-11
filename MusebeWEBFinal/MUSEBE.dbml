@@ -70,10 +70,6 @@
     <Parameter Name="URL" Parameter="uRL" Type="System.String" DbType="VarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.CotizacionCopiar" Method="CotizacionCopiar">
-    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.Entradas_Obtener_Folio" Method="Entradas_Obtener_Folio">
     <ElementType Name="Entradas_Obtener_FolioResult">
       <Column Name="Folio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -329,35 +325,6 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.Cotizaciones_Abrir" Method="Cotizaciones_Abrir">
-    <Parameter Name="IdCotizacion" Parameter="idCotizacion" Type="System.Int32" DbType="Int" />
-    <ElementType Name="Cotizaciones_AbrirResult">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Folio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Requisicion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="IdCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IdContacto" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Margen" Type="System.Single" DbType="Real" CanBeNull="true" />
-      <Column Name="Usuario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Titulo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="IdPrecioLista" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IdFormaPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TiempoEntrega" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Referencia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="LugarEntrega" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="IdMetodoPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Letra" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="IdSolicitud" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Telefono" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.SolicitudaRequisicion" Method="SolicitudaRequisicion">
-    <Parameter Name="IdSolicitud" Parameter="idSolicitud" Type="System.Int32" DbType="Int" />
-    <Parameter Name="UsuarioParametro" Parameter="usuarioParametro" Type="System.String" DbType="VarChar(MAX)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.Empresas_Consultar_Todas" Method="Empresas_Consultar_Todas">
     <ElementType Name="Empresas_Consultar_TodasResult">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -371,6 +338,11 @@
       <Column Name="Activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="Celular" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.SolicitudaRequisicion" Method="SolicitudaRequisicion">
+    <Parameter Name="IdSolicitud" Parameter="idSolicitud" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UsuarioParametro" Parameter="usuarioParametro" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.COTIZACIONES_INSERTAR" Method="COTIZACIONES_INSERTAR">
     <Parameter Name="Folio" Parameter="folio" Type="System.String" DbType="VarChar(MAX)" />
@@ -389,10 +361,40 @@
     <Parameter Name="LugarEntrega" Parameter="lugarEntrega" Type="System.String" DbType="VarChar(MAX)" />
     <Parameter Name="IdSol" Parameter="idSol" Type="System.Int32" DbType="Int" />
     <Parameter Name="Letra" Parameter="letra" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Numero" Parameter="numero" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Cotizaciones_Abrir" Method="Cotizaciones_Abrir">
+    <Parameter Name="IdCotizacion" Parameter="idCotizacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Cotizaciones_AbrirResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Folio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Requisicion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdContacto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Margen" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Titulo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdPrecioLista" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdFormaPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TiempoEntrega" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Referencia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="LugarEntrega" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdMetodoPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Letra" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="IdSolicitud" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Numero" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
   </Function>
   <Function Name="dbo.Cotizaciones_Nueva_Revision" Method="Cotizaciones_Nueva_Revision">
     <Parameter Name="Folio" Parameter="folio" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CotizacionCopiar" Method="CotizacionCopiar">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

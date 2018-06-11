@@ -32,20 +32,19 @@
 			<dx:TabPage Text="Atendidas">
 				<ContentCollection>
 					<dx:ContentControl runat="server">
-						<dx:ASPxGridView ID="grdCotizaciones0" runat="server" AutoGenerateColumns="False" DataSourceID="SolicitudesCotizacion" EnableTheming="True" Theme="Aqua" Width="100%">
+						<dx:ASPxGridView ID="grdCotizaciones0" runat="server" AutoGenerateColumns="False" DataSourceID="PedidosAtendidos" EnableTheming="True" Theme="Aqua" Width="100%">
 							<Columns>
-								<dx:GridViewDataTextColumn FieldName="IdPedido" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+								<dx:GridViewDataTextColumn FieldName="IdPedido" ShowInCustomizationForm="True" Visible="False" VisibleIndex="0">
 								</dx:GridViewDataTextColumn>
-								<dx:GridViewDataDateColumn FieldName="FechaPedido" ShowInCustomizationForm="True" VisibleIndex="2">
+								<dx:GridViewDataDateColumn FieldName="FechaPedido" ShowInCustomizationForm="True" VisibleIndex="1">
 								</dx:GridViewDataDateColumn>
-								<dx:GridViewDataTextColumn FieldName="Usuario" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="3">
+								<dx:GridViewDataTextColumn FieldName="Usuario" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="2">
 								</dx:GridViewDataTextColumn>
-								<dx:GridViewDataTextColumn FieldName="RazonSocial" ShowInCustomizationForm="True" VisibleIndex="4">
-								</dx:GridViewDataTextColumn>
-								<dx:GridViewDataTextColumn ShowInCustomizationForm="True" VisibleIndex="0">
+								<dx:GridViewDataTextColumn FieldName="RazonSocial" ShowInCustomizationForm="True" VisibleIndex="3">
 								</dx:GridViewDataTextColumn>
 							</Columns>
 						</dx:ASPxGridView>
+						<asp:SqlDataSource ID="PedidosAtendidos" runat="server" ConnectionString="<%$ ConnectionStrings:DB_9B18B8_musebeConnectionString %>" SelectCommand="PedidosTodosAtendidos" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
 					</dx:ContentControl>
 				</ContentCollection>
 			</dx:TabPage>

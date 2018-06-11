@@ -40,6 +40,15 @@ namespace MusebeWEBFinal {
         protected global::DevExpress.Web.ASPxGridView grdCotizaciones0;
         
         /// <summary>
+        /// PedidosAtendidos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource PedidosAtendidos;
+        
+        /// <summary>
         /// SolicitudesCotizacion control.
         /// </summary>
         /// <remarks>
