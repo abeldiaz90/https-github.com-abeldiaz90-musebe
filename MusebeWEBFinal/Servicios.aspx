@@ -117,19 +117,32 @@
 						</dx:ASPxListBox>
 						<dx:ASPxTextBox ID="Personas" runat="server" Caption="Para cuantas Personas" HorizontalAlign="Center" Width="100%" Theme="Aqua">
 							<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
+							<ValidationSettings ErrorTextPosition="Bottom" SetFocusOnError="True" ValidationGroup="ServiciosCotizar">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
 						</dx:ASPxTextBox>
 						<dx:ASPxMemo ID="txtDescripcion" runat="server" Caption="Descripción de los servicios deseados:" Height="71px" Theme="Aqua" Width="100%">
 							<CaptionSettings HorizontalAlign="Left" Position="Top" VerticalAlign="Top" />
 						</dx:ASPxMemo>
-						<dx:ASPxTextBox ID="txtNombre" runat="server" AutoResizeWithContainer="True" Caption="Nombre Completo:" Width="100%">
+						<dx:ASPxTextBox ID="txtNombre" runat="server" AutoResizeWithContainer="True" Caption="Nombre Completo:" Width="100%" DisplayFormatString="ServiciosCotizar">
 							<CaptionSettings Position="Top" />
+							<ValidationSettings ErrorTextPosition="Bottom" SetFocusOnError="True" ValidationGroup="ServiciosCotizar">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
 						</dx:ASPxTextBox>
-						<dx:ASPxTextBox ID="txtTelefono" runat="server" AutoResizeWithContainer="True" Caption=" Telefono:" Width="100%">
+						<dx:ASPxTextBox ID="txtTelefono" runat="server" AutoResizeWithContainer="True" Caption=" Telefono:" Width="100%" DisplayFormatString="ServiciosCotizar">
 							<CaptionSettings Position="Top" />
+							<ValidationSettings ErrorTextPosition="Bottom" SetFocusOnError="True" ValidationGroup="ServiciosCotizar">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
 						</dx:ASPxTextBox>
-						<dx:ASPxTextBox ID="txtCorreo" runat="server" AutoResizeWithContainer="True" Caption="Correo:" Width="100%">
+						<dx:ASPxTextBox ID="txtCorreo" runat="server" AutoResizeWithContainer="True" Caption="Correo:" Width="100%" DisplayFormatString="ServiciosCotizar">
 							<CaptionSettings Position="Top" />
+							<ValidationSettings ErrorTextPosition="Bottom" SetFocusOnError="True" ValidationGroup="ServiciosCotizar">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
 						</dx:ASPxTextBox>
+						<dx:ASPxButton ID="btnGuardarCotizacion" runat="server" Text="Enviar" Theme="Aqua" OnClick="btnGuardarCotizacion_Click" ValidationGroup="ServiciosCotizar"></dx:ASPxButton>
 						<br />
 					</dx:PopupControlContentControl>
 				</ContentCollection>

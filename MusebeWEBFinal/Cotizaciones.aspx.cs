@@ -40,6 +40,10 @@ namespace MusebeWEBFinal
 		{
 			try
 			{
+				if (Numero.Value == "")
+				{
+					Numero.Value = "1";
+				}
 				MUSEBEDataContext db = new MUSEBEDataContext();
 				db.COTIZACIONES_INSERTAR(this.txtFolio.Text, this.FechaCotizacion.Date, "", Int32.Parse(this.cboClientes.SelectedItem.Value.ToString()), Int32.Parse(this.cboContacto.SelectedItem.Value.ToString()), 0, this.Page.User.Identity.Name.ToString(), this.txtTitulo.Text, Int32.Parse(this.cboTipoMoneda.SelectedItem.Value.ToString()), Int32.Parse(this.cboFormaPago.SelectedItem.Value.ToString()), this.txtReferencia.Text, Int32.Parse(this.cboMetodoPago.SelectedItem.Value.ToString()), this.txtTiempoEntrega.Text, this.txtLugarEntrega.Text, null, this.Letra.Value,Int32.Parse(this.Numero.Value));
 				db.Cotizaciones_Detalle_Insertar(this.txtFolio.Text, this.txtItem.Text, float.Parse(this.txtCantidad.Text));
