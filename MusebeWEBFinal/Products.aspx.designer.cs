@@ -58,6 +58,15 @@ namespace MusebeWEBFinal {
         protected global::DevExpress.Web.ASPxTextBox txtClave;
         
         /// <summary>
+        /// Id control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField Id;
+        
+        /// <summary>
         /// txtDescripcionCorta control.
         /// </summary>
         /// <remarks>
@@ -74,15 +83,6 @@ namespace MusebeWEBFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxMemo txtDescripcionLarga;
-        
-        /// <summary>
-        /// imgPrincipal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxBinaryImage imgPrincipal;
         
         /// <summary>
         /// cboGrupo control.
@@ -335,6 +335,60 @@ namespace MusebeWEBFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnNoGuardar;
+        
+        /// <summary>
+        /// imageGallery control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxImageGallery imageGallery;
+        
+        /// <summary>
+        /// imgBinaria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxBinaryImage imgBinaria;
+        
+        /// <summary>
+        /// lnkImagenes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkImagenes;
+        
+        /// <summary>
+        /// lnkCambiarImagenPrincipal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkCambiarImagenPrincipal;
+        
+        /// <summary>
+        /// popupCargaImagenes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPopupControl popupCargaImagenes;
+        
+        /// <summary>
+        /// ArchivosGaleriasFotos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxFileManager ArchivosGaleriasFotos;
         
         /// <summary>
         /// popupBusqueda control.

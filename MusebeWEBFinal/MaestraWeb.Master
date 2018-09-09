@@ -22,6 +22,12 @@
 	</asp:ContentPlaceHolder>
 </head>
 <body style="margin-top: 0px;">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPPWKCH"
+				height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+
 	<form id="form1" runat="server">
 		<div>
 			<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -33,7 +39,7 @@
 					}
 
 					.topnav {
-						overflow:visible;
+						overflow: visible;
 						background-color: #333;
 					}
 
@@ -58,7 +64,7 @@
 
 					@media screen and (max-width: 600px) {
 						.topnav a:not(:first-child) {
-							display:contents;
+							display: contents;
 						}
 
 						.topnav a.icon {
@@ -86,10 +92,10 @@
 					}
 				</style>
 				</head>
-                <body>						
+                <body>
 					<div class="pull-right">
 						<p style="color: black" class="d-inline pull-right">
-							&#9742;<a style="color:black" href="tel:+529381180887">9381180887</a>
+							&#9742;<a style="color: black" href="tel:+529381180887">9381180887</a>
 						</p>
 						<br />
 						<p style="color: black" class="d-inline pull-right">
@@ -120,8 +126,13 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12">
-								<p class="text-center" style="color: black">Copyright &copy; <a style="color:black" href="index.aspx">MultiServicios BEAR S.A. de C.V.</a></p>
-								<p class="text-center" style="color: black">Tel. Oficina :&#9742;<a style="color:black" href="#" id="lnkTelefonoOficina" runat="server"><dx:ASPxLabel ID="tel" runat="server" Text=""></dx:ASPxLabel></a> Cel. &#128241;<a style="color:black" href="#" id="lnkTelefonoCelular" runat="server"><dx:ASPxLabel ID="cel" runat="server" Text=""></dx:ASPxLabel></a><a style="color:black" href="#" id="linkcorreo" runat="server" title="Envienos sus dudas por correo electronico">  &#9993;<dx:ASPxLabel ID="mail" runat="server" Text=""></dx:ASPxLabel></a> </p>
+								<p class="text-center" style="color: black">Copyright &copy; <a style="color: black" href="index.aspx">MultiServicios BEAR S.A. de C.V.</a></p>
+								<p class="text-center" style="color: black">
+									Tel. Oficina :&#9742;<a style="color: black" href="#" id="lnkTelefonoOficina" runat="server"><dx:ASPxLabel ID="tel" runat="server" Text=""></dx:ASPxLabel>
+									</a>Cel. &#128241;<a style="color: black" href="#" id="lnkTelefonoCelular" runat="server"><dx:ASPxLabel ID="cel" runat="server" Text=""></dx:ASPxLabel>
+									</a><a style="color: black" href="#" id="linkcorreo" runat="server" title="Envienos sus dudas por correo electronico">&#9993;<dx:ASPxLabel ID="mail" runat="server" Text=""></dx:ASPxLabel>
+									</a>
+								</p>
 							</div>
 						</div>
 						<!-- /.row -->

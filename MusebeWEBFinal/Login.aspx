@@ -2,14 +2,43 @@
 
 <%@ Register Src="~/menupaginaweb.ascx" TagPrefix="uc1" TagName="menupaginaweb" %>
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
+	<script>
+		dataLayer = [{
+			'pageCategory': 'signup',
+			'visitorType': 'high-value'
+		}];
+	</script>
+	<!-- Google Tag Manager -->
+	<script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+				new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+			'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-NPPWKCH');</script>
+
+	<script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+				new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+			'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-NPPWKCH');</script>
+	<!-- End Google Tag Manager -->
 	<asp:ScriptManager ID="ScriptManager1" runat="server">
 	</asp:ScriptManager>
-	
-<style>
-		body {
+
+	<style>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript > <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPPWKCH" height="0" width="0" style="display:none;visibility:hidden" > </iframe > </noscript > body {
 			background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
 			background-color: transparent;
 			background-repeat: no-repeat;
@@ -117,11 +146,18 @@
 								<asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="Password" Display="Dynamic" ValidationGroup="Login" ErrorMessage="Please enter a password" CssClass="error">Please enter a password</asp:RequiredFieldValidator>
 								<asp:Button ID="LoginButton" runat="server" CommandName="Login" class="btn btn-primary" ValidationGroup="Login" Text="Log in" UseSubmitBehavior="false" />
 								<asp:LinkButton ID="LinkButton1" runat="server">Olvide mi contraseña</asp:LinkButton>
-							    <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Registrarme</asp:LinkButton>
+								<asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Registrarme</asp:LinkButton>
 							</div>
 						</LayoutTemplate>
 
 					</asp:Login>
+					<a href="#" name="button1" onclick="dataLayer.push({'event': 'button1-click'});">Button 1</a>
+					<a href="#"
+						name="color"
+						onclick="dataLayer.push({
+     'color': 'red',
+     'conversionValue': 50,
+     'event': 'customizeCar'});">Customize Color</a>
 				</div>
 			</section>
 		</div>

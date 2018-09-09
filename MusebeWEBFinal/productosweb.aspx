@@ -5,10 +5,40 @@
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 <asp:Content ID="Content3" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
+	<script>
+		dataLayer = [{
+			'pageCategory': 'Productos',
+			'visitorType': 'high-value'
+		}];
+	</script>
+	<!-- Google Tag Manager -->
+	<script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+				new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+			'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-NPPWKCH');</script>
+
+	<script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+				new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+			'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-NPPWKCH');</script>
+	<!-- End Google Tag Manager -->
 	<asp:ScriptManager ID="ScriptManager1" EnablePageMethods="true" runat="server"></asp:ScriptManager>
 	<asp:UpdatePanel ID="UpdatePanel1" runat="server">
 		<ContentTemplate>
 			<style>
+					<style>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript > <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPPWKCH" height="0" width="0" style="display:none;visibility:hidden" > </iframe > </noscript >
 				body {
 					background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
 					background-color: transparent;

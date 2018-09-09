@@ -907,6 +907,7 @@
     <Content Include="Fonts\glyphicons-98-vector-path-line.png" />
     <Content Include="Fonts\glyphicons-99-vector-path-curve.png" />
     <Content Include="Galeria.aspx" />
+    <Content Include="Hola.html" />
     <Content Include="Imagenes\HomeGaleria\banquetes.jpg" />
     <Content Include="Imagenes\HomeGaleria\Bocadillos.jpg" />
     <Content Include="Imagenes\HomeGaleria\CoffeBreak.jpg" />

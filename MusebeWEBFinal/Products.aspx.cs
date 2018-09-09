@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -75,9 +78,10 @@ namespace MusebeWEBFinal
 			{
 				MUSEBEDataContext db = new MUSEBEDataContext();
 				var query = db.Productos_Consultar_Clave(this.grdResultadosBusqueda.GetRowValues(this.grdResultadosBusqueda.FocusedRowIndex, "Clave").ToString());
-
+				this.Panel1.Enabled = true;
 				foreach (var i in query)
 				{
+					this.Id.Value = i.Id.ToString();
 					this.txtClave.Text = i.Clave;
 					this.txtDescripcionCorta.Text = i.NombreCorto;
 					this.txtDescripcionLarga.Text = i.Descripcion;
@@ -98,7 +102,9 @@ namespace MusebeWEBFinal
 					this.chkInventario.Checked = i.Inventariable.Value;
 					this.chkIva.Checked = i.Iva.Value;
 					this.chkVisible.Checked = i.VisibleWeb.Value;
-					this.imgPrincipal.Value = i.Imagen;
+					this.imgBinaria.ContentBytes = i.Imagen.ToArray();
+					ObtenerRuta(i.Id.ToString());
+
 				}
 				this.popupBusqueda.ShowOnPageLoad = false;
 			}
@@ -106,6 +112,47 @@ namespace MusebeWEBFinal
 			{
 				ex.ToString();
 			}
+		}
+
+		public void ObtenerRuta(string IdProducto)
+		{
+			string targetPath = Server.MapPath("Imagenes/Productos/" + IdProducto);
+			if (File.Exists(targetPath))
+			{
+				this.imageGallery.SettingsFolder.ImageSourceFolder = "~\\Imagenes\\Productos\\" + IdProducto;
+				//this.imageGallery.CustomImageProcessing += imageGallery_CustomImageProcessing;
+				this.imageGallery.UpdateImageCacheFolder();
+				this.ArchivosGaleriasFotos.Settings.RootFolder = targetPath;
+			}
+			else
+			{
+				Directory.CreateDirectory(targetPath);
+				this.ArchivosGaleriasFotos.Settings.RootFolder = targetPath;
+				this.imageGallery.SettingsFolder.ImageSourceFolder = "~\\Imagenes\\Productos\\" + IdProducto;
+				//this.imageGallery.CustomImageProcessing += imageGallery_CustomImageProcessing;
+				this.imageGallery.UpdateImageCacheFolder();
+			}
+		}
+
+
+		public System.Drawing.Image Base64StringToImage(byte[] imageBytes)
+		{
+
+			var memStream = new MemoryStream(imageBytes, 0, imageBytes.Length);
+
+			memStream.Write(imageBytes, 0, imageBytes.Length);
+			var image = System.Drawing.Image.FromStream(memStream);
+			return image;
+		}
+
+		protected void lnkImagenes_Click(object sender, EventArgs e)
+		{
+			this.popupCargaImagenes.ShowOnPageLoad = true;
+		}
+
+		protected void lnkCambiarImagenPrincipal_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
