@@ -151,13 +151,7 @@
 						</LayoutTemplate>
 
 					</asp:Login>
-					<a href="#" name="button1" onclick="dataLayer.push({'event': 'button1-click'});">Button 1</a>
-					<a href="#"
-						name="color"
-						onclick="dataLayer.push({
-     'color': 'red',
-     'conversionValue': 50,
-     'event': 'customizeCar'});">Customize Color</a>
+	
 				</div>
 			</section>
 		</div>
