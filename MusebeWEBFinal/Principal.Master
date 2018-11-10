@@ -29,6 +29,7 @@
 		<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 			<asp:ScriptManager ID="ScriptManager1" runat="server">
 			</asp:ScriptManager>
+		
 			<asp:UpdatePanel ID="UpdatePanel1" runat="server">
 				<ContentTemplate>
 					<div class="col-md-8">
@@ -60,12 +61,10 @@
 								<li role="separator" class="divider"></li>
 								<li><a href="#">
 									<asp:LoginStatus ID="LoginStatus1" runat="server" OnLoggingOut="LoginStatus1_LoggingOut" />
-								</a></li>
+									</a></li>
 							</ul>
 						</div>
 					</div>
-
-
 					<dx:ASPxPopupControl ID="popupPerfil" runat="server" HeaderText="Mis Datos" Modal="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Theme="Metropolis" AllowDragging="True" AllowResize="True" AutoUpdatePosition="True" ShowPageScrollbarWhenModal="True">
 						<ContentCollection>
 							<dx:PopupControlContentControl runat="server">
@@ -129,6 +128,7 @@
 					</div>
 				</ContentTemplate>
 			</asp:UpdatePanel>
+		
 			<!-- Smartsupp Live Chat script -->
 			<script type="text/javascript">
 				var _smartsupp = _smartsupp || {};

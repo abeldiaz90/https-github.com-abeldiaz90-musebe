@@ -22,6 +22,24 @@ namespace MusebeWEBFinal {
         protected global::DevExpress.Web.ASPxTextBox txtPara;
         
         /// <summary>
+        /// txtCC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtCC;
+        
+        /// <summary>
+        /// txtCCO control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtCCO;
+        
+        /// <summary>
         /// txtAsunto control.
         /// </summary>
         /// <remarks>

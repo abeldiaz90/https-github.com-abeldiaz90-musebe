@@ -14,7 +14,10 @@ namespace MusebeWEBFinal
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+			if (!Page.IsPostBack)
+			{
+				this.Id.Value = string.Empty;
+			}
 		}
 
 		protected void btnNuevo_Click(object sender, EventArgs e)
@@ -24,11 +27,33 @@ namespace MusebeWEBFinal
 
 		protected void btnCancelar_Click(object sender, EventArgs e)
 		{
+			Limpiar();
 			this.Panel1.Enabled = false;
 		}
 
 		public void Limpiar()
 		{
+			this.Id.Value = "";
+			this.txtClave.Text = string.Empty;
+			this.txtDescripcionCorta.Text = string.Empty;
+			this.txtDescripcionLarga.Text = string.Empty;
+			this.cboGrupo.SelectedIndex = -1;
+			this.cboMarca.SelectedIndex = -1;
+			this.cboMaterial.SelectedIndex = -1;
+			this.cboUnidad.SelectedIndex = -1;
+			this.txtDimension.Text = string.Empty;
+			this.txtPiezasPaquete.Text = string.Empty;
+			this.txtPaquetesCaja.Text = string.Empty;
+			this.txtPrecioPaquetesCaja.Text = string.Empty;
+			this.txtPrecioPieza.Text = string.Empty;
+			this.txtPrecioPiezasCajabulto.Text = string.Empty;
+			this.txtMinimo.Text = string.Empty;
+			this.txtMaximo.Text = string.Empty;
+			this.txtCantidadInicial.Text = string.Empty;
+			this.chkActivo.Checked = false;
+			this.chkInventario.Checked = false;
+			this.chkIva.Checked = false;
+			this.chkVisible.Checked = false;
 
 		}
 
@@ -38,19 +63,49 @@ namespace MusebeWEBFinal
 			{
 				popupConfirmacion.ShowOnPageLoad = true;
 			}
-			catch (Exception ex) { }
+			catch (Exception ex)
+			{
+				ex.ToString();
+			}
 		}
 
 		protected void btnSiGuardar_Click(object sender, EventArgs e)
 		{
 			MUSEBEDataContext db = new MUSEBEDataContext();
-			db.Productos_Insertar(this.txtDescripcionCorta.Text, this.txtDescripcionLarga.Text, this.txtDescripcionCorta.Text, this.txtClave.Text, Int32.Parse(this.cboGrupo.SelectedItem.Value.ToString()), Int32.Parse(this.cboMarca.SelectedItem.Value.ToString()), Int32.Parse(this.cboMaterial.SelectedItem.Value.ToString()), Int32.Parse(this.cboUnidad.SelectedItem.Value.ToString()), float.Parse(this.txtDimension.Text), Int32.Parse(this.txtPiezasPaquete.Text), Int32.Parse(this.txtPaquetesCaja.Text), Decimal.Parse(this.txtPrecioPieza.Text), Decimal.Parse(this.txtPrecioPaquetesCaja.Text), Decimal.Parse(this.txtPrecioPiezasCajabulto.Text), this.User.Identity.Name.ToString(), this.chkActivo.Checked, float.Parse(this.txtMinimo.Text), float.Parse(this.txtMaximo.Text), float.Parse(this.txtCantidadInicial.Text), this.chkVisible.Checked);
-			db.SubmitChanges();
-			this.popupConfirmacion.ShowOnPageLoad = false;
-			ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(),
+			if (Id.Value.ToString() == string.Empty)
+			{
+				db.Productos_Insertar(this.txtDescripcionCorta.Text, this.txtDescripcionLarga.Text, this.txtDescripcionCorta.Text, this.txtClave.Text, Int32.Parse(this.cboGrupo.SelectedItem.Value.ToString()), Int32.Parse(this.cboMarca.SelectedItem.Value.ToString()), Int32.Parse(this.cboMaterial.SelectedItem.Value.ToString()), Int32.Parse(this.cboUnidad.SelectedItem.Value.ToString()), float.Parse(this.txtDimension.Text), Int32.Parse(this.txtPiezasPaquete.Text), Int32.Parse(this.txtPaquetesCaja.Text), Decimal.Parse(this.txtPrecioPieza.Text), Decimal.Parse(this.txtPrecioPaquetesCaja.Text), Decimal.Parse(this.txtPrecioPiezasCajabulto.Text), this.User.Identity.Name.ToString(), this.chkActivo.Checked, float.Parse(this.txtMinimo.Text), float.Parse(this.txtMaximo.Text), float.Parse(this.txtCantidadInicial.Text), this.chkVisible.Checked);
+				db.SubmitChanges();
+				ObtenerId();
+				ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(),
 						"err_msg",
-						"alert('!Producto GUardado!');",
+						"alert('!El producto ha sido dado de alta!');",
 						true);
+			}
+			else
+			{
+				db.Productos_Modificar(Int32.Parse(this.Id.Value.ToString()), this.txtDescripcionCorta.Text, this.txtDescripcionLarga.Text, this.txtDescripcionCorta.Text, this.txtClave.Text, Int32.Parse(this.cboGrupo.SelectedItem.Value.ToString()), Int32.Parse(this.cboMarca.SelectedItem.Value.ToString()), Int32.Parse(this.cboMaterial.SelectedItem.Value.ToString()), Int32.Parse(this.cboUnidad.SelectedItem.Value.ToString()), float.Parse(this.txtDimension.Text), Int32.Parse(this.txtPiezasPaquete.Text), Int32.Parse(this.txtPiezasBulto.Text), Int32.Parse(this.txtPaquetesCaja.Text), Decimal.Parse(this.txtPrecioPieza.Text), Decimal.Parse(this.txtPrecioPaquetesCaja.Text), Decimal.Parse(this.txtPrecioPiezasCajabulto.Text), this.User.Identity.Name.ToString(), this.chkActivo.Checked, float.Parse(this.txtMinimo.Text), float.Parse(this.txtMaximo.Text), float.Parse(this.txtCantidadInicial.Text), this.chkIva.Checked, this.chkInventario.Checked, this.chkVisible.Checked);
+				db.SubmitChanges();
+				ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(),
+						"err_msg",
+						"alert('!Los datos han sido guardados!');",
+						true);
+			}
+
+
+			this.popupConfirmacion.ShowOnPageLoad = false;
+
+		}
+
+		public void ObtenerId()
+		{
+			MUSEBEDataContext db = new MUSEBEDataContext();
+			var productos = db.Productos_Consultar_Clave(this.txtClave.Text);
+			foreach(var i in productos)
+			{
+				this.Id.Value = i.Id.ToString();
+				ObtenerRuta(Id.Value);
+			}
 		}
 
 		protected void btnNoGuardar_Click(object sender, EventArgs e)
@@ -119,7 +174,7 @@ namespace MusebeWEBFinal
 			string targetPath = Server.MapPath("Imagenes/Productos/" + IdProducto);
 			if (File.Exists(targetPath))
 			{
-				this.imageGallery.SettingsFolder.ImageSourceFolder = "~\\Imagenes\\Productos\\" + IdProducto;
+				this.imageGallery.ImageSourceFolder = "~\\Imagenes\\Productos\\" + IdProducto;
 				//this.imageGallery.CustomImageProcessing += imageGallery_CustomImageProcessing;
 				this.imageGallery.UpdateImageCacheFolder();
 				this.ArchivosGaleriasFotos.Settings.RootFolder = targetPath;
@@ -128,7 +183,7 @@ namespace MusebeWEBFinal
 			{
 				Directory.CreateDirectory(targetPath);
 				this.ArchivosGaleriasFotos.Settings.RootFolder = targetPath;
-				this.imageGallery.SettingsFolder.ImageSourceFolder = "~\\Imagenes\\Productos\\" + IdProducto;
+				this.imageGallery.ImageSourceFolder = "~\\Imagenes\\Productos\\" + IdProducto;
 				//this.imageGallery.CustomImageProcessing += imageGallery_CustomImageProcessing;
 				this.imageGallery.UpdateImageCacheFolder();
 			}
@@ -145,14 +200,51 @@ namespace MusebeWEBFinal
 			return image;
 		}
 
-		protected void lnkImagenes_Click(object sender, EventArgs e)
+		protected void btnFotoPrinicpal_Click(object sender, EventArgs e)
 		{
-			this.popupCargaImagenes.ShowOnPageLoad = true;
+			MUSEBEDataContext db = new MUSEBEDataContext();
+			var datosproducto = db.Productos_Consultar_Clave(this.txtClave.Text);
+			foreach (var i in datosproducto)
+			{
+				this.imgBinaria.ContentBytes = i.Imagen.ToArray();
+			}
+			this.popupImagen.ShowOnPageLoad = true;
 		}
 
-		protected void lnkCambiarImagenPrincipal_Click(object sender, EventArgs e)
+		protected void btnGaleria_Click(object sender, EventArgs e)
 		{
+			this.popupGaleria.ShowOnPageLoad = true;
+		}
 
+		protected void SubirImagen_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+		{
+			string filename = Path.GetFileName(e.UploadedFile.FileName);
+			string ruta = Path.GetDirectoryName(e.UploadedFile.FileName);
+
+			string targetPath = Server.MapPath("Imagenes/Productos/" + e.UploadedFile.FileName);
+			if (File.Exists(targetPath))
+			{
+				File.Delete(targetPath);
+			}
+
+
+			e.UploadedFile.SaveAs(targetPath);
+
+			byte[] fileBytes = System.IO.File.ReadAllBytes(targetPath);
+			MUSEBEDataContext db = new MUSEBEDataContext();
+			db.Productos_Modificar_Foto(Int32.Parse(this.Id.Value), fileBytes);
+			db.SubmitChanges();		
+			//var datosproducto = db.Productos_Consultar_Clave(this.txtClave.Text);
+			//foreach (var i in datosproducto)
+			//{
+			//	this.imgBinaria.ContentBytes = i.Imagen.ToArray();
+			//	this.imgBinaria.DataBind();
+			//}
+			this.popupImagen.ShowOnPageLoad = false;
+			ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(),
+					"err_msg",
+					"alert('!La foto ha sido cambiada!');",
+					true);
 		}
 	}
 }

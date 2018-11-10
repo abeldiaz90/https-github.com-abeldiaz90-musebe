@@ -229,7 +229,7 @@ namespace MusebeWEBFinal
 			var query = db.Usuarios_Consultar_Datos(this.Page.User.Identity.Name.ToString());
 			foreach (var d in query)
 			{
-				n.Mail(d.Correo, d.Correo, App_GlobalResources.Mensajes.CambioPasswordExitoso, true, "Estimado: <p><b>" + d.Nombre + " " + d.Segundo_Nombre + " " + d.Apellido_Paterno + " " + d.Apellido_Materno + "</b> Le informamos que:" + App_GlobalResources.Mensajes.CambioPasswordExitoso);
+				n.Mail(d.Correo, d.Correo,d.Correo, App_GlobalResources.Mensajes.CambioPasswordExitoso, true, "Estimado: <p><b>" + d.Nombre + " " + d.Segundo_Nombre + " " + d.Apellido_Paterno + " " + d.Apellido_Materno + "</b> Le informamos que:" + App_GlobalResources.Mensajes.CambioPasswordExitoso,null);
 				ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", @"alert('" + App_GlobalResources.Mensajes.CambioPasswordExitoso + "')", true);
 			}
 			this.popupPassword.ShowOnPageLoad = false;

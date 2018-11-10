@@ -6,12 +6,18 @@
 	<dx:ASPxTextBox ID="txtPara" runat="server" Caption="Para" CssClass="form-control" Width="100%">
 	</dx:ASPxTextBox>
 	<br />
-	<dx:ASPxTextBox ID="txtAsunto" runat="server" Caption="Asunto" CssClass="form-control" Width="100%">
+	<dx:ASPxTextBox ID="txtCC" runat="server" Caption="CC" CssClass="form-control" Width="100%" NullText="Escriba destinatarios separados por ;">
 	</dx:ASPxTextBox>
 	<br />
-	<dx:ASPxMemo ID="txtMensaje" runat="server" Caption="Mensaje" Height="71px" Width="100%">
+	<dx:ASPxTextBox ID="txtCCO" runat="server" Caption="CCO" CssClass="form-control" Width="100%" NullText="Escriba destinatarios separados por ;">
+	</dx:ASPxTextBox>
+	<br />
+	<dx:ASPxTextBox ID="txtAsunto" runat="server" Caption="Asunto" CssClass="form-control" Width="100%" >
+	</dx:ASPxTextBox>
+	<br />
+	<dx:ASPxMemo ID="txtMensaje" runat="server" Caption="Mensaje" CssClass="form-control"  Height="71px" Width="100%">
 	</dx:ASPxMemo>
 	<br />
-	<dx:ASPxButton ID="txtEnviar" runat="server" OnClick="txtEnviar_Click" Text="Enviar">
+	<dx:ASPxButton ID="txtEnviar" runat="server" OnClick="txtEnviar_Click" Text="Enviar Correo" CssClass="btn btn-success">
 	</dx:ASPxButton>
 </asp:Content>

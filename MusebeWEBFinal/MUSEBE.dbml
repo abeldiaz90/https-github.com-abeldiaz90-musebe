@@ -452,4 +452,31 @@
       <Column Name="VisibleWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.Productos_Modificar" Method="Productos_Modificar">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Producto" Parameter="producto" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="NombreCorto" Parameter="nombreCorto" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Clave" Parameter="clave" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdGrupo" Parameter="idGrupo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdMarca" Parameter="idMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdMaterial" Parameter="idMaterial" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdUnidad" Parameter="idUnidad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Dimension" Parameter="dimension" Type="System.Single" DbType="Real" />
+    <Parameter Name="PiezasPaquete" Parameter="piezasPaquete" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PiezasCajaBulto" Parameter="piezasCajaBulto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PaquetesCajaBulto" Parameter="paquetesCajaBulto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PrecioPieza" Parameter="precioPieza" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="PrecioPaquete" Parameter="precioPaquete" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="PrecioCajaBulto" Parameter="precioCajaBulto" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Creo" Parameter="creo" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Min" Parameter="min" Type="System.Single" DbType="Real" />
+    <Parameter Name="Max" Parameter="max" Type="System.Single" DbType="Real" />
+    <Parameter Name="Inicial" Parameter="inicial" Type="System.Single" DbType="Real" />
+    <Parameter Name="Iva" Parameter="iva" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Inventariable" Parameter="inventariable" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="VisibleWeb" Parameter="visibleWeb" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

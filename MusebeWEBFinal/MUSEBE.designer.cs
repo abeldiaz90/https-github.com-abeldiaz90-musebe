@@ -433,6 +433,37 @@ namespace MusebeWEBFinal
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), clave);
 			return ((ISingleResult<Productos_Consultar_ClaveResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Productos_Modificar")]
+		public int Productos_Modificar(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Producto", DbType="VarChar(MAX)")] string producto, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(MAX)")] string descripcion, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NombreCorto", DbType="VarChar(MAX)")] string nombreCorto, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Clave", DbType="VarChar(MAX)")] string clave, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdGrupo", DbType="Int")] System.Nullable<int> idGrupo, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdMarca", DbType="Int")] System.Nullable<int> idMarca, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdMaterial", DbType="Int")] System.Nullable<int> idMaterial, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUnidad", DbType="Int")] System.Nullable<int> idUnidad, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dimension", DbType="Real")] System.Nullable<float> dimension, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PiezasPaquete", DbType="Int")] System.Nullable<int> piezasPaquete, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PiezasCajaBulto", DbType="Int")] System.Nullable<int> piezasCajaBulto, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PaquetesCajaBulto", DbType="Int")] System.Nullable<int> paquetesCajaBulto, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PrecioPieza", DbType="Money")] System.Nullable<decimal> precioPieza, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PrecioPaquete", DbType="Money")] System.Nullable<decimal> precioPaquete, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PrecioCajaBulto", DbType="Money")] System.Nullable<decimal> precioCajaBulto, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Creo", DbType="VarChar(MAX)")] string creo, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Activo", DbType="Bit")] System.Nullable<bool> activo, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Min", DbType="Real")] System.Nullable<float> min, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Max", DbType="Real")] System.Nullable<float> max, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Inicial", DbType="Real")] System.Nullable<float> inicial, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Iva", DbType="Bit")] System.Nullable<bool> iva, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Inventariable", DbType="Bit")] System.Nullable<bool> inventariable, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="VisibleWeb", DbType="Bit")] System.Nullable<bool> visibleWeb)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, producto, descripcion, nombreCorto, clave, idGrupo, idMarca, idMaterial, idUnidad, dimension, piezasPaquete, piezasCajaBulto, paquetesCajaBulto, precioPieza, precioPaquete, precioCajaBulto, creo, activo, min, max, inicial, iva, inventariable, visibleWeb);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class Usuarios_Consultar_DatosResult

@@ -477,16 +477,10 @@ namespace MusebeWEBFinal
 			ReportDataSource dsMain = new ReportDataSource();
 			dsMain.Name = "CotizacionImprimir";
 			dsMain.Value = ds;
-
-
-
 			DataTable dslogo = ObtenerLogoEmpresa();
-
-
 			ReportDataSource logo = new ReportDataSource();
 			logo.Name = "ObtenerLogoEmpresa";
 			logo.Value = dslogo;
-
 			report.DataSources.Clear();
 			report.DataSources.Add(dsMain);
 			report.DataSources.Add(logo);
@@ -495,7 +489,6 @@ namespace MusebeWEBFinal
 			string mimeType;
 			string encoding;
 			string fileNameExtension;
-
 			string deviceInfo =
 				"<DeviceInfo>" +
 				"  <OutputFormat>PDF</OutputFormat>" +
@@ -506,12 +499,9 @@ namespace MusebeWEBFinal
 				"  <MarginRight>0cm</MarginRight>" +
 				"  <MarginBottom>0cm</MarginBottom>" +
 				"</DeviceInfo>";
-
 			Warning[] warnings;
 			string[] streams;
 			byte[] renderedBytes;
-
-
 			renderedBytes = report.Render(
 				reportType,
 				deviceInfo,
@@ -520,16 +510,12 @@ namespace MusebeWEBFinal
 				out fileNameExtension,
 				out streams,
 				out warnings);
-
 			string filename = Path.Combine(Path.GetTempPath(), "Cotizacion.pdf");
-
-
 			using (var fs = new FileStream(filename, FileMode.Create))
 			{
 				fs.Write(renderedBytes, 0, renderedBytes.Length);
 				fs.Close();
 			}
-
 			// Create  the file attachment for this e-mail message.
 			Attachment data = new Attachment(filename, MediaTypeNames.Application.Octet);
 			// Add time stamp information for the file.
@@ -539,33 +525,11 @@ namespace MusebeWEBFinal
 			disposition.ReadDate = System.IO.File.GetLastAccessTime(filename);
 			// Add the file attachment to this e-mail message.
 
-
-
-
-			MailMessage msg = new MailMessage();
-			msg.From = new MailAddress("ventas@musebe.com.mx", "Multiservicios BEAR", System.Text.Encoding.UTF8);
-			msg.Subject = "Cotización";
-			msg.To.Add(FormatMultipleEmailAddresses(this.txtCorreo.Text));
-			msg.CC.Add(FormatMultipleEmailAddresses("abeldiaz90@hotmail.com"));
-			msg.SubjectEncoding = System.Text.Encoding.UTF8;
-			msg.Body = "Estimado Cliente le enviamos nuestra cotizacion con numero de Folio:  " + this.txtFolio.Text;
-			msg.BodyEncoding = System.Text.Encoding.UTF8;
-			msg.Attachments.Add(data);
-			msg.IsBodyHtml = true;
-
-
-
-			SmtpClient client = new SmtpClient();
-			client.Host = "mail.musebe.com.mx";
-			client.Port = 587;
-			NetworkCredential login = new NetworkCredential("ventas@musebe.com.mx", "Imperio90_");
-			//client.EnableSsl = true;
-			client.UseDefaultCredentials = true;
-			client.Credentials = login;
-
 			try
 			{
-				client.Send(msg);
+				Utilidades.Mails correo = new Utilidades.Mails();
+				correo.Mail(this.txtCorreo.Text, this.txtCorreo.Text, "israel.cervantes@musebe.com.mx;armando.bear@musebe.com.mx", "Cotización " + this.txtFolio.Text, true, "Estimado Cliente le enviamos nuestra cotizacion con numero de Folio:  " + this.txtFolio.Text, data);
+
 				ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(),
 						"err_msg",
 						"alert('!Los usuarios han sido notificados via correo electrónico!');",

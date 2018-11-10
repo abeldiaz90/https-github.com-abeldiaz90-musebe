@@ -310,6 +310,24 @@ namespace MusebeWEBFinal {
         protected global::DevExpress.Web.ASPxButton btnCancelar;
         
         /// <summary>
+        /// btnFotoPrinicpal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnFotoPrinicpal;
+        
+        /// <summary>
+        /// btnGaleria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnGaleria;
+        
+        /// <summary>
         /// popupConfirmacion control.
         /// </summary>
         /// <remarks>
@@ -337,13 +355,13 @@ namespace MusebeWEBFinal {
         protected global::DevExpress.Web.ASPxButton btnNoGuardar;
         
         /// <summary>
-        /// imageGallery control.
+        /// popupImagen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxImageGallery imageGallery;
+        protected global::DevExpress.Web.ASPxPopupControl popupImagen;
         
         /// <summary>
         /// imgBinaria control.
@@ -355,22 +373,31 @@ namespace MusebeWEBFinal {
         protected global::DevExpress.Web.ASPxBinaryImage imgBinaria;
         
         /// <summary>
-        /// lnkImagenes control.
+        /// SubirImagen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkImagenes;
+        protected global::DevExpress.Web.ASPxUploadControl SubirImagen;
         
         /// <summary>
-        /// lnkCambiarImagenPrincipal control.
+        /// popupGaleria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkCambiarImagenPrincipal;
+        protected global::DevExpress.Web.ASPxPopupControl popupGaleria;
+        
+        /// <summary>
+        /// imageGallery control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxImageSlider imageGallery;
         
         /// <summary>
         /// popupCargaImagenes control.
@@ -434,5 +461,14 @@ namespace MusebeWEBFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource Resultados;
+        
+        /// <summary>
+        /// UpdateProgress1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress UpdateProgress1;
     }
 }

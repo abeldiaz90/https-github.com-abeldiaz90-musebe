@@ -135,6 +135,7 @@
     <Content Include="detalleservicio.aspx" />
     <Content Include="Directorio.aspx" />
     <Content Include="Entradas.aspx" />
+    <Content Include="Error.html" />
     <Content Include="Fonts\glyphicons-1-glass.png" />
     <Content Include="Fonts\glyphicons-10-magic.png" />
     <Content Include="Fonts\glyphicons-100-vector-path-all.png" />
@@ -937,6 +938,7 @@
     <Content Include="Fonts\glyphicons-99-vector-path-curve.png" />
     <Content Include="Galeria.aspx" />
     <Content Include="Hola.html" />
+    <Content Include="Imagenes\cargando.gif" />
     <Content Include="Imagenes\HomeGaleria\banquetes.jpg" />
     <Content Include="Imagenes\HomeGaleria\Bocadillos.jpg" />
     <Content Include="Imagenes\HomeGaleria\CoffeBreak.jpg" />
