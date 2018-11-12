@@ -939,6 +939,7 @@
     <Content Include="Galeria.aspx" />
     <Content Include="Hola.html" />
     <Content Include="Imagenes\cargando.gif" />
+    <Content Include="Imagenes\empty-photo.jpg" />
     <Content Include="Imagenes\HomeGaleria\banquetes.jpg" />
     <Content Include="Imagenes\HomeGaleria\Bocadillos.jpg" />
     <Content Include="Imagenes\HomeGaleria\CoffeBreak.jpg" />
@@ -1009,10 +1010,6 @@
       <DependentUpon>ProductosDatos.xsd</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\Musebe.pubxml" />
-    <None Include="Properties\PublishProfiles\musebepublish.pubxml" />
-    <None Include="Properties\PublishProfiles\publicar.pubxml" />
-    <None Include="Properties\PublishProfiles\publish.pubxml" />
-    <None Include="Properties\PublishProfiles\Sistema.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

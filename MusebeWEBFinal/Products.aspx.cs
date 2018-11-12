@@ -71,10 +71,13 @@ namespace MusebeWEBFinal
 
 		protected void btnSiGuardar_Click(object sender, EventArgs e)
 		{
+
+			string targetPath = Server.MapPath("Imagenes/empty-photo.jpg");
+			byte[] fileBytes = System.IO.File.ReadAllBytes(targetPath);
 			MUSEBEDataContext db = new MUSEBEDataContext();
 			if (Id.Value.ToString() == string.Empty)
 			{
-				db.Productos_Insertar(this.txtDescripcionCorta.Text, this.txtDescripcionLarga.Text, this.txtDescripcionCorta.Text, this.txtClave.Text, Int32.Parse(this.cboGrupo.SelectedItem.Value.ToString()), Int32.Parse(this.cboMarca.SelectedItem.Value.ToString()), Int32.Parse(this.cboMaterial.SelectedItem.Value.ToString()), Int32.Parse(this.cboUnidad.SelectedItem.Value.ToString()), float.Parse(this.txtDimension.Text), Int32.Parse(this.txtPiezasPaquete.Text), Int32.Parse(this.txtPaquetesCaja.Text), Decimal.Parse(this.txtPrecioPieza.Text), Decimal.Parse(this.txtPrecioPaquetesCaja.Text), Decimal.Parse(this.txtPrecioPiezasCajabulto.Text), this.User.Identity.Name.ToString(), this.chkActivo.Checked, float.Parse(this.txtMinimo.Text), float.Parse(this.txtMaximo.Text), float.Parse(this.txtCantidadInicial.Text), this.chkVisible.Checked);
+				db.Productos_Insertar(this.txtDescripcionCorta.Text, this.txtDescripcionLarga.Text, this.txtDescripcionCorta.Text, this.txtClave.Text, Int32.Parse(this.cboGrupo.SelectedItem.Value.ToString()), Int32.Parse(this.cboMarca.SelectedItem.Value.ToString()), Int32.Parse(this.cboMaterial.SelectedItem.Value.ToString()), Int32.Parse(this.cboUnidad.SelectedItem.Value.ToString()), float.Parse(this.txtDimension.Text), Int32.Parse(this.txtPiezasPaquete.Text), Int32.Parse(this.txtPaquetesCaja.Text), Int32.Parse(this.txtPiezasBulto.Text), Decimal.Parse(this.txtPrecioPieza.Text), Decimal.Parse(this.txtPrecioPaquetesCaja.Text), Decimal.Parse(this.txtPrecioPiezasCajabulto.Text), this.User.Identity.Name.ToString(), this.chkActivo.Checked, float.Parse(this.txtMinimo.Text), float.Parse(this.txtMaximo.Text), float.Parse(this.txtCantidadInicial.Text), this.chkVisible.Checked, this.chkIva.Checked, this.chkInventario.Checked, fileBytes);
 				db.SubmitChanges();
 				ObtenerId();
 				ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(),
@@ -101,7 +104,7 @@ namespace MusebeWEBFinal
 		{
 			MUSEBEDataContext db = new MUSEBEDataContext();
 			var productos = db.Productos_Consultar_Clave(this.txtClave.Text);
-			foreach(var i in productos)
+			foreach (var i in productos)
 			{
 				this.Id.Value = i.Id.ToString();
 				ObtenerRuta(Id.Value);
@@ -175,7 +178,6 @@ namespace MusebeWEBFinal
 			if (File.Exists(targetPath))
 			{
 				this.imageGallery.ImageSourceFolder = "~\\Imagenes\\Productos\\" + IdProducto;
-				//this.imageGallery.CustomImageProcessing += imageGallery_CustomImageProcessing;
 				this.imageGallery.UpdateImageCacheFolder();
 				this.ArchivosGaleriasFotos.Settings.RootFolder = targetPath;
 			}
@@ -184,7 +186,6 @@ namespace MusebeWEBFinal
 				Directory.CreateDirectory(targetPath);
 				this.ArchivosGaleriasFotos.Settings.RootFolder = targetPath;
 				this.imageGallery.ImageSourceFolder = "~\\Imagenes\\Productos\\" + IdProducto;
-				//this.imageGallery.CustomImageProcessing += imageGallery_CustomImageProcessing;
 				this.imageGallery.UpdateImageCacheFolder();
 			}
 		}
@@ -233,13 +234,8 @@ namespace MusebeWEBFinal
 			byte[] fileBytes = System.IO.File.ReadAllBytes(targetPath);
 			MUSEBEDataContext db = new MUSEBEDataContext();
 			db.Productos_Modificar_Foto(Int32.Parse(this.Id.Value), fileBytes);
-			db.SubmitChanges();		
-			//var datosproducto = db.Productos_Consultar_Clave(this.txtClave.Text);
-			//foreach (var i in datosproducto)
-			//{
-			//	this.imgBinaria.ContentBytes = i.Imagen.ToArray();
-			//	this.imgBinaria.DataBind();
-			//}
+			db.SubmitChanges();
+
 			this.popupImagen.ShowOnPageLoad = false;
 			ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(),
 					"err_msg",
