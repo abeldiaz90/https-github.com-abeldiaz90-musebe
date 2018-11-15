@@ -355,33 +355,6 @@ namespace MusebeWEBFinal {
         protected global::DevExpress.Web.ASPxButton btnNoGuardar;
         
         /// <summary>
-        /// popupImagen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl popupImagen;
-        
-        /// <summary>
-        /// imgBinaria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxBinaryImage imgBinaria;
-        
-        /// <summary>
-        /// SubirImagen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxUploadControl SubirImagen;
-        
-        /// <summary>
         /// popupGaleria control.
         /// </summary>
         /// <remarks>
@@ -416,6 +389,15 @@ namespace MusebeWEBFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxFileManager ArchivosGaleriasFotos;
+        
+        /// <summary>
+        /// btnCargarGaleria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnCargarGaleria;
         
         /// <summary>
         /// popupBusqueda control.
@@ -461,6 +443,42 @@ namespace MusebeWEBFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource Resultados;
+        
+        /// <summary>
+        /// popupImagen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPopupControl popupImagen;
+        
+        /// <summary>
+        /// CP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel CP;
+        
+        /// <summary>
+        /// imgBinaria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxBinaryImage imgBinaria;
+        
+        /// <summary>
+        /// SubirImagen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl SubirImagen;
         
         /// <summary>
         /// UpdateProgress1 control.

@@ -209,12 +209,15 @@ namespace MusebeWEBFinal
 			{
 				this.imgBinaria.ContentBytes = i.Imagen.ToArray();
 			}
+			//ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "none", "<script>$('#myModal').modal('show');</script>", false);
+			//ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
 			this.popupImagen.ShowOnPageLoad = true;
 		}
 
 		protected void btnGaleria_Click(object sender, EventArgs e)
 		{
-			this.popupGaleria.ShowOnPageLoad = true;
+			ObtenerRuta(this.Id.Value);
+			this.popupCargaImagenes.ShowOnPageLoad = true;
 		}
 
 		protected void SubirImagen_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
@@ -227,20 +230,27 @@ namespace MusebeWEBFinal
 			{
 				File.Delete(targetPath);
 			}
-
-
 			e.UploadedFile.SaveAs(targetPath);
-
 			byte[] fileBytes = System.IO.File.ReadAllBytes(targetPath);
 			MUSEBEDataContext db = new MUSEBEDataContext();
 			db.Productos_Modificar_Foto(Int32.Parse(this.Id.Value), fileBytes);
 			db.SubmitChanges();
+		}
 
-			this.popupImagen.ShowOnPageLoad = false;
-			ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(),
-					"err_msg",
-					"alert('!La foto ha sido cambiada!');",
-					true);
+
+		protected void CP_Callback(object sender, DevExpress.Web.CallbackEventArgsBase e)
+		{
+			MUSEBEDataContext db = new MUSEBEDataContext();
+			var query = db.Productos_Consultar_Clave(this.txtClave.Text);
+			foreach (var i in query)
+			{
+				this.imgBinaria.ContentBytes = i.Imagen.ToArray();
+			}
+		}
+
+		protected void btnCargarGaleria_Click(object sender, EventArgs e)
+		{
+			this.popupGaleria.ShowOnPageLoad = true;
 		}
 	}
 }
