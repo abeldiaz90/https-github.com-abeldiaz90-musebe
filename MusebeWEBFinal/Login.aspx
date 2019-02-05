@@ -6,160 +6,137 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
-	<script>
-		dataLayer = [{
-			'pageCategory': 'signup',
-			'visitorType': 'high-value'
-		}];
-	</script>
-	<!-- Google Tag Manager -->
-	<script>
-		(function (w, d, s, l, i) {
-			w[l] = w[l] || []; w[l].push({
-				'gtm.start':
-				new Date().getTime(), event: 'gtm.js'
-			}); var f = d.getElementsByTagName(s)[0],
-			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-			'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-NPPWKCH');</script>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
 
-	<script>
-		(function (w, d, s, l, i) {
-			w[l] = w[l] || []; w[l].push({
-				'gtm.start':
-				new Date().getTime(), event: 'gtm.js'
-			}); var f = d.getElementsByTagName(s)[0],
-			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-			'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-NPPWKCH');</script>
-	<!-- End Google Tag Manager -->
-	<asp:ScriptManager ID="ScriptManager1" runat="server">
-	</asp:ScriptManager>
+    <style>
+        body {
+            background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
 
-	<style>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript > <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPPWKCH" height="0" width="0" style="display:none;visibility:hidden" > </iframe > </noscript > body {
-			background-image: url('Imagenes/PaginaWeb/Fondo.jpg');
-			background-color: transparent;
-			background-repeat: no-repeat;
-			background-size: cover;
-			margin: 0;
-		}
+        .topnav {
+            /*overflow:hidden;*/
+            background-color: deepskyblue;
+            /*position:relative;*/
+        }
 
-		.topnav {
-			/*overflow:hidden;*/
-			background-color: deepskyblue;
-			/*position:relative;*/
-		}
+            .topnav a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+                z-index: 0;
+                position: relative;
+            }
 
-			.topnav a {
-				float: left;
-				display: block;
-				color: #f2f2f2;
-				text-align: center;
-				padding: 14px 16px;
-				text-decoration: none;
-				font-size: 17px;
-				z-index: 0;
-				position: relative;
-			}
+                .topnav a:hover {
+                    background-color: #F0D27B;
+                    color: white;
+                    position: relative;
+                }
 
-				.topnav a:hover {
-					background-color: #F0D27B;
-					color: white;
-					position: relative;
-				}
+            .topnav .icon {
+                display: none;
+            }
 
-			.topnav .icon {
-				display: none;
-			}
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
 
-		@media screen and (max-width: 600px) {
-			.topnav a:not(:first-child) {
-				display: none;
-			}
+            .topnav a.icon {
+                float: right;
+                display: inherit;
+            }
+        }
 
-			.topnav a.icon {
-				float: right;
-				display: inherit;
-			}
-		}
+        @media screen and () {
+            .topnav.responsive {
+                position: absolute;
+            }
 
-		@media screen and () {
-			.topnav.responsive {
-				position: absolute;
-			}
+            .carousel-inner > .item > img {
+                margin: 0 auto;
+            }
 
-			.carousel-inner > .item > img {
-				margin: 0 auto;
-			}
+            .topnav.responsive .icon {
+                position: relative;
+                right: 0;
+                top: 0;
+            }
 
-			.topnav.responsive .icon {
-				position: relative;
-				right: 0;
-				top: 0;
-			}
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+    </style>
+    <div class="topnav" id="myTopnav">
+        <uc1:menupaginaweb runat="server" ID="menupaginaweb" EnableTheming="true" />
+        <asp:Image ID="imglogo" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" />
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 
-			.topnav.responsive a {
-				float: none;
-				display: block;
-				text-align: left;
-			}
-		}
-	</style>
-	<div class="topnav" id="myTopnav">
-		<uc1:menupaginaweb runat="server" ID="menupaginaweb" EnableTheming="true" />
-		<asp:Image ID="imglogo" ImageUrl="~/Imagenes/Logo/logo.jpg" runat="server" Width="7%" Height="7%" />
-	</div>
-	<script>
-		function myFunction() {
-			var x = document.getElementById("myTopnav");
-			if (x.className === "topnav") {
-				x.className += " responsive";
-			} else {
-				x.className = "topnav";
-			}
-		}
-	</script>
-	<%--	<div class="modal-content" style="align-content: center">
-		<div class="modal-body" style="align-content: center">--%>
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<section id="loginForm" class="panel panel-default">
-				<div class="panel-body">
-					<h2>Iniciar sesión</h2>
-					<hr />
-					<asp:Login ID="Login1" runat="server" CssClass="User" OnAuthenticate="Login1_Authenticate">
-						<LayoutTemplate>
-							<div id="loginform" class="form-horizontal" role="form">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<asp:TextBox runat="server" ID="UserName" CssClass="form-control" placeholder="User Name"></asp:TextBox>
-								</div>
-								<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="UserName" Display="Dynamic" ValidationGroup="Login" ErrorMessage="Please enter an User Name" CssClass="error">Please enter an User Name</asp:RequiredFieldValidator>
+    <script>
+        function alerta(USER_ID) {
+            window.alert(USER_ID);
+            //gtag('set', { 'user_id': USER_ID });
+            utag.link({
+                UserID: USER_ID,
+                category: "TEALIUM"
+            });
+        }
+    </script>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <section id="loginForm" class="panel panel-default">
+                <div class="panel-body">
+                    <h2>Iniciar sesión</h2>
+                    <hr />
+                    <asp:Login ID="Login1" runat="server" CssClass="User" OnAuthenticate="Login1_Authenticate">
+                        <LayoutTemplate>
+                            <div id="loginform" class="form-horizontal" role="form">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <asp:TextBox runat="server" ID="UserName" CssClass="form-control" placeholder="User Name"></asp:TextBox>
+                                </div>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="UserName" Display="Dynamic" ValidationGroup="Login" ErrorMessage="Please enter an User Name" CssClass="error">Please enter an User Name</asp:RequiredFieldValidator>
 
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-									<asp:TextBox runat="server" ID="Password" CssClass="form-control" placeholder="Password"
-										TextMode="Password"></asp:TextBox>
-								</div>
-								<asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="Password" Display="Dynamic" ValidationGroup="Login" ErrorMessage="Please enter a password" CssClass="error">Please enter a password</asp:RequiredFieldValidator>
-								<asp:Button ID="LoginButton" runat="server" CommandName="Login" class="btn btn-primary" ValidationGroup="Login" Text="Log in" UseSubmitBehavior="false" />
-								<asp:LinkButton ID="LinkButton1" runat="server">Olvide mi contraseña</asp:LinkButton>
-								<asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Registrarme</asp:LinkButton>
-							</div>
-						</LayoutTemplate>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <asp:TextBox runat="server" ID="Password" CssClass="form-control" placeholder="Password"
+                                        TextMode="Password"></asp:TextBox>
+                                </div>
+                                <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="Password" Display="Dynamic" ValidationGroup="Login" ErrorMessage="Please enter a password" CssClass="error">Please enter a password</asp:RequiredFieldValidator>
+                                <asp:Button ID="LoginButton" runat="server" CommandName="Login" class="btn btn-primary" ValidationGroup="Login" Text="Log in" UseSubmitBehavior="false" />
+                                <asp:LinkButton ID="LinkButton1" runat="server">Olvide mi contraseña</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click" OnClientClick='utag.link({category: "TEALIUM"});'>Registrarme</asp:LinkButton>
+                            </div>
+                        </LayoutTemplate>
 
-					</asp:Login>
-	
-				</div>
-			</section>
-		</div>
-	</div>
-	<%--		</div>
-		<div class="modal-footer">
-		</div>
-	</div>--%>
+                    </asp:Login>
+
+                </div>
+            </section>
+        </div>
+    </div>
 </asp:Content>
 <asp:Content ID="Content6" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 </asp:Content>

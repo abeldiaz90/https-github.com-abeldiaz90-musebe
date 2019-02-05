@@ -190,7 +190,7 @@
 							</a>
 							</b>
 									<br />
-							<button type="button" class="btn btn-default" aria-label="Left Align" title="Detalles" value='<%# Eval("Id") %>' onclick='dataLayer.push({"event": "clickProducto","pageCategory": "Productos","AccionProductos": "<%# Eval("Producto") %>","EtiquetaProductos": "<%# Eval("Descripcion") %>"});mostrarGaleria(<%# Eval("Id") %>);'>
+							<button type="button" class="btn btn-default" aria-label="Left Align" title="Detalles" value='<%# Eval("Id") %>' onclick='dataLayer.push({"event": "clickProducto","pageCategory": "Productos","AccionProductos": "<%# Eval("Producto") %>","EtiquetaProductos": "<%# Eval("Descripcion") %>","dimension1":"leche lala"});mostrarGaleria(<%# Eval("Id") %>);'>
 								<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
 							</button>
 							<button type="button" class="btn btn-default" aria-label="Left Align" title="Agregar al carrito" onclick="CallServerMethod(<%# Eval("Clave") %>)" value='<%# Eval("Clave") %>' name='<%# Eval("Clave") %>'>

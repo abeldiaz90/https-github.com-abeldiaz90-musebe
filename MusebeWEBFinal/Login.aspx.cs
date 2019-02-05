@@ -25,7 +25,7 @@ namespace MusebeWEBFinal
 					Response.Redirect("~/Index.aspx", false);
 				}
 			}
-			else {  }
+			else { }
 		}
 
 		public string Rol()
@@ -51,6 +51,8 @@ namespace MusebeWEBFinal
 		{
 			try
 			{
+				//Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "window.alert('hola');", true);
+			//	Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "alerta('" + Utilidades.Security.Encrypt(this.Login1.UserName).ToString() + "');", true);
 				SqlConnection con = new SqlConnection();
 				con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString;
 				con.Open();
@@ -78,15 +80,17 @@ namespace MusebeWEBFinal
 					Response.Cookies.Add(ck);
 					Session["Usuario"] = this.Login1.UserName;
 					Session["Rol"] = Resultado.Rows[0]["ID_ROL"].ToString();
-					if (Resultado.Rows[0]["ID_ROL"].ToString() == "")
-					{
-						Response.Redirect("~/Index.aspx", false);
-					}
-					else
-					{
-						Response.Redirect("~/Default.aspx", false);
-					}
-				}
+
+
+                    if (Resultado.Rows[0]["ID_ROL"].ToString() == "")
+                    {
+                        Response.Redirect("~/Index.aspx", false);
+                    }
+                    else
+                    {
+                        Response.Redirect("~/Default.aspx", false);
+                    }
+                }
 				else
 				{
 
@@ -98,11 +102,6 @@ namespace MusebeWEBFinal
 		protected void LinkButton2_Click(object sender, EventArgs e)
 		{
 			Response.Redirect("Register.aspx");
-		}
-
-		protected void Login1_Authenticate1(object sender, AuthenticateEventArgs e)
-		{
-
 		}
 	}
 }
